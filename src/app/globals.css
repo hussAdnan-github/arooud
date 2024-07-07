@@ -2,32 +2,208 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: #f8f5f5;
 }
+@layer components {
+ .header_line{
+  
+ }
+ .headerline_title{
+  font-size: 20px;
+  text-align: end;
+  position: relative;
+  right: 0;
+ }
+ .headerline_title::before{
+   content: '';
+   position: absolute;
+   height: 2px;
+   width: 86%;
+   top: 50%;
+   left: 0;
+   background-color: rgb(214, 206, 206);
+   }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+}
+.loading{
+  width: 100%;
+  height: 32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.three-body {
+  --uib-size: 35px;
+  --uib-speed: 0.8s;
+  --uib-color: #5D3FD3;
+  position: relative;
+  display: inline-block;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+ }
+ 
+ .three-body__dot {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+ }
+ 
+ .three-body__dot:after {
+  content: '';
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: var(--uib-color);
+  border-radius: 50%;
+ }
+ 
+ .three-body__dot:nth-child(1) {
+  bottom: 5%;
+  left: 0;
+  transform: rotate(60deg);
+  transform-origin: 50% 85%;
+ }
+ 
+ .three-body__dot:nth-child(1)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite ease-in-out;
+  animation-delay: calc(var(--uib-speed) * -0.3);
+ }
+ 
+ .three-body__dot:nth-child(2) {
+  bottom: 5%;
+  right: 0;
+  transform: rotate(-60deg);
+  transform-origin: 50% 85%;
+ }
+ 
+ .three-body__dot:nth-child(2)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite
+     calc(var(--uib-speed) * -0.15) ease-in-out;
+ }
+ 
+ .three-body__dot:nth-child(3) {
+  bottom: -5%;
+  left: 0;
+  transform: translateX(116.666%);
+ }
+ 
+ .three-body__dot:nth-child(3)::after {
+  top: 0;
+  left: 0;
+  animation: wobble2 var(--uib-speed) infinite ease-in-out;
+ }
+ 
+ @keyframes spin78236 {
+  0% {
+   transform: rotate(0deg);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+ 
+  100% {
+   transform: rotate(360deg);
   }
+ }
+ 
+ @keyframes wobble1 {
+  0%,
+   100% {
+   transform: translateY(0%) scale(1);
+   opacity: 1;
+  }
+ 
+  50% {
+   transform: translateY(-66%) scale(0.65);
+   opacity: 0.8;
+  }
+ }
+ 
+ @keyframes wobble2 {
+  0%,
+   100% {
+   transform: translateY(0%) scale(1);
+   opacity: 1;
+  }
+ 
+  50% {
+   transform: translateY(66%) scale(0.65);
+   opacity: 0.8;
+  }
+ }
+ 
+.footer_img{
+    background-image: url(../../public/img/footer.svg);
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+  background-color: black;
+  border-radius: 50%;
+  padding: 26px;
+}
+.swiper-button-prev:after,.swiper-rtl .swiper-button-next:after{
+font-size: 24px !important;
+  font-weight: bold;
+  color: white !important;
+
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+  background-color: black;
+  border-radius: 50%;
+  padding: 26px;
+  }
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+font-size: 24px !important;
+  font-weight: bold;
+  color: white !important;
+
+}
+.slider_categries .swiper-button-prev, .swiper-rtl .swiper-button-next{
+  background-color: rgb(202, 202, 202);
+  border-radius: 50%;
+  padding: 20px;
+  left: 0;
+}
+.slider_categries .swiper-button-prev:after,.swiper-rtl .swiper-button-next:after{
+font-size: 10px !important;
+  font-weight: bold;
+  color: rgb(0, 0, 0) !important;
+
+}
+.slider_categries .swiper-button-next, .swiper-rtl .swiper-button-prev{
+  background-color:  rgb(202, 202, 202);
+  border-radius: 50%;
+  padding: 20px;
+  right: 8px;
+  }
+  .slider_categries .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+font-size: 10px !important;
+  font-weight: bold;
+  color: rgb(0, 0, 0) !important;
+
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Create a custom file input button */
+.update_img {
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EDEEF2;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.partners_offer{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
 }
