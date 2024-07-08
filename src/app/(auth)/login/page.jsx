@@ -8,7 +8,6 @@ import Image from "next/image";
 import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
-import style from './login.module.css'
 export default function page() {
   return (
     <div className="login_user container m-auto">
