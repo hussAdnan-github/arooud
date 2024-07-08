@@ -17,14 +17,15 @@ import Partners from "@/components/Partners";
 export default function Home() {
   return ( 
   
-<div className="home">
+<div className="home"  id="home">
 <Header />
 
 <div className="container m-auto mt-24  ">
   <div className="">
     <MainSlider />
   </div>
-  <div className="mt-32 mb-16">
+  
+  <div className="mt-32 mb-16"  id="offer">
     <HeaderText titel={"ابرز العروض المحلية"}/> 
   </div>
   <div className="my-20">
@@ -67,7 +68,7 @@ export default function Home() {
   <div className="mb-32">
   <Image src={cashBack} alt="cashBack"/>
 </div>
-<div>
+<div  id="coupons">
 <MainTitle title={'الكوبونات والقسائم'}/>
 
 </div>
@@ -77,7 +78,7 @@ export default function Home() {
   <div className="mt-20">
     <SliderCardCoupons/>
   </div>
-<div className="mt-32 mb-20">
+<div className="mt-32 mb-20" id="about">
 <MainTitle title={'عن عــروض'}/>
 
 </div>
@@ -87,7 +88,7 @@ export default function Home() {
   <div className="my-24 btn_after relative">
     <ActiveButtonUser title={'انظم معنا'}/>
   </div>
-<div className="mb-20">
+<div className="mb-20"  id="partents">
 <MainTitle title={'شركاء عروضنا '}/>
 
 </div>

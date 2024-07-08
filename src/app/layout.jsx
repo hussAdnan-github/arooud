@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Provider from "./Provider";
 
-const inter = Cairo({ weight : '300', subsets: ["arabic"] });
+const inter = Cairo({ weight : '200', subsets: ["arabic"] });
 
 export const metadata = {
   title: "Create Next App",

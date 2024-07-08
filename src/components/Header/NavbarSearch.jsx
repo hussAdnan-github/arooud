@@ -12,13 +12,13 @@ export default function NavbarSearch() {
       <div>
         <Dropdown />
       </div>
-    <div className='nav_search_categories'>
+    <div className='nav_search_categories flex-1'>
    
     <SearchBar />
 
     </div>
-    <div className='nav_logo'>
-     <Link href={'/'} className="">
+    <div className='nav_logo' >
+     <Link href={'#home'} className="">
  <Image
 src={logo}
 alt="Logo"

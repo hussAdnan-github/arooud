@@ -10,10 +10,10 @@ export default function SearchBar() {
   
 <form className=" mx-auto">   
 <div className="flex">
-<div className="main_search">
-<Link href={''} className="flex items-center md:w-28 md:text-xl text-white font-bold bg-primaryColo
-h-full rounded-full justify-between md:px-6 px-2 ">
-  <IoSearchSharp className="search_icon me-1"/>
+<div className="main_search  md:w-full md:mx-16">
+<Link href={''} className="flex items-center md:w-28 text-white font-bold bg-primaryColo
+h-full rounded-full justify-between md:px-6 px-2 " style={{fontSize:'16px'}}>
+  <IoSearchSharp className="search_icon me-2" style={{fontSize:'18px'}}/>
   بحـث
   </Link>
   <input type="text" className="text-end text-2xl" />

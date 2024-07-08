@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scroll-behavior: smooth;
+}
 body{
   background-color: #f8f5f5;
 }
@@ -167,6 +170,10 @@ input[type="file"] {
     .btn_dropdown{
       display: none;
     }
+    .main_searchP
+    {
+      width: 50px !important;
+    }
     .main_search:hover{
       /* position: absolute;
     top: 80px;
@@ -176,7 +183,9 @@ input[type="file"] {
       width: 0 !important;
      }
      .main_search a{
-      font-size: 0;
+      font-size: 0 !important; 
+      text-align: center !important;
+      background-color: black !important;
      }
     .main_search:hover input{
     width: 400px !important;
@@ -189,10 +198,10 @@ input[type="file"] {
 
 
    .main_search{
-    height: 54px;
+    height: 52px;
     display: flex;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 3px 3px;
     background-color: white;
     border-radius: 50px;
     align-items: center;
@@ -201,7 +210,7 @@ input[type="file"] {
    }
  
    .main_search input{
-    width: 400px;
+    width: 100%;
     outline: none;
     border: none;
     font-weight: bold;

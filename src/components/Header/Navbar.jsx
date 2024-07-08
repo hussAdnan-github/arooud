@@ -1,30 +1,34 @@
-'use client'
+
+// 'use client'
 import Link from "next/link";
 import Dropdown from '../Dropdown';
 import NavDropDown from "./NavDropDown";
-import DarkmodeSwotch from "../DarkmodeSwotch";
-import { useRef } from "react";
-
+import DarkMode from "../DarkMode";
+// import { usePathname, useRouter } from 'next/navigation';
+const navLinks = [
+  {name: 'شركاء عروضنا' ,href : '#partents'} ,
+  {name: 'عنا' ,href : '#about'} ,
+  {name: 'العروض' ,href : '#offer'} ,
+  {name: 'الكوبونات' ,href : '#coupons'} ,
+  {name: 'الرئيسية' ,href : '#home'} ,
+]
 export default function NavBar() {
-// const aboutRef = useRef(null);
-// onClick={()=>{ aboutRef.current?.scrollIntoView(
-//   {
-//     behavior:'smooth'
-//   }
-// )}}
+  // const router = useRouter();
+  // const path = usePathname();
+   
   return (
     <div className="navbar mt-6">
         <div className="flex justify-between items-center mx-2 md:mx-20">
             <div>
-      <DarkmodeSwotch/>
+      <DarkMode />
 
             </div>
             <div  className=" nav_links flex gap-4 md:gap-16  ">
-            <h1 className="text-sm sm:text-2xl font-bold">شركاء عروضنا</h1>
-            <h1 className="text-sm sm:text-2xl font-bold" >عنا</h1>  
-            <h1 className="text-sm sm:text-2xl font-bold">العروض</h1>
-            <h1 className="text-sm sm:text-2xl font-bold">الكوبونات</h1>
-            <h1 className="text-sm sm:text-2xl font-bold text-primaryColor">الرئيسية</h1>
+            {navLinks.map(link =>{
+              return(
+                <Link key={link.key} href={link.href}><h1 className= "text-sm sm:text-xl font-bold hover:text-red-500">{link.name}</h1></Link>
+              )
+            })}
             </div>
            <div>
             <NavDropDown />
