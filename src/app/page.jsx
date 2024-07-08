@@ -10,6 +10,7 @@ import CardAbout from "@/components/CardAbout";
 import Header from "@/components/Header/Header";
 import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
+import Partners from "@/components/Partners";
  
 
 

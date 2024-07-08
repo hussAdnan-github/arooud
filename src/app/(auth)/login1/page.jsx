@@ -4,6 +4,7 @@ import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import login from '../../../../public/img/login.png'
 import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
+import Link from "next/link";
 
 export default function page() {
   return (
