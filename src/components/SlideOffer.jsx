@@ -18,15 +18,16 @@ import 'swiper/css/pagination';
 import {  Navigation } from 'swiper/modules';
 
 import CardIcon from './CardIcon';
+import CardProduct from './CardProduct'
 
-export default function SliderCategries() {
-    return (
-       <div className="mainslider_categries ">
-            <Swiper
+export default function SlideOffer() {
+  return (
+    <div className="slide_offer">
+     <Swiper
             spaceBetween={10}
             loop={true}
-            navigation={true}
-            modules={[ Navigation]}
+            // navigation={true}
+            // modules={[ Navigation]}
             breakpoints={{
               640: {
                 slidesPerView: 1,
@@ -37,7 +38,7 @@ export default function SliderCategries() {
                 spaceBetween: 40,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
                 spaceBetween: 10,
               },
             }}
@@ -45,26 +46,15 @@ export default function SliderCategries() {
           >
   
 
-    <SwiperSlide> <CardIcon title={"الجمال والعافية"} img={CardIconImg}/></SwiperSlide>
-        <SwiperSlide>    <CardIcon title={"الترفيه"} img={music}/> </SwiperSlide>
-        <SwiperSlide>    <CardIcon title={"التسوق"} img={market}/></SwiperSlide>
-        <SwiperSlide>    
-        <CardIcon title={"السفر والسياحة"} img={world}/> 
-        </SwiperSlide>
-      
-        <SwiperSlide> 
+    <SwiperSlide><CardProduct/></SwiperSlide>
+    <SwiperSlide><CardProduct/></SwiperSlide>
+    <SwiperSlide><CardProduct/></SwiperSlide>
+    <SwiperSlide><CardProduct/></SwiperSlide>
+    <SwiperSlide><CardProduct/></SwiperSlide>
+  
 
-                <CardIcon title={"الضيافة"} img={hotel}/>
-   
-        </SwiperSlide>
-      
-        <SwiperSlide> 
-
-                <CardIcon title={"الضيافة"} img={hotel}/>
-   
-        </SwiperSlide>
       
           </Swiper>
-       </div>
-      );
+    </div>
+  )
 }

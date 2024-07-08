@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/Header/Header";
 import Footer from "@/components/Footer";
 import Loading from "./loading";
+import Provider from "./Provider";
 
 const inter = Cairo({ weight : '300', subsets: ["arabic"] });
 
@@ -15,8 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+
+        <Provider>
         {children}
-    <Footer/>
+        <Footer/>
+        </Provider>
       <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
       </body>
     </html>

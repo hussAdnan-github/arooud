@@ -9,9 +9,9 @@ export default function CardCoupons() {
   return (
     <div  className="card_coupons">
         
-<div class="flex flex-col max-w-xl items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div className="flex flex-col max-w-xl items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   
-        <Image class="rounded-t-lg" src={Coupons} alt="image Coupons" />
+        <Image className="rounded-t-lg" src={Coupons} alt="image Coupons" />
      
    <div className='flex justify-between mt-2 w-full px-2 ps-8 gap-24 card_bodycoupons'>
    <div className='flex flex-col items-center gap-8 mt-4'>

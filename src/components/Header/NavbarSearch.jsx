@@ -8,17 +8,17 @@ import Dropdown from '../Dropdown';
 
 export default function NavbarSearch() {
   return (
-    <div className='navbar_top flex justify-between mx-10'>
+    <div className='navbar_top flex justify-between mx-2 md:mx-10 items-center'>
       <div>
         <Dropdown />
       </div>
-    <div className='nav_search_categories w-2/3'>
+    <div className='nav_search_categories'>
    
     <SearchBar />
 
     </div>
     <div className='nav_logo'>
-     <Link href={'/'} class="">
+     <Link href={'/'} className="">
  <Image
 src={logo}
 alt="Logo"

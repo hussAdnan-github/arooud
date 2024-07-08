@@ -12,36 +12,38 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import CardProduct from './CardProduct';
 import CardCoupons from './CardCoupons';
+import Link from 'next/link';
 
 export default function SliderCardCoupons() {
     return (
         <>
           <Swiper
             loop={true}
-            slidesPerView={1}
+            // slidesPerView={1}
             centeredSlides={true}
-            spaceBetween={10}
+            // spaceBetween={10}
             breakpoints={{
               640: {
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 0,
               },
               768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+                slidesPerView: 1,
+                spaceBetween: 10,
               },
               1024: {
                 slidesPerView: 2,
-                spaceBetween: 50,
+                spaceBetween: 10,
               },
             }}
             // grabCursor={true}    
             className="mySwiper"
           >
-            <SwiperSlide><CardCoupons /></SwiperSlide>
-            <SwiperSlide><CardCoupons /></SwiperSlide>
-            <SwiperSlide><CardCoupons /></SwiperSlide>
-            <SwiperSlide><CardCoupons /></SwiperSlide>
+            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
+            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
+            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
+            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
+
 
           </Swiper>
         </>

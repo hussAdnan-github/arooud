@@ -1,20 +1,19 @@
-import CardIcon from "@/components/CardIcon";
-import CardProduct from "@/components/CardProduct";
 import HeaderLine from "@/components/HeaderLine";
 import HeaderText from "@/components/HeaderText";
-import Hero from "@/components/Hero";
 import MainSlider from "@/components/MainSlider";
 import SliderCard from "@/components/SliderCard";
 import cashBack from '../../public/img/cashBack.svg'
-
+import Link from "next/link";
 import Image from "next/image";
 import SliderCategries from "@/components/SliderCategries";
 import Dropdown from "@/components/Dropdown";
-import NavbarSearch from "@/components/Header/NavbarSearch";
 import SliderCardCoupons from "@/components/SliderCardCoupons";
 import CardAbout from "@/components/CardAbout";
 import Partners from "@/components/partners";
 import Header from "@/components/Header/Header";
+import MainTitle from "@/components/MainTitle";
+import ActiveButtonUser from "@/components/ActiveButtonUser";
+ 
 
 
 export default function Home() {
@@ -27,13 +26,12 @@ export default function Home() {
   <div className="">
     <MainSlider />
   </div>
-  <div className="mt-32">
+  <div className="mt-32 mb-16">
     <HeaderText titel={"ابرز العروض المحلية"}/> 
   </div>
-  <div>
+  <div className="my-20">
     <SliderCard />
   </div>
-  <div><HeaderLine/></div>
   <div>
     <SliderCard />
   </div>
@@ -44,26 +42,24 @@ export default function Home() {
   <div>
   <SliderCategries/>
   </div>
-  <div className="text-end my-28">
-    <h1 className="text-5xl font-bold">
-    العروض والخصومات
-    </h1>
+  <div className="mt-28">
+  <MainTitle title={'العروض والخصومات'}/>
   </div>
-  <div className="mt-32">
+  <div className="mt-20 mb-16">
     <HeaderText titel={"عروض مميزة"}/> 
   </div>
   <div>
     <SliderCard />
   </div>
   <div><HeaderLine title={'المزيد من العروض المميزة'}/></div>
-  <div className="mt-32">
+  <div className="mt-32 mb-16">
     <HeaderText titel={"عروض الأسبوع"}/> 
   </div>
   <div>
     <SliderCard />
   </div>
   <div><HeaderLine title={'المزيد من عروض الأسبوع'}/></div>
-  <div className="mt-32">
+  <div className="mt-32 mb-16">
     <HeaderText titel={"بقية عروض"}/> 
   </div>
   <div>
@@ -73,34 +69,42 @@ export default function Home() {
   <div className="mb-32">
   <Image src={cashBack} alt="cashBack"/>
 </div>
-<div className="text-end my-28">
-    <h1 className="text-5xl font-bold">
-    الكوبونات والقسائم
-    </h1>
-  </div>
-  <div className="mt-32">
+<div>
+<MainTitle title={'الكوبونات والقسائم'}/>
+
+</div>
+  <div className="mt-20">
     <HeaderText titel={"كوبونات المتاجر العالمية"}/> 
   </div>
-  <div className="mt-24">
+  <div className="mt-20">
     <SliderCardCoupons/>
   </div>
-  <div className="text-end my-28">
-    <h1 className="text-5xl font-bold">
-     عن عــروض  
-    </h1>
-  </div>
-  <div>
+<div className="mt-32 mb-20">
+<MainTitle title={'عن عــروض'}/>
+
+</div>
+  <div id="about" >
     <CardAbout />
   </div>
-  <div className="text-end my-28">
-    <h1 className="text-5xl font-bold">
-    شركاء عروضنا 
-    </h1>
+  <div className="my-24 btn_after relative">
+    <ActiveButtonUser title={'انظم معنا'}/>
   </div>
+<div className="mb-20">
+<MainTitle title={'شركاء عروضنا '}/>
+
+</div>
   <div className="container m-auto">
     <Partners/>
   </div>
+  <div className="my-24 btn_before text-end relative">
+    <ActiveButtonUser title={'المزيـد'}/>
+  </div>
 </div> 
+
+
+
+
+
 </div>
 )
 }

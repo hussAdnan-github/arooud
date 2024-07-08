@@ -29,7 +29,7 @@ export default function MainSlider() {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
+            className="mySwiper main_slider"
           >
             <SwiperSlide>
               <Image src={mainSlider} alt='Image Main Carsoule' />
