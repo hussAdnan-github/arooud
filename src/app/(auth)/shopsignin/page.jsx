@@ -1,16 +1,11 @@
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
-import login from '../../../../public/img/login.png'
-import facebook from '../../../../public/img/facebook.png'
-import google from '../../../../public/img/google.png'
 import Image from "next/image";
 import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
-
-
 export default function page() {
   return (
     <div className="login_user container m-auto mt-10">
