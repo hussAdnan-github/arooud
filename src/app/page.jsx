@@ -3,13 +3,10 @@ import HeaderText from "@/components/HeaderText";
 import MainSlider from "@/components/MainSlider";
 import SliderCard from "@/components/SliderCard";
 import cashBack from '../../public/img/cashBack.svg'
-import Link from "next/link";
 import Image from "next/image";
 import SliderCategries from "@/components/SliderCategries";
-import Dropdown from "@/components/Dropdown";
 import SliderCardCoupons from "@/components/SliderCardCoupons";
 import CardAbout from "@/components/CardAbout";
-import Partners from "@/components/partners";
 import Header from "@/components/Header/Header";
 import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
