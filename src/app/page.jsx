@@ -24,6 +24,7 @@ export default function Home() {
   <div className="">
     <MainSlider />
   </div>
+  
   <div className="mt-32 mb-16">
     <HeaderText titel={"ابرز العروض المحلية"}/> 
   </div>
