@@ -8,6 +8,7 @@ import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
 export default function page() {
   return (
+    
     <div className="login_user container m-auto mt-10">
        <div className="profile flex justify-between">
         <div className="profile_img_user flex gap-4 items-center">
