@@ -18,6 +18,7 @@ export default function Home() {
   return ( 
   
 <div className="home"  id="home">
+  
 <Header />
 
 <div className="container m-auto mt-24  ">
@@ -26,6 +27,7 @@ export default function Home() {
   </div>
   
   <div className="mt-32 mb-16"  id="offer">
+  <div className="mt-32 mb-16">
     <HeaderText titel={"ابرز العروض المحلية"}/> 
   </div>
   <div className="my-20">
@@ -102,7 +104,7 @@ export default function Home() {
 
 
 
-
+</div>
 
 </div>
 )
