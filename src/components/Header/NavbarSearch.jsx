@@ -22,7 +22,7 @@ export default function NavbarSearch() {
  <Image
 src={logo}
 alt="Logo"
-className='w-36'
+className='w-20 md:w-36'
 />
       </Link>
     </div> 

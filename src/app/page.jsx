@@ -87,7 +87,7 @@ export default function Home() {
   <div id="about" >
     <CardAbout />
   </div>
-  <div className="my-24 btn_after relative">
+  <div className="my-24 text-center md:text-start btn_after relative">
     <ActiveButtonUser title={'انظم معنا'}/>
   </div>
 <div className="mb-20"  id="partents">
@@ -97,7 +97,7 @@ export default function Home() {
   <div className="container m-auto">
     <Partners/>
   </div>
-  <div className="my-24 btn_before text-end relative">
+  <div className="my-24 btn_before text-center md:text-end relative">
     <ActiveButtonUser title={'المزيـد'}/>
   </div>
 </div> 

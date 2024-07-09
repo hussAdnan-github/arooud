@@ -107,7 +107,6 @@ font-size: 10px !important;
 font-size: 10px !important;
   font-weight: bold;
   color: rgb(0, 0, 0) !important;
-
 }
 
 input[type="file"] {
@@ -147,19 +146,29 @@ input[type="file"] {
          }
    }
   @media (max-width: 640px) {
+    .main_slider .swiper-button-next, .swiper-rtl .swiper-button-prev ,
+    .main_slider .swiper-button-prev, .swiper-rtl .swiper-button-next{
+display: none ;
+    }
     .btn_after::after{
-      width: 55% !important;
+     display: none;
      }
     .headerline_title::before{
       width: 55% !important;
       }
    }
   @media (max-width: 768px) { 
+    .btn_before::after{
+      display: none;
+    }
+    .mySelect{
+      display: none;
+    }
     .btn_after::after{
-      width: 66% !important;
+      display: none;
      }
-    .headerline_title::before {
-      width: 66% !important;
+    .headerline_title::after {
+      width: 30% !important;
   }
     .btn_dropdown{
       font-size: 0 !important;
@@ -185,10 +194,10 @@ input[type="file"] {
      .main_search a{
       font-size: 0 !important; 
       text-align: center !important;
-      background-color: black !important;
+      background-color: rgb(255, 0, 0) !important;
      }
     .main_search:hover input{
-    width: 400px !important;
+    width: 100px !important;
  
      }
      select{
@@ -243,10 +252,6 @@ select option {
   color: #333;
   text-align: end;
 
-}
-select option:checked {
-  background-color: rgba(255, 0, 0, 0.39);
-  color: #000000;
 }
 
 /* Style the hovered option */

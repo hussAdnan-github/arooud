@@ -25,7 +25,7 @@ return (
      :
        (<MdLightMode onClick={()=>setTheme(pre=>pre = 'dark')}
          className="-z-0 text-4xl text-white bottom-6  cursor-pointer hover:text-primaryColo relative 
-         left-1 border border-white bg-black rounded-full p-1.5 " style={{transition :'.8s', bottom:"30px"}} />))}
+         left-2 border border-white bg-black rounded-full p-1.5 " style={{transition :'.8s', bottom:"30px"}} />))}
          </div>
     )
 }

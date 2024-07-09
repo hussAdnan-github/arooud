@@ -7,20 +7,17 @@ import SliderCard from "@/components/SliderCard";
 import SlideOffer from "@/components/SlideOffer";
 export default function page() {
   return (
-    <div className="main_offer">
+    <div className="main_offer ">
     <Header />
-    <div className="offer_mainImg">
+    <div className="offer_mainImg ">
         <Image src={details} className="w-full" height={450}/>
     </div>
-    <div>
+    <div className="mt-40 md:mt-0">
         <Offer />
     </div>
 <div className="container m-auto">
-<div className="  mb-16">
-    <HeaderText titel={"عروض محلات صدى الرنين"}/> 
-  </div>
-  <div className="container">
-     <div className="mt-44 mb-16">
+  <div className="md:container">
+     <div className="  mb-16">
     <HeaderText titel={"عروض محلات صدى الرنين"}/> 
   </div>
      <SlideOffer />
