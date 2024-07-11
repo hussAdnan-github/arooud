@@ -20,11 +20,11 @@ return (
       <MdDarkMode className="text-xl text-white"/>
       </div>
     {mounted &&   (currntTheme === 'dark' ? (<MdDarkMode onClick={()=>setTheme(pre=>pre = 'light')}  
-   className='-z-0 text-4xl cursor-pointer hover:text-primaryColo relative left-9 bg-black
+   className=' text-4xl cursor-pointer hover:text-primaryColo relative left-9 bg-black
      border border-[#374151] rounded-full p-1.5 'style={{transition :'.8s' , bottom:"30px"}}/>)
      :
        (<MdLightMode onClick={()=>setTheme(pre=>pre = 'dark')}
-         className="-z-0 text-4xl text-white bottom-6  cursor-pointer hover:text-primaryColo relative 
+         className=" text-4xl text-white bottom-6  cursor-pointer hover:text-primaryColo relative 
          left-2 border border-white bg-black rounded-full p-1.5 " style={{transition :'.8s', bottom:"30px"}} />))}
          </div>
     )

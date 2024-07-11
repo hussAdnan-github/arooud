@@ -11,6 +11,7 @@ import Header from "@/components/Header/Header";
 import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import Partners from "@/components/Partners";
+import MainDropDown from "@/components/MainDropDown";
  
 
 
@@ -46,8 +47,17 @@ export default function Home() {
   <div className="mt-28">
   <MainTitle title={'العروض والخصومات'}/>
   </div>
-  <div className="mt-20 mb-16">
+  <div className="mt-20 mb-16 flex items-center justify-end md:flex-row flex-col-reverse">
+   
+    <div className="flex ms-0 md:ms-80 md:flex-row flex-col-reverse">
+      <MainDropDown title={'المنطقة'}/>
+      <MainDropDown title={'محل تجاري'}/>
+      <MainDropDown title={'التصنيف'}/>
+      
+    </div>
+    <div className="flex-1">
     <HeaderText titel={"عروض مميزة"}/> 
+    </div>
   </div>
   <div>
     <SliderCard />

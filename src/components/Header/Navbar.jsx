@@ -23,7 +23,7 @@ export default function NavBar() {
             {navLinks.map(link =>{
               return(
                 <Link key={link.key} href={link.href} onClick={()=>{
-                  console.log('adasdasd')
+                  console.log(link);
                 }}><h1 className= "text-sm sm:text-xl font-bold hover:text-red-500">{link.name}</h1></Link>
               )
             })}

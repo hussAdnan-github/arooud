@@ -155,6 +155,7 @@ display: none ;
      }
     .headerline_title::before{
       width: 55% !important;
+      display: none;
       }
    }
   @media (max-width: 768px) { 
@@ -168,7 +169,8 @@ display: none ;
       display: none;
      }
     .headerline_title::after {
-      width: 30% !important;
+      /* width: 30% !important; */
+      display: none;
   }
     .btn_dropdown{
       font-size: 0 !important;
@@ -274,4 +276,22 @@ select:focus{
   outline: none;
   border: none;
   border-left:solid rgb(228, 227, 227) 1px;
+}
+
+
+
+
+/* dashbard */
+
+.active{
+  position: relative;
+}
+.active::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  left: -10px;
+  background-color: red;
+  border-radius: 10px;
 }

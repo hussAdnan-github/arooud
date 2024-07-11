@@ -15,19 +15,18 @@ export default function Offer() {
  </div>
  <div className="flex flex-col items-start justify-between md:flex-row md:max-w-screen-xl  ">
     <div className="flex flex-col items-end mt-10 mx-0 md:mx-10 gap-6 w-full md:w-2/3">
-        <h1 className="text-gray-400 ">جوالات</h1>
-        <h1 className="text-3xl md:text-4xl text-center md:text-end">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة</h1>
-        <h1 className="text-2xl text-center md:text-end ps-0 md:ps-20">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا،  </h1>
-        <div className="flex md:flex-row flex-col-reverse gap-6 mb-10 md:mb-0 md:gap-28 mt-4">   
-            <div className="flex items-center gap-6 md:justify-normal justify-center" >
+        <h1 className="text-gray-400 text-center md:text-end mt-11 md:mt-0 w-full md:w-auto">جوالات</h1>
+        <h1 className="text-2xl md:text-4xl text-center md:text-end font-bold">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة</h1>
+        <h1 className="text-2xl px-3 md:px-0 text-center md:text-end ps-0 md:ps-20">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا،  </h1>
+        <div className="flex md:flex-row flex-col-reverse gap-6 mb-10 md:mb-0 md:gap-28 mt-4 items-center w-full md:w-auto">   
+            <div className="flex items-center gap-6 md:justify-normal justify-center " >
                 <div className="text-end">
                     <p className="font-bold">صلاحية العرض</p>
                     <p>الى تاريخ 12/2/2024</p>
                 </div>
                 <MdOutlineDateRange className="text-2xl text-gray-400"/>
-
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex gap-4 flex-col-reverse md:flex-row items-center md:items-end">
             <p className="me-6 text-xl">5999 </p>
                 <p className="font-bold">رس <span className="font-normal">( شامل الضريبة )</span></p>
                 <div className="flex flex-col items-center">
@@ -41,7 +40,7 @@ export default function Offer() {
          <Image className="w-full h-full object-contain" src={phone} alt="" />
     </div>
 </div>
-<div className="offer_dowm flex justify-evenly items-center my-10">
+<div className="offer_dowm flex justify-evenly items-center my-10 flex-col-reverse md:flex-row gap-6 md:gap-0">
             <div className="offer_star flex gap-1">
             <FaRegStar className="text-gray-400 text-xl"/>
             <FaRegStar className="text-gray-400 text-xl"/>

@@ -3,6 +3,15 @@ import { FaAngleDown } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
 
 import Link from 'next/link'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function SearchBar() {
   return (
@@ -17,12 +26,33 @@ md:h-full rounded-full justify-between md:px-6 px-2 " style={{fontSize:'16px'}}>
   بحـث
   </Link>
   <input type="text" className="text-end text-2xl" />
+  {/* <Select className="bg-white">
+      <SelectTrigger className="w-[150px] border-0">
+        <SelectValue placeholder="كل الاصناف" className="font-bold" />
+      </SelectTrigger>
+      <SelectContent className='bg-white'style={{zIndex:'99999'}}>
+        <SelectGroup>
+        <SelectItem value="all">كل الاصناف  </SelectItem>
+          <SelectItem value="est">يشسيشسيشسي  </SelectItem>
+          <SelectItem value="cst">شسيسشيسشيسشي  </SelectItem>
+          <SelectItem value="mst">سشيشسيءءيسش  </SelectItem>
+          <SelectItem value="pst">يسشيسشيسب</SelectItem>
+          <SelectItem value="akst">سشبشسبشسيشس</SelectItem>
+          <SelectItem value="hst">شسيسشيسشي</SelectItem>
+        </SelectGroup>
+  
+ 
+ 
+ 
+      </SelectContent>
+  </Select> */}
+
 <select id="mySelect" name="mySelect" className="">
   <option value="">كل الاصناف</option>
-  <option value="option1" className="a">1</option>
+  {/* <option value="option1" className="a">1</option>
   <option value="option1">1</option>
   <option value="option1">1</option>
-  <option value="option1">1</option>
+  <option value="option1">1</option> */}
 </select>
 </div>
 </div>

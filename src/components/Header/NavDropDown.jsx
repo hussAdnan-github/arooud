@@ -12,7 +12,7 @@ export default function NavDropDown() {
   };
 
   return (
-    <div className="nav_dropdown">
+    <div className="nav_dropdown md:">
         
 <div className="bg-white flex flex-col justify-center ">
 <div className="flex items-center justify-center">
@@ -31,14 +31,14 @@ export default function NavDropDown() {
 
 {/* Filter 3 */}
     <div className="flex flex-col gap-9 items-end flex-1 me-0">
- <div className='text-end '>
+ <div className='text-end me-4'>
     <h1 className='text-2xl mb-8 font-bold'>الفلترة حسب السعر</h1>
  <div className="filter_price grid md:grid-cols-2 ">
         
       <div className='flex items-center'>
       <h1 className='text-sm font-bold'>مابين 5000  الف 
         </h1>
-        <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+        <input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
       </div>
        <div className='flex items-center'>
@@ -46,23 +46,32 @@ export default function NavDropDown() {
 
 
 </h1>
-<input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
        </div>
       <div className='flex items-center mt-6'>
       <h1 className='text-sm font-bold'>اقل من 5000 الف</h1>
-<input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
       </div>
       </div>
  </div>
- <div className='text-end'>
- <h1 className='text-2xl mb-8 font-bold'>الفلترة حسب اقسام عروض</h1>
+ <div className='text-end me-4'>
+ <h1 className='text-2xl mb-4 font-bold'>الفلترة حسب اقسام عروض</h1>
 
  <div className="filter_work grid md:grid-cols-2 ">
-    <h1>اقل من 5000 الف</h1>
-    <h1>اقل من 5000 الف</h1>
-    <h1>اقل من 5000 الف</h1>
+<div className='flex items-center'>
+<h1 className='text-sm font-bold'>مواقع عالمية</h1>
+<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+</div>
+<div className='flex items-center'>
+<h1 className='text-sm font-bold'>متجر الكتروني</h1>
+<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+</div>
+<div className='flex items-center'>
+<h1 className='text-sm font-bold'>مواقع عالمية</h1>
+<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+</div>
   </div>
  </div>
     </div>
@@ -73,35 +82,35 @@ export default function NavDropDown() {
     الفلترة حسب الاقسام
     </h1>
     <div className="filter_work grid md:grid-cols-3 gap-2">
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-44 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>قسم السفر والسياحة</h1>
     </div>
    
@@ -112,31 +121,31 @@ export default function NavDropDown() {
   <div className="text-end">
     <h1 className="  text-2xl mb-8 font-bold">الفلترة حسب المنطقة</h1>
     <div className="filter_countery grid md:grid-cols-3 gap-2" >
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>المكلا</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
-    <div className="text-center border border-gray-500 w-32 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
     <h1>تريم</h1>
     </div>
   </div>
