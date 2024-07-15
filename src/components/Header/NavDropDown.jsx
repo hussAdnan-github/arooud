@@ -1,28 +1,38 @@
-
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-// import { FaAngleUp } from "react-icons/fa6";
 
-export default function NavDropDown() {
-    const [isVisible, setIsVisible] = useState(false);
+export default function NavbarDropdown() {
 
-  const toggleVisibility = () => {
-    setIsVisible((prevState) => !prevState);
+  const [randomColor, setRandomColor] = useState('#000000');
+
+  useEffect(() => {
+    generateRandomColor();
+  }, []);
+
+  const generateRandomColor = () => {
+    const hexChars = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+       ;
+    }
+    setRandomColor(color);
+
   };
+
+
 
   return (
     <div className="nav_dropdown md:">
         
-<div className="bg-white flex flex-col justify-center ">
+<div className="flex flex-col justify-center ">
 <div className="flex items-center justify-center">
   <div className=" relative inline-block text-left dropdown">
-    <span className="rounded-md shadow-sm"><button onClick={toggleVisibility} className=" inline-flex justify-center w-full px-4 py-2 rounded-xl text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border  border-gray-300 hover:text-gray-500 focus:outline-none focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" 
+    <span className="rounded-md shadow-sm"><button className="hover:-translate-y-1 hover:scale-100   bg-gray-200 hover:bg-gray-100  inline-flex justify-center px-4 py-2 rounded-full w-48 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border  border-gray-300 hover:text-gray-500 focus:outline-none focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" 
        type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
-        <FaAngleDown className='mt-2 me-4' />
+        <FaAngleDown className='mt-2 me-4 text-primaryColo' />
         
         <span className='text-xl font-bold navbar_down'>الفـــلــتـــــرة</span>
-        {/* {isVisible ? <FaAngleDown /> :  <FaAngleUp /> } */}
         </button></span>
     <div className="fixed left-0 w-full opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95" style={{zIndex:'99999999' , top:'134px'}}>
      <div className="absolute right-0 w-full mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
@@ -38,7 +48,7 @@ export default function NavDropDown() {
       <div className='flex items-center'>
       <h1 className='text-sm font-bold'>مابين 5000  الف 
         </h1>
-        <input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+        <input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo     ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
       </div>
        <div className='flex items-center'>
@@ -46,12 +56,12 @@ export default function NavDropDown() {
 
 
 </h1>
-<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
        </div>
       <div className='flex items-center mt-6'>
       <h1 className='text-sm font-bold'>اقل من 5000 الف</h1>
-<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
       </div>
       </div>
@@ -62,15 +72,15 @@ export default function NavDropDown() {
  <div className="filter_work grid md:grid-cols-2 ">
 <div className='flex items-center'>
 <h1 className='text-sm font-bold'>مواقع عالمية</h1>
-<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
 <div className='flex items-center'>
 <h1 className='text-sm font-bold'>متجر الكتروني</h1>
-<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
 <div className='flex items-center'>
 <h1 className='text-sm font-bold'>مواقع عالمية</h1>
-<input id="default-checkbox" type="checkbox" value="" className="ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
   </div>
  </div>
@@ -82,11 +92,15 @@ export default function NavDropDown() {
     الفلترة حسب الاقسام
     </h1>
     <div className="filter_work grid md:grid-cols-3 gap-2">
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:randomColor
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:randomColor
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    

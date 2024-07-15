@@ -40,8 +40,8 @@ export default function MainCoupons() {
    </div>
         </div>
     </div>
-    <div className=" m-0 md:m-6 p-0 w-full md:w-1/3 h-80 rounded-lg flex items-center justify-center">
-         <Image className="w-full h-full object-cover rounded-xl" src={Coupons} alt="" />
+    <div className="overflow-hidden m-0 md:m-6 p-0 w-full md:w-1/3 h-80 rounded-lg flex items-center justify-center">
+         <Image className="coupons_mainimg transition w-full h-full object-cover rounded-xl" src={Coupons} alt="" />
     </div>
   
 </div>

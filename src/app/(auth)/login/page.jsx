@@ -10,7 +10,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
 export default function page() {
   return (
-    <div className="login_user container m-auto">
+    <div className="login_user container m-auto ">
       <div className="flex justify-between flex-col sm:flex-row items-center mt-12 taps_user">
          <div >
        <Link href={'/'} className="flex items-center gap-3 mb-6 sm:mb-0">
@@ -20,7 +20,7 @@ export default function page() {
        </h1>
        </Link>
       </div>
-     <div className="flex flex-col sm:flex-row gap-3">
+     <div className="flex flex-col sm:flex-row gap-4">
      <Link href={'/storesignin'}div>
       <NonActiveButtonUser title={'التسجيل كمتجر إلكتروني'}/>
       </ Link>
@@ -56,7 +56,9 @@ export default function page() {
     </div> 
   
    <div className="flex justify-end gap-8">
-   <ButtonRoundedSocendary title={'تسجيل جديد'}/>
+   <Link href={'/signup'} type="submit" className=" text-center font-bold transition ease-in-out delay-150  hover:scale-105  duration-30 hover:bg-primaryColo hover:text-white hover:border-white hover:font-bold border border-gray-400 text-gray-400 inline-block w-48 rounded-full py-2">
+     تسجــيل جديد
+    </Link>
    <ButtonRoundedPrimary title={'تسجــيل'} urllink={'/'}/>
    </div>
    <h1 className="text-gray-400 text-xs mt-2">أو سجل عبر حساباتك على منصات التواصل الإجتماعي </h1>

@@ -4,13 +4,13 @@ import Image from "next/image";
 import logo from '../../../public/img/logo.png'
 
 import SearchBar from '../SearchBar';
-import Dropdown from '../Dropdown';
+import NavbarDropdown from './NavbarDropdown';
 
 export default function NavbarSearch() {
   return (
     <div className='navbar_top flex justify-between mx-2 md:mx-10 items-center'>
       <div>
-        <Dropdown />
+        <NavbarDropdown />
       </div>
     <div className='nav_search_categories flex-1'>
    
@@ -18,12 +18,11 @@ export default function NavbarSearch() {
 
     </div>
     <div className='nav_logo' >
-     <Link href={'#home'} className="">
+     <Link href={'/'} className="">
  <Image
 src={logo}
 alt="Logo"
-className='w-20 md:w-36'
-/>
+width={159} height={60}/>
       </Link>
     </div> 
     </div>

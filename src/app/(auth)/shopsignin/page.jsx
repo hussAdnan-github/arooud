@@ -1,8 +1,5 @@
-import ActiveButtonUser from "@/components/ActiveButtonUser";
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
-import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import Image from "next/image";
-import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
@@ -20,9 +17,9 @@ export default function page() {
           </div>
          
         </div>
-        <div className="img_logo">
+        <Link href={'/'} className="img_logo">
         <Image src={logo} alt="logo" className="w-28"/>
-        </div>
+        </Link>
         </div> 
        <Link href={'/'} className="flex items-center gap-3 mt-16 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
@@ -61,7 +58,9 @@ export default function page() {
         </div>
         
    <div className="flex justify-end gap-16 mt-12">
-   <ButtonRoundedPrimary title={'سجيل محل جديد'} urllink={'/shopsignup'}/>
+   <Link href={'/shopsignup'} type="submit" className="text-white bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60 md:w-48 rounded-full py-2">
+   سجيل محل جديد
+    </Link  >
    <ButtonRoundedPrimary title={'التسجيل'} urllink={'/'}/>
    </div>
         </form>

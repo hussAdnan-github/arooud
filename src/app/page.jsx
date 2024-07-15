@@ -19,47 +19,63 @@ export default function Home() {
   return ( 
   
 <div className="home"  id="home">
-  
 <Header />
+  
 
-<div className="container m-auto mt-24  ">
-  <div className="">
+<div className=" mt-10" data-aos="zoom-in">
+  <div className="container m-auto">
     <MainSlider />
   </div>
-  
-  <div className="mt-32 mb-16"  id="offer">
-  <div className="mt-32 mb-16">
+
+
+<div className="section_1 bg-[#F4F4F4] pb-24">
+<div className="container m-auto">
+ <div className="mt-44">
     <HeaderText titel={"ابرز العروض المحلية"}/> 
   </div>
-  <div className="my-20">
+  <div className="my-20 mt-14" id='offer'>
     <SliderCard />
   </div>
   <div>
     <SliderCard />
   </div>
-  <div><HeaderLine title={'المزيد من العروض'}/></div>
-<div className="mb-32">
+  <div>
+    <HeaderLine title={'المزيد من العروض'}/>
+    </div>
+
+
+<div className="">
   <Image src={cashBack} alt="cashBack"/>
 </div>
-  <div>
+
+
+  <div className="mt-24">
   <SliderCategries/>
   </div>
-  <div className="mt-28">
+
+ 
+  </div> 
+
+</div>
+
+<div className="section_2 bg-[#EDEEF2]">
+    <div className="container m-auto">
+    <div className=" ">
   <MainTitle title={'العروض والخصومات'}/>
   </div>
-  <div className="mt-20 mb-16 flex items-center justify-end md:flex-row flex-col-reverse">
+  <div className="mt-20 flex items-center justify-end md:flex-row flex-col-reverse">
    
-    <div className="flex ms-0 md:ms-80 md:flex-row flex-col-reverse">
+    <div className="flex ms-0 md:ms-80 md:flex-row flex-col-reverse " >
       <MainDropDown title={'المنطقة'}/>
       <MainDropDown title={'محل تجاري'}/>
       <MainDropDown title={'التصنيف'}/>
       
     </div>
-    <div className="flex-1">
+    <div className="flex-1 ">
     <HeaderText titel={"عروض مميزة"}/> 
     </div>
   </div>
-  <div>
+  <div className="mt-14" >
     <SliderCard />
   </div>
   <div><HeaderLine title={'المزيد من العروض المميزة'}/></div>
@@ -77,19 +93,26 @@ export default function Home() {
     <SliderCard />
   </div>
   <div><HeaderLine title={'المزيد من عروض المميزة'}/></div>
+ 
+ 
   <div className="mb-32">
   <Image src={cashBack} alt="cashBack"/>
 </div>
+    </div>
+</div>
+  
 <div  id="coupons">
 <MainTitle title={'الكوبونات والقسائم'}/>
 
 </div>
-  <div className="mt-20">
+  <div className="mt-20" >
     <HeaderText titel={"كوبونات المتاجر العالمية"}/> 
   </div>
-  <div className="mt-20">
+  <div className="mt-20" >
     <SliderCardCoupons/>
   </div>
+
+
 <div className="mt-32 mb-20" id="about">
 <MainTitle title={'عن عــروض'}/>
 
@@ -104,7 +127,7 @@ export default function Home() {
 <MainTitle title={'شركاء عروضنا '}/>
 
 </div>
-  <div className="container m-auto">
+  <div className="container m-auto"  >
     <Partners/>
   </div>
   <div className="my-24 btn_before text-center md:text-end relative">
@@ -116,6 +139,5 @@ export default function Home() {
 
 </div>
 
-</div>
 )
 }

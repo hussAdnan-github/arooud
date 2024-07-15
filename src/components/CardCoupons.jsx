@@ -7,11 +7,11 @@ import { IoTimerSharp } from "react-icons/io5";
 
 export default function CardCoupons() {
   return (
-    <div  className="card_coupons">
+    <div  className="card_coupons ">
         
-<div className="flex flex-col max-w-xl items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div className="overflow-hidden flex flex-col max-w-xl items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   
-        <Image className="rounded-t-lg" src={Coupons} alt="image Coupons" />
+        <Image className="  hover:scale-125 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300 rounded-t-lg" src={Coupons} alt="image Coupons" />
      
    <div className='flex flex-col-reverse md:flex-row mt-2 w-full md:px-2 px-1 ps-2 md:ps-8 gap-0 md:gap-24 card_bodycoupons'>
    <div className='flex flex-col items-center gap-8 mt-4'>
@@ -38,7 +38,7 @@ export default function CardCoupons() {
     </div>
     <div className='located_coupons flex items-center text-sm md:text-xl w-full justify-center mt-4 mb-6'>
     <p>محل صدى الرنين اليمن - حضرموت - المكلا </p>
-    <IoLocationOutline className='text-primaryColor'/>
+    <IoLocationOutline className='coupons_located text-primaryColor'/>
 
     </div>
     </div>

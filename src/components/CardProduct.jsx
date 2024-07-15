@@ -8,9 +8,9 @@ import Link from 'next/link';
 export default function CardProduct() {
   return (
     <div className='card_product ms-5 md:ms-0'>
-<div className="card relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border dark:border-[#1f2937] border-gray-100 bg-white shadow-md dark:bg-[#1f2937]">
+<div className="card relative flex w-full   max-w-xs flex-col overflow-hidden rounded-lg border dark:border-[#1f2937] border-gray-100 bg-white shadow-md dark:bg-[#1f2937]">
   <div className="relative mx-2 mt-2 flex h-60 overflow-hidden rounded-xl bg-gray-200" href="#">
-    <Image className=" w-full" src={card} alt="product image" />
+    <Image className=" w-full  hover:scale-125 hover:rotate-12 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300" src={card} alt="product image" />
     <span className="absolute top-0 right-0" style={{right:'-14px'}}><Image src={iconCard}/></span>
   </div>
   <div className=" px-4 pb-5 card_body mt-1 text-end">
@@ -42,8 +42,8 @@ export default function CardProduct() {
         <h1 className='text-xs font-bold'>تفاصيل</h1>
     </div>
   <div className='flex flex-col items-end'>
-        <h1 className='text-center w-20 mb-1 text-white rounded-sm text-xs bg-[#F64A51] block ' style={{padding:'3px'}}>%14.5خصم</h1>
-        <h1 className='text-xs mt-1'>اليمن - حضرموت - المكلا <CiLocationOn className='text-[#F64A51] text-xl inline-block' />
+        <h1 className='discount text-center w-20 mb-1 text-white rounded-sm text-xs bg-[#F64A51] block ' style={{padding:'3px'}}>%14.5خصم</h1>
+        <h1 className='text-xs mt-1'>اليمن - حضرموت - المكلا <CiLocationOn className='located_card  text-[#F64A51] text-xl inline-block' />
         </h1>
     </div>
   

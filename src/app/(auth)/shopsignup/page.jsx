@@ -40,14 +40,14 @@ export default function page() {
       <div className="form_user_login flex flex-col items-end">
         <div className="text_ligin text-end">
         <h1 className="mb-4 text-2xl font-bold mt-6">لا يوجد لديك حساب؟ سجل الآن</h1>
-        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل الدخول حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك.</p>
+        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
         </div>
-        <form className="w-1/2 text-end mt-8">
+        <form className="w-[543px] text-end mt-8">
 
         <div className="mb-4">
        <label for="first_name" className="block mb-4 text-sm font-medium text-gray-500 dark:text-white">صورة الشعار</label>
 
-       <label className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white" for="file_input"> <FaCircleChevronLeft className="text-gray-400 text-xl"/>إضافة صورة شعار المتجر
+       <label className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white" for="file_input"> <FaCircleChevronLeft className="text-gray-400 text-xl"/>إضافة صورة شعار المحل
 
        </label>
         <input className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" />
@@ -71,7 +71,7 @@ export default function page() {
             <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
         </div>
         <div className="mb-4 flex flex-col items-end ">
-            <label for="email" className="block mb-4 text-sm font-medium text-gray-500 dark:text-white">البريد الإلكتروني او رقم الهاتف</label>
+            <label for="email" className="block mb-4 text-sm font-medium text-gray-500 dark:text-white">البريد الإلكتروني </label>
             <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="husseb@gia.com" required />
         </div> 
         <div className="mb-4">
@@ -87,15 +87,15 @@ export default function page() {
             <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="@sdasdasd" required />
    </div>  
     <div className="mb-4">
-            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب منصة اكس*</label>
+            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب منصة اكس</label>
             <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="@sdasdasd" required />
    </div>  
     <div className="mb-4">
-            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب الانستقرام*</label>
+            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب الانستقرام</label>
             <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="@sdasdasd" required />
    </div>  
     <div className="mb-4">
-            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب آخر*</label>
+            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط حساب آخر</label>
             <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="سيؤؤؤن" required />
    </div>  
    <div className="flex justify-end gap-8 mt-4">

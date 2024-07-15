@@ -37,7 +37,7 @@ export default function Offer() {
         </div>
     </div>
     <div className="bg-gray-200 m-0 md:m-6 p-0 md:p-4 w-full md:w-1/3 h-80 rounded-xl flex items-center justify-center">
-         <Image className="w-full h-full object-contain" src={phone} alt="" />
+         <Image className="offer_Img transition w-full h-full object-contain" src={phone} alt="" />
     </div>
 </div>
 <div className="offer_dowm flex justify-evenly items-center my-10 flex-col-reverse md:flex-row gap-6 md:gap-0">

@@ -2,6 +2,7 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Provider from "./Provider";
+import Header from "@/components/Header/Header";
 
 const inter = Cairo({ weight : '200', subsets: ["arabic"] });
 
