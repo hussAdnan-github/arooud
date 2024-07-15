@@ -17,6 +17,9 @@ module.exports = {
       // },
     },
     extend: {
+      fontFamily:{
+        fontLocal : ["var(--font-local)"]
+      },
       colors: {
         primaryColo:'#ED1C24',
         grayColor: '#D3D1D8',

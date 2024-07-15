@@ -20,9 +20,9 @@ export default function CardProduct() {
   </div>
     <div className='flex items-center h-16 my-4  rounded-md bg-gray-200'>
     <div className='card_sad'>
-<Image src={cardSAD} alt='image cardSAD'/>
+<Image src={cardSAD} alt='image cardSAD  'className='relative top-[-12px]'width={66} height={66}/>
     </div>
-    <div>
+    <div className=' w-[75%]'>
     <div className='flex justify-end items-end gap-1'>
     <h1 className='text-xs text-gray-400'>
     ( شامل الضريبة )

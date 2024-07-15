@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import BtnBack from "@/components/btnBack";
 export default function page() {
   return (
     <div className="login_user container m-auto">
@@ -20,10 +21,10 @@ export default function page() {
          <div >
        <div className="flex items-center gap-3 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
+<div className="cursor-pointer">
+<BtnBack/>
 
-       <Link href={'/'} >
-    <h1 className="font-bold">رجوع الى الخلف 
-    </h1></Link>
+</div>
        </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3">

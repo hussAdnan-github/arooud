@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
 import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
+import BtnBack from "@/components/btnBack";
 
 
 export default function page() {
@@ -25,8 +26,10 @@ export default function page() {
         </div> 
        <Link href={'/'} className="flex items-center gap-3 mt-16 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
-       <h1 className="font-bold">رجوع الى الخلف 
-       </h1>
+     <div className="cursor-pointer">
+     <BtnBack/>
+     </div>
+
        </Link>
   
  

@@ -25,7 +25,7 @@ md:h-full rounded-full justify-between md:px-6 px-2 " style={{fontSize:'16px'}}>
   بحـث
   </Link>
   <input type="text" className="text-end text-2xl" />
-  {/* <Select className="bg-white">
+  <Select className="bg-white">
       <SelectTrigger className="w-[150px] border-0">
         <SelectValue placeholder="كل الاصناف" className="font-bold" />
       </SelectTrigger>
@@ -44,15 +44,15 @@ md:h-full rounded-full justify-between md:px-6 px-2 " style={{fontSize:'16px'}}>
  
  
       </SelectContent>
-  </Select> */}
-
+  </Select>
+{/* 
 <select id="mySelect" name="mySelect" className="">
   <option value="">كل الاصناف</option>
-  {/* <option value="option1" className="a">1</option>
+  <option value="option1" className="a">1</option>
   <option value="option1">1</option>
   <option value="option1">1</option>
-  <option value="option1">1</option> */}
-</select>
+  <option value="option1">1</option>
+</select> */}
 </div>
 </div>
 </form>

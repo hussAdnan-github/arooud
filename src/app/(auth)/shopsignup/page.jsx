@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Link from "next/link";
+import BtnBack from "@/components/btnBack";
 
 export default function page() {
   return (
@@ -23,9 +24,10 @@ export default function page() {
        <div className="flex items-center gap-3 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
 
-       <Link href={'/'} >
-    <h1 className="font-bold">رجوع الى الخلف 
-    </h1></Link>
+      <div className="cursor-pointer">
+       <BtnBack/>
+
+      </div>
        </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3">

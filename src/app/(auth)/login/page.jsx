@@ -8,6 +8,7 @@ import Image from "next/image";
 import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
+import BtnBack from "@/components/btnBack";
 export default function page() {
   return (
     <div className="login_user container m-auto ">
@@ -16,8 +17,8 @@ export default function page() {
        <Link href={'/'} className="flex items-center gap-3 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
 
-       <h1 className="font-bold">رجوع الى الخلف 
-       </h1>
+       <BtnBack/>
+
        </Link>
       </div>
      <div className="flex flex-col sm:flex-row gap-4">
