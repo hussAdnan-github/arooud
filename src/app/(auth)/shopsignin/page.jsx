@@ -34,7 +34,7 @@ export default function page() {
       <div className="form_user_login flex flex-col items-end">
         <div className="text_ligin text-end">
         <h1 className="mb-4 text-2xl font-bold">لا يوجد لديك حساب؟ سجل الآن</h1>
-        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل الدخول حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك.</p>
+        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
         </div>
         <form className="md:w-1/2 w-full text-end">
 

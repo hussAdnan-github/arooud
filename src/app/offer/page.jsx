@@ -6,7 +6,10 @@ import HeaderText from "@/components/HeaderText";
 import SlideOffer from "@/components/SlideOffer";
 export default function page() {
   return (
-    <div className="main_offer">
+
+   <div>
+    <Header />
+     <div className="main_offer">
     {/* <Header /> */}
     <div className="offer_mainImg ">
         <Image src={details} className=" w-full" height={450}/>
@@ -23,5 +26,6 @@ export default function page() {
      </div>
 </div>
     </div>
+   </div>
   )
 }

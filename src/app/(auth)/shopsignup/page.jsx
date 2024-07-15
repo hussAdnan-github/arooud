@@ -4,7 +4,15 @@ import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaCircleChevronLeft } from "react-icons/fa6";
-
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import Link from "next/link";
 
 export default function page() {
@@ -27,8 +35,8 @@ export default function page() {
       <Link href={'/shopsignin'}>
       <ActiveButtonUser title={'التسجيل كمحل إلكتروني'}/>
       </Link>
-      <Link href={'/'}>
-      <NonActiveButtonUser title={'تسجيل دخول'}/>
+      <Link href={'/login'}>
+      <NonActiveButtonUser title={'التسجيل كمستخدم'}/>
       </Link>
      
      </div>
@@ -78,9 +86,21 @@ export default function page() {
             <label for="phone" className="block mb-4 text-sm font-medium text-gray-900 dark:text-white">رقم الهاتف</label>
             <input type="tel" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+967" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
         </div>
-    <div className="mb-4">
-            <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">المدينة</label>
-            <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="سيؤؤؤن" required />
+        <div className="mb-4">
+            <label for="company" className="block mb-2 text-sm font-medium text-[#9796A1] dark:text-white">المدينة</label>
+            <Select className="bg-white">
+      <SelectTrigger className="w-full text-[#9796A1] border-[#DADADA]">
+        <SelectValue placeholder=" سيؤن" className="font-bold " />
+      </SelectTrigger>
+      <SelectContent className='bg-white text-[#9796A1]'style={{zIndex:'99999'}}>
+        <SelectGroup className="">
+        <SelectItem value="all" className='flex w-full justify-end text-[#9796A1]'>سيؤؤؤؤن  </SelectItem>
+          <SelectItem value="est" className='flex w-full justify-end '>يشسيشسيشسي  </SelectItem>
+          <SelectItem value="cst" className='flex w-full justify-end '>شسيسشيسشيسشي  </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+  </Select>  
+  
    </div>  
     <div className="mb-4">
             <label for="company" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">موقع المحل</label>
@@ -99,7 +119,7 @@ export default function page() {
             <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="سيؤؤؤن" required />
    </div>  
    <div className="flex justify-end gap-8 mt-4">
-   <ButtonRoundedPrimary title={'أرســال'} urllink={'/'}/>
+   <ButtonRoundedPrimary title={'إرســال'} urllink={'/'}/>
    </div>
         </form>
       </div>

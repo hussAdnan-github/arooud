@@ -33,8 +33,8 @@ export default function page() {
       <Link href={'/shopsignin'}>
       <NonActiveButtonUser title={'التسجيل كمحل إلكتروني'}/>
       </Link>
-      <Link href={'/'}>
-      <NonActiveButtonUser title={'تسجيل دخول'}/>
+      <Link href={'/login'}>
+      <NonActiveButtonUser title={'التسجيل كمستخدم'}/>
       </Link>
      
      </div>
@@ -87,10 +87,10 @@ export default function page() {
     <div className="mb-4">
             <label for="company" className="block mb-2 text-sm font-medium text-[#9796A1] dark:text-white">المدينة</label>
             <Select className="bg-white">
-      <SelectTrigger className="w-full border-[#DADADA]">
-        <SelectValue placeholder="كل الاصناف" className="font-bold" />
+      <SelectTrigger className="w-full text-[#9796A1] border-[#DADADA]">
+        <SelectValue placeholder=" سيؤن" className="font-bold" />
       </SelectTrigger>
-      <SelectContent className='bg-white'style={{zIndex:'99999'}}>
+      <SelectContent className='bg-white text-[#9796A1]'style={{zIndex:'99999'}}>
         <SelectGroup className="">
         <SelectItem value="all" className='flex w-full justify-end '>سيؤؤؤؤن  </SelectItem>
           <SelectItem value="est" className='flex w-full justify-end '>يشسيشسيشسي  </SelectItem>

@@ -36,7 +36,7 @@ export default function page() {
       <div className="form_user_login flex flex-col items-end">
         <div className="text_ligin text-end">
         <h1 className="mb-4 text-2xl font-bold">لا يوجد لديك حساب؟ سجل الآن</h1>
-        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل الدخول حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
+        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
         </div>
         <form className="md:w-[543px] w-full text-end">
 
@@ -60,7 +60,9 @@ export default function page() {
         </div>
         
    <div className="flex justify-end gap-16 mt-12">
-   <ButtonRoundedPrimary title={'إضافة متجر جديد'} urllink={'/storesignup'}/>
+   <Link href={'/storesignup'} type="submit" className="text-white bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60 md:w-48 rounded-full py-2">
+   إضافة متجر جديد
+    </Link >
    <ButtonRoundedPrimary title={'التسجيل'} urllink={'/'}/>
    </div>
         </form>

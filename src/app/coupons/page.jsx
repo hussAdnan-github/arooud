@@ -5,7 +5,9 @@ import MainCoupons from "@/components/MainCoupons";
 
 export default function page() {
   return (
-    <div className="coupons">
+ <div>
+  <Header />
+     <div className="coupons">
            {/* <Header /> */}
     <div className="offer_mainImg">
         <Image src={details} className="w-full" height={450}/>
@@ -14,5 +16,6 @@ export default function page() {
         <MainCoupons/>
     </div>
     </div>
+ </div>
   )
 }

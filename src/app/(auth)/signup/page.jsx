@@ -26,7 +26,7 @@ export default function page() {
       <Link href={'/shopsignin'}>
       <NonActiveButtonUser title={'التسجيل كمحل إلكتروني'}/>
       </Link>
-      <Link href={'/'}>
+      <Link href={'/login'}>
       <ActiveButtonUser title={'تسجيل دخول'}/>
       </Link>
      

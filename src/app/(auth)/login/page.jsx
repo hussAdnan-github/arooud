@@ -27,8 +27,8 @@ export default function page() {
       <Link href={'/shopsignin'}>
       <NonActiveButtonUser title={'التسجيل كمحل إلكتروني'}/>
       </Link>
-      <Link href={'/'}>
-      <ActiveButtonUser title={'تسجيل دخول'}/>
+      <Link href={'/login'}>
+      <ActiveButtonUser title={'التسجيل كمستخدم'}/>
       </Link>
      
      </div>
@@ -43,7 +43,7 @@ export default function page() {
       <div className="form_user_login text-end mt-10 flex flex-col w-4/5">
         <div className="text_ligin">
         <h1 className="mb-4 text-2xl font-bold">لديك حساب؟ سجل الدخول</h1>
-        <p className="" style={{fontSize:"14px"}}>قم بالتسجيل الدخول حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك.</p>
+        <p className="" style={{fontSize:"14px"}}>قم بالتسجيل الدخول حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
         </div>
         <form>
 

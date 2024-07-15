@@ -30,7 +30,7 @@ export default function page() {
       <NonActiveButtonUser title={'التسجيل كمتجر إلكتروني'}/>
       </div>
       <div>
-      <ActiveButtonUser title={'تسجيل دخول'}/>
+      <ActiveButtonUser title={'التسجيل كمستخدم'}/>
       </div>
      
      </div>
