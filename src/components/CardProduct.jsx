@@ -15,16 +15,16 @@ export default function CardProduct() {
   </div>
   <div className=" px-4 pb-5 card_body mt-1 text-end">
   <div className='card_title'>
-  <span className='card_type text-gray-400  text-xs '>جوالات</span>
+  <span className='card_type text-[#C8C9CC]  text-xs '>جوالات</span>
   <h1 className='font-medium text-end card_name mt-1'>أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي</h1>
   </div>
     <div className='flex items-center h-16 my-4  rounded-md bg-gray-200'>
     <div className='card_sad'>
 <Image src={cardSAD} alt='image cardSAD  'className='relative top-[-12px]'width={66} height={66}/>
     </div>
-    <div className=' w-[75%]'>
+    <div className=' w-[75%] me-1'>
     <div className='flex justify-end items-end gap-1'>
-    <h1 className='text-xs text-gray-400'>
+    <h1 className='text-[10px] text-gray-400'>
     ( شامل الضريبة )
 
         </h1>
@@ -33,7 +33,7 @@ export default function CardProduct() {
             4599
         </h1>
     </div> 
-    <div className='flex flex-row-reverse gap-1'><h1 className='text-sm '> 5999</h1>  <span className='text-sm text-[#F64A51]'>وفر 800 رس</span></div>
+    <div className='flex flex-row-reverse gap-1 '><h1 className='text-xs line-through '> 5999</h1>  <span className='text-xs text-[#F64A51]'>وفر 800 رس</span></div>
     </div>
     </div>
 

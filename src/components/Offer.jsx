@@ -16,7 +16,7 @@ export default function Offer() {
  <div className="flex flex-col items-start justify-between md:flex-row md:max-w-screen-xl  ">
     <div className="flex flex-col items-end mt-10 mx-0 md:mx-10 gap-6 w-full md:w-2/3">
         <h1 className="text-gray-400 text-center md:text-end mt-11 md:mt-0 w-full md:w-auto">جوالات</h1>
-        <h1 className="text-2xl md:text-4xl text-center md:text-end font-bold">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة</h1>
+        <h1 className="text-2xl text-center md:text-end font-medium	md:text-5xl">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة</h1>
         <h1 className="text-2xl px-3 md:px-0 text-center md:text-end ps-0 md:ps-20">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا،  </h1>
         <div className="flex md:flex-row flex-col-reverse gap-6 mb-10 md:mb-0 md:gap-28 mt-4 items-center w-full md:w-auto">   
             <div className="flex items-center gap-6 md:justify-normal justify-center " >
@@ -27,7 +27,7 @@ export default function Offer() {
                 <MdOutlineDateRange className="text-2xl text-gray-400"/>
             </div>
             <div className="flex gap-4 flex-col-reverse md:flex-row items-center md:items-end">
-            <p className="me-6 text-xl">5999 </p>
+            <p className="me-6 text-xl line-through">5999 </p>
                 <p className="font-bold">رس <span className="font-normal">( شامل الضريبة )</span></p>
                 <div className="flex flex-col items-center">
                 <p className="text-5xl font-bold">457899</p>

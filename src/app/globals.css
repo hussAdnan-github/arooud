@@ -10,20 +10,19 @@ body{
 
 }
 @layer components {
- .header_line{
-  
- }
- .headerline_title{
+ 
+ .header_line.header_line{
+
   font-size: 20px;
   text-align: end;
   position: relative;
   right: 0;
  }
- .headerline_title::before{
+ .header_line::before{
    content: '';
    position: absolute;
    height: 2px;
-   width: 80%;
+   width: 70%;
    top: 50%;
    left: 0;
    background-color: rgb(214, 206, 206);
@@ -64,7 +63,7 @@ body{
   background-color: black;
   border-radius: 50%;
   padding: 26px;
-  margin-left: 4px;
+  margin-left: 0px;
 }
 .main_slider .swiper-button-prev:after,.swiper-rtl .swiper-button-next:after{
 font-size: 24px !important;
@@ -100,18 +99,31 @@ font-size: 10px !important;
   transition: .5;
 
 }
- .swiper-button-prev, .swiper-rtl .swiper-button-next:hover
-, .swiper-button-next, .swiper-rtl .swiper-button-prev:hover
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+  animation: bounces1 1s infinite;
+  
+} 
+.swiper-button-next, .swiper-rtl .swiper-button-prev
 {
   animation: bounces 1s infinite;
 }
 
+@keyframes bounces1 {
+  0%, 100% {
+    transform: translateX(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+   }
+ 50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
 @keyframes bounces {
   0%, 100% {
     transform: translateX(-10%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
+   }
+ 50% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
@@ -166,8 +178,12 @@ input[type="file"] {
          }
    }
   @media (max-width: 640px) {
+   
     .main_slider .swiper-button-next, .swiper-rtl .swiper-button-prev ,
-    .main_slider .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    .main_slider .swiper-button-prev, .swiper-rtl .swiper-button-next ,
+   .slider_categries .swiper-button-next, .swiper-rtl .swiper-button-prev ,
+   .slider_categries  .swiper-button-prev, .swiper-rtl .swiper-button-next ,
+   .header_line::before{
 display: none ;
     }
     .btn_after::after{
@@ -425,3 +441,4 @@ input:focus{
   transform: scale(.8);
 }
 
+ 

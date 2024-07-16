@@ -23,7 +23,7 @@ export default function NavbarDropdown() {
 
 
   return (
-    <div className="nav_dropdown md:">
+    <div className="nav_dropdown hidden md:block">
         
 <div className="flex flex-col justify-center ">
 <div className="flex items-center justify-center">
@@ -40,55 +40,57 @@ export default function NavbarDropdown() {
   <div className="flex gap-2 py-8">
 
 {/* Filter 3 */}
-    <div className="flex flex-col gap-9 items-end flex-1 me-0">
- <div className='text-end me-4'>
-    <h1 className='text-2xl mb-8 font-bold'>الفلترة حسب السعر</h1>
- <div className="filter_price grid md:grid-cols-2 ">
+    <div className="flex flex-col gap-9 items-end  flex-1 md:me-10">
+    <h1 className='text-2xl mb-1  underline underline-offset-8 decoration-[#DDDDDD] font-medium	'>الفلترة حسب السعر</h1>
+  <div className="filter_price grid md:grid-cols-2 " style={{  direction: 'rtl'}}>
         
       <div className='flex items-center'>
+      <input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo     me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
       <h1 className='text-sm font-bold'>مابين 5000  الف 
         </h1>
-        <input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo     ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-
       </div>
        <div className='flex items-center'>
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
        <h1 className='text-sm font-bold'>اقل من 5000 الف
-
-
 </h1>
-<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
        </div>
       <div className='flex items-center mt-6'>
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
       <h1 className='text-sm font-bold'>اقل من 5000 الف</h1>
-<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 
       </div>
-      </div>
- </div>
- <div className='text-end me-4'>
- <h1 className='text-2xl mb-4 font-bold'>الفلترة حسب اقسام عروض</h1>
+  </div>
 
- <div className="filter_work grid md:grid-cols-2 ">
+  
+ <h1 className='text-2xl  underline underline-offset-8 decoration-[#DDDDDD] font-medium	'>الفلترة حسب اقسام عروض</h1>
+
+ <div className="filter_work grid md:grid-cols-2 gap-4 " style={{  direction: 'rtl'}}>
 <div className='flex items-center'>
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
 <h1 className='text-sm font-bold'>مواقع عالمية</h1>
-<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
 <div className='flex items-center'>
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
 <h1 className='text-sm font-bold'>متجر الكتروني</h1>
-<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
 <div className='flex items-center'>
+<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+
 <h1 className='text-sm font-bold'>مواقع عالمية</h1>
-<input id="default-checkbox" type="checkbox" value="" className="accent-primaryColo  ms-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 </div>
   </div>
- </div>
-    </div>
+  
+</div>
 
     {/* Filter 2 */}
   <div className="text-end me-2">
-    <h1 className=" text-2xl mb-8 font-bold">
+    <h1 className=" text-2xl mb-8  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
     الفلترة حسب الاقسام
     </h1>
     <div className="filter_work grid md:grid-cols-3 gap-2">
@@ -133,7 +135,7 @@ export default function NavbarDropdown() {
 
   {/* Filter 1 */}
   <div className="text-end">
-    <h1 className="  text-2xl mb-8 font-bold">الفلترة حسب المنطقة</h1>
+    <h1 className="  text-2xl mb-8  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">الفلترة حسب المنطقة</h1>
     <div className="filter_countery grid md:grid-cols-3 gap-2" >
     <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
       <h1>تريم</h1>
