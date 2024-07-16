@@ -6,6 +6,9 @@ import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
 import BtnBack from "@/components/btnBack";
+import TitleHeadRegiste from "@/components/TitleHeadRegiste";
+import MainInput from "@/components/MainInput";
+import MainInputEmail from "@/components/MainInputEmail";
 
 export default function page() {
   return (
@@ -24,10 +27,10 @@ export default function page() {
       <NonActiveButtonUser title={'التسجيل كمتجر إلكتروني'}/>
       </ Link>
       <Link href={'/shopsignin'}>
-      <NonActiveButtonUser title={'التسجيل كمحل إلكتروني'}/>
+      <NonActiveButtonUser title={'التسجيل كمحل تجاري'}/>
       </Link>
       <Link href={'/login'}>
-      <ActiveButtonUser title={'تسجيل دخول'}/>
+      <ActiveButtonUser title={'التسجيل كمستخدم'}/>
       </Link>
      
      </div>
@@ -39,25 +42,16 @@ export default function page() {
       </div>
 
       <div className="form_user_login text-end flex flex-col w-4/5">
-        <div className="text_ligin">
-        <h1 className="mb-4 text-2xl font-bold">لا يوجد لديك حساب؟ سجل الآن</h1>
-        <p className="mb-3" style={{fontSize:"14px"}}>قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك</p>
-        </div>
+       <TitleHeadRegiste title={'لا يوجد لديك حساب؟ سجل الآن'} description={'قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك'}/>
         <form>
 
-        <div className=" ">
-            <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">الاسم</label>
-            <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
-        </div>
-        <div className="mt-5 flex flex-col items-end ">
-            <label for="email" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">البريد الإلكتروني او رقم الهاتف</label>
-            <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="husseb@gia.com" required />
-        </div> 
-    <div className="mt-5">
-            <label for="company" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">المدينة</label>
-            <input type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="سيؤن" required />
-   </div>  
-   <div className="flex justify-end gap-8 mt-8">
+      <MainInput lable={'الاسم'} title={'سالم سليم'}/>
+      <div className="mb-8 flex flex-col items-end ">
+        <label for="email" className="block mb-2 text-[16px] font-medium text-[#9796A1] dark:text-white me-3">البريد الإلكتروني او رقم الهاتف</label>
+        <input type="email" id="email" className="md:h-14 md:text-[17px] border-[##DADADA]    placeholder-[#DADADA] bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="husseb@gia.com" required />
+    </div> 
+      <MainInput lable={'المدينة'} title={'سيؤن'}/>
+   <div className="flex justify-end gap-8 mt-10">
    <ButtonRoundedPrimary title={'إرســال'}/>
    </div>
         </form>

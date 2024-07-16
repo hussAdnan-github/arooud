@@ -4,6 +4,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
 import BtnBack from "@/components/btnBack";
+import MainInput from "@/components/MainInput";
 
 
 export default function page() {
@@ -24,18 +25,18 @@ export default function page() {
         <Image src={logo} alt="logo" className="w-28"/>
         </Link>
         </div> 
-       <Link href={'/'} className="flex items-center gap-3 mt-16 mb-6 sm:mb-0">
+     
+  
+ 
+    
+    <div className="email_user mt-10">
+    <Link href={'/'} className="flex items-center gap-3 mb-6 sm:mb-0">
        <FaChevronLeft className="text-sm" />
      <div className="cursor-pointer">
      <BtnBack/>
      </div>
 
        </Link>
-  
- 
-    
-    <div className="email_user">
-     
       <div className="form_user_login flex flex-col items-end">
         <div className="text_ligin text-end">
         <h1 className="mb-4 text-2xl font-bold">لا يوجد لديك حساب؟ سجل الآن</h1>
@@ -43,27 +44,18 @@ export default function page() {
         </div>
         <form className="md:w-[543px] w-full text-end">
 
-        <div className="mb-4">
-            <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">اسم المتجر الكتروني</label>
-            <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
-        </div>
        
-        <div className="mb-4">
-            <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">مجال عمل المتجر الكتروني</label>
-            <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
-        </div>
-        <div className="mb-4">
-            <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">رابط المتجر</label>
-            <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
-        </div>
+        <MainInput lable={'اسم المتجر الكتروني'} title={'sawdd'}/>
+        <MainInput lable={'مجال عمل المتجر الكتروني'} title={'عطور'}/>
+        <MainInput lable={'رابط المتجر '} title={'عطور'}/>
+        <MainInput lable={'حسابات التواصل '} title={'@sdaff'}/>
+       
+   
         
-        <div className="mb-4">
-            <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">حساب التـواصل</label>
-            <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
-        </div>
+       
         
    <div className="flex justify-end gap-16 mt-12">
-   <Link href={'/storesignup'} type="submit" className="text-white bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60 md:w-48 rounded-full py-2">
+   <Link href={'/storesignup'} type="submit" className="text-white md:w-[230px] bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60 md:w-48 rounded-full py-2">
    إضافة متجر جديد
     </Link >
    <ButtonRoundedPrimary title={'التسجيل'} urllink={'/'}/>
