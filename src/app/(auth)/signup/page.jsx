@@ -5,7 +5,7 @@ import login from '../../../../public/img/login.png'
 import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
-import BtnBack from "@/components/btnBack";
+import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
 import MainInput from "@/components/MainInput";
 import MainInputEmail from "@/components/MainInputEmail";

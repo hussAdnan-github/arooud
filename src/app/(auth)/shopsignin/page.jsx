@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
 import logo from '../../../../public/img/logo.png'
 import Link from "next/link";
-import BtnBack from "@/components/btnBack";
+import BtnBack from "@/components/BtnBack";
 import MainInput from "@/components/MainInput";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
 export default function page() {

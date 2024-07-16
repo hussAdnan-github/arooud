@@ -5,10 +5,9 @@ import login from '../../../../public/img/login.png'
 import facebook from '../../../../public/img/facebook.png'
 import google from '../../../../public/img/google.png'
 import Image from "next/image";
-import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
 import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
-import BtnBack from "@/components/btnBack";
+import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
 export default function page() {
   return (

@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import BtnBack from "@/components/btnBack";
+import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
 import MainInput from "@/components/MainInput";
 export default function page() {

@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Link from "next/link";
-import BtnBack from "@/components/btnBack";
+import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
 import MainInput from "@/components/MainInput";
 
