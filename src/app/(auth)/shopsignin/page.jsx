@@ -51,7 +51,7 @@ export default function page() {
        
         
    <div className="flex justify-end gap-16 mt-12">
-   <Link href={'/shopsignup'} type="submit" className="text-white md:w-[230px] bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60 md:w-48 rounded-full py-2">
+   <Link href={'/shopsignup'} type="submit" className="text-white md:w-[230px] bg-primaryColo transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-30 text-xl font-bold text-center inline-block w-60  rounded-full py-2">
    سجيل محل جديد
     </Link  >
    <ButtonRoundedPrimary title={'التسجيل'} urllink={'/'}/>
