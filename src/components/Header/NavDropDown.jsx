@@ -1,26 +1,12 @@
-'use client'
-import { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 
 export default function NavbarDropdown() {
 
-  const [randomColor, setRandomColor] = useState('#000000');
 
-  useEffect(() => {
-    generateRandomColor();
-  }, []);
 
   const generateRandomColor = () => {
-    const hexChars = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-       ;
-    }
-    setRandomColor(color);
-
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   };
-
-
 
   return (
     <div className="nav_dropdown hidden md:block">
@@ -95,38 +81,68 @@ export default function NavbarDropdown() {
     </h1>
     <div className="filter_work grid md:grid-cols-3 gap-2">
     <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
-        borderColor:randomColor
+        borderColor:generateRandomColor()
       }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
     <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
-        borderColor:randomColor
+        borderColor:generateRandomColor()
       }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    
-    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center">
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
+      <h1>قسم السفر والسياحة</h1>
+    </div>
+   
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
+      <h1>قسم السفر والسياحة</h1>
+    </div>
+   
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
+      <h1>قسم السفر والسياحة</h1>
+    </div>
+   
+    <div className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center" style={{
+        borderColor:generateRandomColor()
+      }}>
       <h1>قسم السفر والسياحة</h1>
     </div>
    

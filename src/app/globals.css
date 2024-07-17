@@ -89,7 +89,7 @@ font-size: 24px !important;
   background-color: rgb(202, 202, 202);
   border-radius: 50%;
   padding: 20px;
-  left: 6px !important;
+  left: 5px !important;
 }
 .swiper-button-prev:after,.swiper-rtl .swiper-button-next:after 
 {
@@ -133,7 +133,7 @@ font-size: 10px !important;
   background-color:  rgb(202, 202, 202);
   border-radius: 50%;
   padding: 20px;
-  right: 30px !important;
+  right: 26px !important;
   }
   .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after
 {
