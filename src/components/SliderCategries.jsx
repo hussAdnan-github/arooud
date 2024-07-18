@@ -6,13 +6,13 @@ import hotel from '../../public/img/hotel.svg'
 import world from '../../public/img/world.svg'
 import music from '../../public/img/music.svg'
 
-import React, { useRef, useState } from 'react';
+
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css/navigation';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 
 import {  Navigation } from 'swiper/modules';
@@ -20,9 +20,23 @@ import {  Navigation } from 'swiper/modules';
 import CardIcon from './CardIcon';
 
 export default function SliderCategries() {
+  let swiperRef = null;
+
+  const handlePrevClick = () => {
+    if (swiperRef) {
+      swiperRef.slidePrev();
+    }
+  };
+
+  const handleNextClick = () => {
+    if (swiperRef) {
+      swiperRef.slideNext();
+    }
+  };
     return (
        <div className="mainslider_categries ">
-            <Swiper
+            <Swiper 
+            onSwiper={(swiper) => (swiperRef = swiper)}
             spaceBetween={10}
             loop={true}
             navigation={true}
@@ -65,6 +79,10 @@ export default function SliderCategries() {
         </SwiperSlide>
       
           </Swiper>
+          {/* <div>
+        <button onClick={handlePrevClick}>Previous</button>
+        <button onClick={handleNextClick}>Next</button>
+      </div> */}
        </div>
       );
 }

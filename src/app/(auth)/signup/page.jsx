@@ -1,62 +1,50 @@
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
-import login from '../../../../public/img/login.png'
+import login from "../../../../public/img/login.png";
 import Image from "next/image";
-import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
 import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
-import MainInput from "@/components/MainInput";
-import MainInputEmail from "@/components/MainInputEmail";
 
+import Sigin from "@/components/form/Sigin";
 export default function page() {
   return (
     <div className="login_user container m-auto">
       <div className="flex justify-between flex-col sm:flex-row items-center mt-12 taps_user">
-         <div >
-       <div className="flex items-center gap-3 mb-6 sm:mb-0">
-       <FaChevronLeft className="text-sm" />
-
-       <BtnBack/>
-
-       </div>
-      </div>
-      <div className="flex flex-col sm:flex-row gap-3">
-     <Link href={'/storesignin'}div>
-      <NonActiveButtonUser title={'التسجيل كمتجر إلكتروني'}/>
-      </ Link>
-      <Link href={'/shopsignin'}>
-      <NonActiveButtonUser title={'التسجيل كمحل تجاري'}/>
-      </Link>
-      <Link href={'/login'}>
-      <ActiveButtonUser title={'التسجيل كمستخدم'}/>
-      </Link>
-     
-     </div>
-    </div>
-
-    <div className="email_user flex justify-between items-center md:items-start mt-10 flex-col md:flex-row">
-      <div className="img_ligin_user w-full flex justify-center">
-         <Image src={login} className="w-4/5 md:w-3/4"/>
+        <div>
+          <div className="">
+            <BtnBack />
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link href={"/storesignin"} div>
+            <NonActiveButtonUser title={"التسجيل كمتجر إلكتروني"} />
+          </Link>
+          <Link href={"/shopsignin"}>
+            <NonActiveButtonUser title={"التسجيل كمحل تجاري"} />
+          </Link>
+          <Link href={"/login"}>
+            <ActiveButtonUser title={"التسجيل كمستخدم"} />
+          </Link>
+        </div>
       </div>
 
-      <div className="form_user_login text-end flex flex-col w-4/5">
-       <TitleHeadRegiste title={'لا يوجد لديك حساب؟ سجل الآن'} description={'قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك'}/>
-        <form>
+      <div className="email_user flex justify-between items-center md:items-start mt-12 flex-col md:flex-row">
+        <div className="img_ligin_user w-full flex justify-center">
+          <Image src={login} className="w-4/5 md:w-3/4" />
+        </div>
+        <div className="form_user_login text-end flex flex-col w-4/5">
+          <TitleHeadRegiste
+            title={"لا يوجد لديك حساب؟ سجل الآن"}
+            description={
+              "قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك"
+            }
+          />
 
-      <MainInput lable={'الاسم'} title={'سالم سليم'}/>
-      <div className="mb-8 flex flex-col items-end ">
-        <label for="email" className="block mb-2 text-[16px] font-medium text-[#9796A1] dark:text-white me-3">البريد الإلكتروني او رقم الهاتف</label>
-        <input type="email" id="email" className="md:h-14 md:text-[17px] border-[##DADADA]    placeholder-[#DADADA] bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="husseb@gia.com" required />
-    </div> 
-      <MainInput lable={'المدينة'} title={'سيؤن'}/>
-   <div className="flex justify-end gap-8 mt-10">
-   <ButtonRoundedPrimary title={'إرســال'}/>
-   </div>
-        </form>
+          <Sigin />
+        </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }

@@ -23,9 +23,9 @@ export default function page() {
           </div>
          
         </div>
-        <div className="img_logo">
+        <Link href={'/'} className="img_logo">
         <Image src={logo} alt="logo" className="w-28"/>
-        </div>
+        </Link >
         </div> 
 
       <div className="cutomer_info">
@@ -35,7 +35,7 @@ export default function page() {
             <Image src={login } alt="asdasd" className="rounded-full w-full h-full border border-black object-contain"/>
           </div>
         <div>
-         <Link href={'#'}> <h1 className="text-primaryColo underline mt-10 text-2xl font-bold flex items-center"> <FaAngleDoubleLeft /> اضافة</h1></Link>
+         <Link href={'#'}> <h1 className="text-primaryColo underline mt-10 text-2xl  font-normal flex items-center"> <FaAngleDoubleLeft /> اضافة</h1></Link>
          </div>           
         </div>
           <div className="cutomer_data w-full md:w-2/4">
@@ -43,19 +43,20 @@ export default function page() {
           <div className="text-end name relative w-full border-b-2 pb-2 border border-x-0 border-t-0 ">
           <h1 className="text-[#9796A1] text-xl">الاسم</h1>
           <h1 className="text-black text-2xl font-bold mt-4">سالم سليم احمد</h1>
-          <Link href={'#'}> <h1 className="text-primaryColo font-bold underline absolute flex items-center left-0 gap-1 top-2/3"> <FaAngleDoubleLeft />  تعديل</h1></Link>
+          <Link href={'#'}> <h1 className="text-primaryColo font-normal text-[16px] underline absolute flex items-center left-0 gap-1 top-2/3"> <FaAngleDoubleLeft />  تعديل</h1></Link>
 
           </div>
          <div className="text-end email relative w-full border-b-2 pb-2 border border-x-0 border-t-0">
          <h1 className="text-[#9796A1] text-xl">البريد الإلكتروني</h1>
          <h1 className=" mt-4 text-black text-2xl font-bold">sawdd@gmail.com</h1>
-         <Link href={'#'}> <h1 className="text-primaryColo font-bold underline absolute flex items-center left-0 gap-1 top-2/3">  <FaAngleDoubleLeft />تعديل</h1></Link>
+         <Link href={'#'}> <h1 className="text-primaryColo font-normal text-[16px] underline absolute flex items-center left-16 gap-1 top-2/3">  <FaAngleDoubleLeft />تعديل</h1></Link>
+         <Link href={'#'}> <h1 className="text-primaryColo font-normal text-[16px] underline absolute flex items-center left-0 gap-1 top-2/3">  <FaAngleDoubleLeft />اضافة</h1></Link>
 
          </div>
         <div className="text-end countary relative w-full border-b-2 pb-2 border border-x-0 border-t-0 ">
               <h1 className="text-end text-[#9796A1] text-xl">المدينة</h1>
             <h1 className=" mt-4 text-black text-2xl font-bold">سيئون</h1>
-          <Link href={'#'}> <h1 className="text-primaryColo font-bold underline absolute flex items-center left-0 gap-1 top-2/3"> <FaAngleDoubleLeft /> تعديل</h1></Link>
+          <Link href={'#'}> <h1 className="text-primaryColo font-normal text-[16px] underline absolute flex items-center left-0 gap-1 top-2/3"> <FaAngleDoubleLeft /> تعديل</h1></Link>
 
         </div>
         <div className="flex flex-col md:flex-row justify-end  gap-6 md:gap-16 me-6 md:me-0    mt-10">

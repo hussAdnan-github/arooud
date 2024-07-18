@@ -56,7 +56,7 @@ export default function Home() {
 </div>
 
 
-  <div className="mt-24 ms-4">
+  <div className="mt-24">
   <SliderCategries/>
   </div>
   </div> 
