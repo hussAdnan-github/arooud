@@ -19,7 +19,7 @@ export default function Offer() {
         <h1 className="text-2xl text-center md:text-end font-medium	md:text-5xl">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة</h1>
         <h1 className="text-2xl px-3 md:px-0 text-center md:text-end ps-0 md:ps-20">أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا،  </h1>
         <div className="flex md:flex-row flex-col-reverse gap-6 mb-10 md:mb-0 md:gap-28 mt-4 items-center w-full md:w-auto">   
-            <div className="flex items-center gap-6 md:justify-normal justify-center " >
+            <div className="flex items-end md:items-center gap-6 md:justify-normal justify-center " >
                 <div className="text-end">
                     <p className="font-bold">صلاحية العرض</p>
                     <p>الى تاريخ 12/2/2024</p>

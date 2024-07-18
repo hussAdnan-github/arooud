@@ -25,8 +25,8 @@ md:h-full rounded-full justify-between md:px-6 px-2 " style={{fontSize:'16px'}}>
   بحـث
   </Link>
   <input type="text" className="text-end text-2xl" />
-  <Select className="bg-white">
-      <SelectTrigger className="w-[150px] border-0">
+  <Select className="bg-white ">
+      <SelectTrigger className="w-[150px] border-0 hidden md:inline-flex">
         <SelectValue placeholder="كل الاصناف" className="font-bold" />
       </SelectTrigger>
       <SelectContent className='bg-white'style={{zIndex:'99999'}}>

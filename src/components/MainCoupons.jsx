@@ -15,8 +15,8 @@ export default function MainCoupons() {
 <div className="coupons relative bottom-40 md:mt-0 md:mx-10  mt-36 mx-3 md:px-0">
  <div className=" bg-white  rounded-xl  border border-gray-200 shadow  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
  <div className="flex flex-col-reverse items-start justify-between md:flex-row">
-    <div className="flex flex-col items-end mt-10 mx-0 md:mx-10 gap-6 w-full md:w-2/3">
-        <h1 className="text-gray-400">جوالات</h1>
+    <div className="flex flex-col items-center md:items-end mt-10 mx-0 md:mx-10 gap-6 w-full md:w-2/3">
+        <h1 className="text-gray-400 t">جوالات</h1>
         <h1 className="text-3xl md:text-5xl text-center md:text-end font-bold">كوبون من محلات صدى الرنين للهواتف الذكية وجميع مستلزمات الجوال</h1>
         <div className="flex justify-center w-full md:w-auto gap-4">
            <div className="flex flex-col items-end">

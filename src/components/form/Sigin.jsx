@@ -62,7 +62,7 @@ export default function Sigin() {
               />
               <p className="text-primaryColo">{errors.countary?.message}</p>
             </div>
-            <div className="flex justify-end gap-8 mt-10">
+            <div className="flex justify-center md:justify-end gap-8 mt-10">
               <ButtonRoundedPrimary title={"إرســال"} />
             </div>
           </form>

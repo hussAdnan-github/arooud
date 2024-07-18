@@ -48,7 +48,7 @@ export default function page() {
               "قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك"
             }
           />
-          <form className="w-[543px] text-end ">
+          <form className="w-full md:w-[543px] text-end ">
             <div className="mb-4">
               <label
                 className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white "
@@ -162,7 +162,7 @@ export default function page() {
             <MainInput lable={"رابط حساب الانستقرام"} title={"sawdd"} />
             <MainInput lable={"رابط حساب آخر"} title={"sawdd"} />
 
-            <div className="flex justify-end gap-8 mt-10">
+            <div className="flex justify-center md:justify-end gap-8 mt-10">
               <ButtonRoundedPrimary title={"إرســال"} urllink={"/"} />
             </div>
           </form>

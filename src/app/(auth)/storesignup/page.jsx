@@ -46,7 +46,7 @@ export default function page() {
           />
 
           <form className="w-full md:w-[543px] text-center md:text-end">
-            <div className="mb-4">
+            <div className="mb-4  text-end">
               <label
                 className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white "
               >
@@ -69,9 +69,9 @@ export default function page() {
 
             <MainInput lable={"اسم المتجر"} title={"صدى الرنين"} />
 
-            <div className="mb-4">
+            <div className="mb-4 text-end">
               <label
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
               >
                 نبذة عن المتجر
               </label>
@@ -85,7 +85,7 @@ export default function page() {
             </div>
             <MainInput lable={"أسـم المسجل"} title={"حسيننن"} />
             <MainInput lable={"مجال عمل المحل التجاري"} title={"حسيننن"} />
-            <div className="mb-8 flex flex-col items-end ">
+            <div className="mb-4   flex flex-col items-end ">
               <label
                 className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
               >
@@ -100,7 +100,7 @@ export default function page() {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 text-end">
               <label
                 className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
               >
@@ -115,7 +115,7 @@ export default function page() {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 text-end">
               <label
                 className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
               >

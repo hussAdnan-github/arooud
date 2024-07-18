@@ -33,7 +33,7 @@ export default function Login() {
           <p className="text-primaryColo">{errors.email?.message}</p>
         </div>
 
-        <div className="flex justify-end gap-8">
+        <div className="flex justify-end  gap-8">
           <Link
             href={"/signup"}
             type="submit"

@@ -14,7 +14,7 @@ export default function Dropdown({id}) {
  
 
 <DropdownMenu>
-      <DropdownMenuTrigger className="w-24  md:w-[155px] h-[34px] px-0 md:px-4 py-1 md:py-3 md:text-sm leading-5 text-white font-normal md:font-bold bg-primaryColo hover:bg-primaryColo hover:text-white hover:border-0 " asChild>
+      <DropdownMenuTrigger className="w-24  md:w-[155px] h-[34px] px-0 md:px-4 py-1 md:py-3 text-[11px] pb-3 sm:pb-0 md:text-sm leading-5 text-white font-normal md:font-bold bg-primaryColo hover:bg-primaryColo hover:text-white hover:border-0 " asChild>
         <Button variant="outline" className='rounded-full'>تسجيل الدخول</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ms-4 w-44 md:w-full bg-[#D3D1D8]"style={{zIndex:'99999'}} >

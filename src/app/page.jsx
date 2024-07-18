@@ -70,7 +70,7 @@ export default function Home() {
   </div>
   <div className="mt-20 flex items-center justify-end md:flex-row flex-col-reverse">
    
-    <div className="flex ms-0 md:ms-80 md:flex-row flex-col-reverse " >
+    <div className="flex mt-4 md:mt-0 ms-0 md:ms-80 md:flex-row flex-col-reverse " >
       <MainDropDown title={'المنطقة'}/>
       <MainDropDown title={'محل تجاري'}/>
       <MainDropDown title={'التصنيف'}/>
@@ -158,7 +158,7 @@ export default function Home() {
     </div>
     <div className="setion_5 mt-10">
       <div className="container m-auto">
-      <div className="me-10"  id="partents">
+      <div className="me-0 md:me-10"  id="partents">
 <MainTitle title={'شركاء عروضنا '}/>
 
 </div>
