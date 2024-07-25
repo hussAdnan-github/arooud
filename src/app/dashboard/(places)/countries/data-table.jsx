@@ -45,7 +45,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import Dropdown from "../../_components/Dropdown"
+import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -102,7 +102,7 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      اسم الدولة 
+                      اسم الدولة
                     </label>
                     <input
                       type="text"
@@ -113,22 +113,34 @@ export function DataTable({ columns, data }) {
                     />
                   </div>
                   <div className="mt-6">
-<label for="first_name" className="block mb-4 text-sm font-medium text-gray-500 dark:text-white">حالة الدولة</label>
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      حالة الدولة
+                    </label>
 
-<Select>
-      <SelectTrigger className="w-full   border-gray-300 ">
-        <SelectValue placeholder="Select a fruit" />
-      </SelectTrigger>
-      <SelectContent className='bg-white '>
-        <SelectGroup>
-          <SelectLabel>قيد الأنشــاء</SelectLabel>
-          <SelectItem value="apple">انتظاار</SelectItem>
-          <SelectItem value="banana">منشــا</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+                    <Select>
+                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white ">
+                        <SelectGroup>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem className=" text-[#9796A1] text-end">
+                            قيد الانشاء
+                          </SelectItem>
 
-</div>
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="apple"
+                          >
+                            انتظاار
+                          </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </form>
 
                 <DialogFooter>
@@ -150,8 +162,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
-
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>

@@ -234,6 +234,37 @@ export function DataTable({ columns, data }) {
                       type="file"
                     />
                   </div>
+                  
+                  <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      حالة المحافظة
+                    </label>
+
+                  
+                    <Select>
+                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white ">
+                        <SelectGroup>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem className=" text-[#9796A1] text-end">
+                            قيد الانشاء
+                          </SelectItem>
+
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="apple"
+                          >
+                            انتظاار
+                          </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </form>
 
                 <DialogFooter>

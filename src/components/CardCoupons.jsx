@@ -31,7 +31,7 @@ export default function CardCoupons() {
               <p className="mb-10 md:mb-0 text-xs font-medium">تفاصيل</p>
             </div>
           </div>
-          <div className="title_cardcoupons flex flex-col items-end  border-l border-gray-500 border-dashed">
+          <div className="title_cardcoupons flex flex-col items-end  border-l-2 border-[#C8C9CC]  border-dashed">
             <p className="text-gray-300 font-normal text-sm	md:text-end w-full text-center">
               جوالات
             </p>

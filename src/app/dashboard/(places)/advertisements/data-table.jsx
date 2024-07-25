@@ -121,15 +121,24 @@ export function DataTable({ columns, data }) {
                       حالة القسم
                     </label>
 
+                  
                     <Select>
-                      <SelectTrigger className="w-full   border-gray-300 ">
-                        <SelectValue placeholder="Select a fruit" />
+                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="" />
                       </SelectTrigger>
                       <SelectContent className="bg-white ">
                         <SelectGroup>
-                          <SelectLabel>قيد الأنشــاء</SelectLabel>
-                          <SelectItem value="apple">انتظاار</SelectItem>
-                          <SelectItem value="banana">منشــا</SelectItem>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem className=" text-[#9796A1] text-end">
+                            قيد الانشاء
+                          </SelectItem>
+
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="apple"
+                          >
+                            انتظاار
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
