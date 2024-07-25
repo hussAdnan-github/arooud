@@ -46,6 +46,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown"
+import ButtonBack from "../../_components/ButtonBack";
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
   const table = useReactTable({
@@ -149,12 +150,8 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-              <div className="flex items-center justify-end">
-                <h1 className="text-primaryColo font-bold ">
-                  العودة الى الخلف
-                </h1>
-                <FaArrowRightLong className="ms-4 text-primaryColo" />
-              </div>
+            <ButtonBack />
+
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>
@@ -184,7 +181,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

@@ -10,7 +10,6 @@ import { GoPasskeyFill } from "react-icons/go";
 import React, { useState } from "react";
 import SideBarItem from "@/components/SideBarItem";
 import { FaBuffer } from "react-icons/fa";
-import { TbLogin } from "react-icons/tb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SidbarItem from "./SidbarItem";
 import { TbWorldUpload } from "react-icons/tb";
@@ -29,6 +28,9 @@ import { BiSolidOffer } from "react-icons/bi";
 import { RiCoupon2Line } from "react-icons/ri";
 
 export default function SideBar() {
+  const titleSidebar =[
+
+  ]
   const account = [
     {
       id: 1,
@@ -40,7 +42,7 @@ export default function SideBar() {
       id: 2,
       name: " المواقع الالكترونية",
       icon: <TbWorldUpload className="ms-4" />,
-      url: "",
+      url: "/dashboard/website",
     },
     {
       id: 3,
@@ -49,26 +51,26 @@ export default function SideBar() {
       url: "",
     },
     {
-      id: 3,
+      id: 4,
       name: "محلات تجارية",
       icon: <AiTwotoneShop className="ms-4" />,
       url: "/dashboard/shops",
     },
   ];
   const offer = [
-    { id: 1, name: "أنوع العملة", icon: <BsCurrencyExchange  className="ms-4" /> , url:''},
-    { id: 1, name: "العروضات والخصومات", icon: <BiSolidOffer  className="ms-4" /> , url:''},
-    { id: 1, name: "القسائم", icon: <RiCoupon2Line   className="ms-4" /> , url:''},
-    { id: 1, name: "القسائم المحلية", icon: <RiCoupon2Line   className="ms-4" /> , url:''},
-    { id: 1, name: "الكوبونات العالمية", icon: <RiCoupon2Line   className="ms-4" /> , url:''},
+    { id: 1, name: "أنوع العملة", icon: <BsCurrencyExchange  className="ms-4" /> , url:"/dashboard/currencies"},
+    { id: 2, name: "العروضات والخصومات", icon: <BiSolidOffer  className="ms-4" /> , url:"/dashboard/discounts"},
+    { id: 3, name: "القسائم", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/coupons"},
+    { id: 4, name: "القسائم المحلية", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/couponsLocal"},
+    { id: 5, name: "الكوبونات العالمية", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/couponsGlobal"},
  
   ];
   const place = [
     { id: 1, name: "الاعلانات", icon: <HiSpeakerphone className="ms-4"/>, url: "/dashboard/advertisements"},
-    { id: 1, name: "البلدان", icon: <IoLocationSharp className="ms-4"/>, url: "/dashboard/countries" },
-    { id: 1, name: "المحافظات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/governorates" },
-    { id: 1, name: "المديريات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/directorates" },
-    { id: 1, name: "من نحن", icon: <BsFillExclamationCircleFill className="ms-4"/>, url:"/dashboard/about" },
+    { id: 2, name: "البلدان", icon: <IoLocationSharp className="ms-4"/>, url: "/dashboard/countries" },
+    { id: 3, name: "المحافظات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/governorates" },
+    { id: 4, name: "المديريات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/directorates" },
+    { id: 5, name: "من نحن", icon: <BsFillExclamationCircleFill className="ms-4"/>, url:"/dashboard/about" },
   ];
   const auth = [{ id: 1, name: "المجموعات", icon: <FaCheckToSlot className="ms-4"/> ,url:'/dashboard/authentications'}];
   const keys = [{ id: 1, name: "الرموز", icon: <FaKey className="ms-4"/> ,url:'/dashboard/keys'}];
@@ -89,7 +91,7 @@ export default function SideBar() {
               <Tabs defaultValue="account" className=" w-full">
                 <TabsList>
                   <TabsTrigger value="account" className="w-full">
-                    <div className="active cursor-pointer flex flex-row-reverse justify-start items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
+                    <div className="cursor-pointer flex flex-row-reverse justify-start items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
                       <FaUserEdit className="ms-4 text-gray-400 text-[16px] " />
                       <span className="ml-2 text-[16px] font-bold text-gray-400">
                         الحسابات
@@ -128,7 +130,7 @@ export default function SideBar() {
                       </div>
                   </TabsTrigger>
               
-                  <TabsTrigger value="auth" className="w-full pe-0">
+                  <TabsTrigger value="auth" className="w-full">
                       <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
                         <FaShield  className="ms-6 text-gray-400 text-[16px] " />
 

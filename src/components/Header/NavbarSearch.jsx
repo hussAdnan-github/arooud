@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
 import logo from '../../../public/img/logo.png'
-
+// import { motion } from 'framer-motion';
 import SearchBar from '../SearchBar';
 import NavbarDropdown from './NavbarDropdown';
 

@@ -46,6 +46,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
+import ButtonBack from "../../_components/ButtonBack";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -83,7 +84,7 @@ export function DataTable({ columns, data }) {
       <div className="w-[880px]">
         <div className="flex justify-between items-center">
           <div>
-            <Dialog className="gap-0" >
+            <Dialog className="gap-0">
               <DialogTrigger asChild>
                 <Button className="bg-primaryColo text-white w-36">
                   {" "}
@@ -113,20 +114,18 @@ export function DataTable({ columns, data }) {
                     />
                   </div>
                   <div className="mb-4">
-              <label
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
-              >
-                نبذة المحل التجاري
-              </label>
-              <textarea
-                id="message"
-                rows="4"
-                className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                placeholder="أضف بعض الوصف للمحل"
-                required
-              ></textarea>
-            </div>
-            <div className="mt-6">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                      نبذة المحل التجاري
+                    </label>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                      placeholder="أضف بعض الوصف للمحل"
+                      required
+                    ></textarea>
+                  </div>
+                  <div className="mt-6">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -250,12 +249,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-              <div className="flex items-center justify-end">
-                <h1 className="text-primaryColo font-bold ">
-                  العودة الى الخلف
-                </h1>
-                <FaArrowRightLong className="ms-4 text-primaryColo" />
-              </div>
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>
@@ -285,7 +279,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-24 bg-white rounded-2xl items-center p-2"
+                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

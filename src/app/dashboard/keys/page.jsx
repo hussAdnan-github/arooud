@@ -33,6 +33,22 @@ async function getData(){
         },
         
      
+        {
+        id: 1,
+        title: "Hamed",
+        key: "21597c25ab38a2458e880398d3e2179bc5346362",
+        date: "يوليو 7, 2024, 4:14 م",
+        },
+        
+     
+        {
+        id: 1,
+        title: "Hamed",
+        key: "21597c25ab38a2458e880398d3e2179bc5346362",
+        date: "يوليو 7, 2024, 4:14 م",
+        },
+        
+     
         
  
   
@@ -47,7 +63,7 @@ export default async function Page() {
     const data = await getData()
   
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto relative">
         <DataTable columns={columns} data={data} />
       </div>
     )

@@ -8,8 +8,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <div className="flex flex-row-reverse bg-[#F7F7F7]">
-          <SideBar/>
+    // flex flex-row-reverse bg-[#F7F7F7]
+    <div className="">
+          {/* <SideBar/> */}
           {children}
     </div>
   );

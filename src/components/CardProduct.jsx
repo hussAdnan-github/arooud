@@ -1,57 +1,81 @@
-import Image from 'next/image'
-import card from '../../public/img/phone.svg'
-import iconCard from '../../public/img/iconCard.svg'
-import cardSAD from '../../public/img/cardSAD.svg'
+import Image from "next/image";
+import card from "../../public/img/phone.svg";
+import iconCard from "../../public/img/iconCard.svg";
+import cardSAD from "../../public/img/cardSAD.svg";
 import { CiLocationOn } from "react-icons/ci";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function CardProduct() {
   return (
-    <div className='card_product ms-5 md:ms-0'>
-<div className="card relative flex w-full   max-w-xs flex-col overflow-hidden rounded-lg border dark:border-[#1f2937] border-gray-100 bg-white shadow-md dark:bg-[#1f2937]">
-  <div className="relative mx-2 mt-2 flex h-60 overflow-hidden rounded-xl bg-gray-200" href="#">
-    <Image className=" w-full  hover:scale-125 hover:rotate-12 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300" src={card} alt="product image" />
-    <span className="absolute top-0 right-0" style={{right:'-14px'}}><Image src={iconCard}/></span>
-  </div>
-  <div className=" px-4 pb-5 card_body mt-1 text-end">
-  <div className='card_title'>
-  <span className='card_type text-[#C8C9CC]  text-xs '>جوالات</span>
-  <h1 className='font-medium text-end card_name mt-1'>أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي</h1>
-  </div>
-    <div className='flex items-center h-16 my-4  rounded-md bg-gray-200'>
-    <div className='card_sad'>
-<Image src={cardSAD} alt='image cardSAD  'className='relative top-[-12px]'width={66} height={66}/>
-    </div>
-    <div className=' w-[75%] me-1'>
-    <div className='flex justify-end items-end gap-1'>
-    <h1 className='text-[10px] text-gray-400'>
-    ( شامل الضريبة )
+    <div className="card_product ms-5 md:ms-0">
+      <div className="card relative flex w-full   max-w-xs flex-col overflow-hidden rounded-lg border dark:border-[#1f2937] border-gray-100 bg-white shadow-md dark:bg-[#1f2937]">
+        <div
+          className="relative mx-2 mt-2 flex h-60 overflow-hidden rounded-xl bg-gray-200"
+          href="#"
+        >
+          <Image
+            className=" w-full  hover:scale-125 hover:rotate-12 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300"
+            src={card}
+            alt="product image"
+          />
+          <span className="absolute top-0 right-0" style={{ right: "-14px" }}>
+            <Image src={iconCard} />
+          </span>
+        </div>
+        <div className=" px-4 pb-5 card_body mt-1 text-end">
+          <div className="card_title">
+            <span className="card_type text-[#C8C9CC]  text-xs ">جوالات</span>
+            <h1 className="font-medium text-end card_name mt-1">
+              أبل أيفون 15 برو ماكس، 5جي، 6.7 بوصة، 256 جيجا، تيتانيوم طبيعي
+            </h1>
+          </div>
+          <div className="flex items-center h-16 my-4  rounded-md bg-[#F4F4F4]">
+            <div className="card_sad w-16 h-16 bg-[#F4F4F4] border border-[#C8C9CC] flex justify-center items-center rounded-full relative -top-6 left-3">
+              <Image
+                src={cardSAD}
+                alt="image cardSAD"
+                className=""
+                width={46}
+                height={46}
+              />
+            </div>
+            <div className=" w-[75%] me-1">
+              <div className="flex justify-end items-end gap-1">
+                <h1 className="text-[10px] text-gray-400">( شامل الضريبة )</h1>
+                <span>رس</span>
+                <h1 className="font-bold text-2xl">4599</h1>
+              </div>
+              <div className="flex flex-row-reverse gap-1 ">
+                <h1 className="text-xs line-through "> 5999</h1>{" "}
+                <span className="text-xs text-[#F64A51]">وفر 800 رس</span>
+              </div>
+            </div>
+          </div>
 
-        </h1>
-    <span>رس</span>
-        <h1 className='font-bold text-2xl'>
-            4599
-        </h1>
-    </div> 
-    <div className='flex flex-row-reverse gap-1 '><h1 className='text-xs line-through '> 5999</h1>  <span className='text-xs text-[#F64A51]'>وفر 800 رس</span></div>
+          <div className="flex justify-between items-center">
+            <div className=" bg-white shadow py-2 px-5 rounded-2xl">
+              <h1 className="text-xs font-medium">تفاصيل</h1>
+            </div>
+            <div className="flex flex-col items-end">
+              <h1
+                className="discount text-center w-20 mb-1 text-white rounded-sm text-xs bg-[#F64A51] block "
+                style={{ padding: "3px" }}
+              >
+                {" "}
+                <span className="me-1">%14.5 </span> خصم
+              </h1>
+              <h1 className="text-xs mt-1">
+                اليمن - حضرموت - المكلا{" "}
+                <CiLocationOn className="located_card  text-[#F64A51] text-xl inline-block" />
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-
-  <div className='flex justify-between items-end'>
-  <div>
-        <h1 className='text-xs font-bold'>تفاصيل</h1>
-    </div>
-  <div className='flex flex-col items-end'>
-        <h1 className='discount text-center w-20 mb-1 text-white rounded-sm text-xs bg-[#F64A51] block ' style={{padding:'3px'}}>%14.5خصم</h1>
-        <h1 className='text-xs mt-1'>اليمن - حضرموت - المكلا <CiLocationOn className='located_card  text-[#F64A51] text-xl inline-block' />
-        </h1>
-    </div>
-  
-  </div>
-  </div>
-</div>
-    </div>
-  )
+  );
 }
-{/* 
- */}
+{
+  /*
+   */
+}

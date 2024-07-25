@@ -28,9 +28,10 @@ export default function SidbarItem({ data }) {
           <div className="w-full px-2">
             <div className="flex flex-col items-center w-full mt-3 border-t border-gray-300 ">
               {data.map( (item) => (
-              <Link href={item.url} className="w-full">
+              <Link 
+              key={item.id}
+              href={item.url} className="w-full">
                 <div
-                  key={item.id}
                   className="flex flex-row-reverse cursor-pointer items-center w-full h-12   mt-2 rounded hover:bg-gray-300" 
                 >
                   {item.icon}

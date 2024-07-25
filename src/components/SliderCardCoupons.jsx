@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import CardProduct from './CardProduct';
 import CardCoupons from './CardCoupons';
 import Link from 'next/link';
@@ -19,9 +19,13 @@ export default function SliderCardCoupons() {
         <>
           <Swiper
             loop={true}
-            // slidesPerView={1}
-            centeredSlides={true}
-            // spaceBetween={10}
+            // slidesPerView={'2'}
+            centeredSlides={false}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            spaceBetween={5}   
             breakpoints={{
               640: {
                 slidesPerView: 1,
@@ -29,15 +33,17 @@ export default function SliderCardCoupons() {
               },
               768: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 40,
               },
               1024: {
                 slidesPerView: 2,
-                spaceBetween: 10,
+                spaceBetween: 5,
               },
             }}
-            // grabCursor={true}    
-            className="mySwiper"
+            grabCursor={true}    
+
+            modules={[Autoplay]}
+            className="mySwiper slide_coupons h-[420px]"
           >
             <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
             <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>

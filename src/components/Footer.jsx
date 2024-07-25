@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="footer z-20 w-full mt-24">
+    <div className="footer z-20 w-full mt-28">
       <div className="footer_img">
         <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4">
           <div className="flex flex-col items-center md:items-end gap-4">

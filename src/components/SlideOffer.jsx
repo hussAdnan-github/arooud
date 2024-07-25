@@ -42,7 +42,7 @@ export default function SlideOffer() {
                 spaceBetween: 10,
               },
             }}
-                        className="mySwiper slider_categries "
+                        className="mySwiper slider_categries h-[520px]"
           >
   
 

@@ -46,6 +46,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
+import ButtonBack from "../../_components/ButtonBack";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -210,59 +211,61 @@ export function DataTable({ columns, data }) {
                   </div>
                   <div className="checkbox_user mt-4">
                     <div className="mt-2">
-                    <div className=" flex  items-start  justify-end">
-                      <div className="flex flex-col">
-                        <label htmlFor="" className=" font-bold">
-                          حالة المستخدم الفائق{" "}
-                        </label>
-                        <h1 className="text-xs text-gray-400">
-                          يقضي بأن هذا المستخدم يمتلك كافة الصلاحيات دون الحاجة
-                          لمنحها له تصريحاً
-                        </h1>
+                      <div className=" flex  items-start  justify-end">
+                        <div className="flex flex-col">
+                          <label htmlFor="" className=" font-bold">
+                            حالة المستخدم الفائق{" "}
+                          </label>
+                          <h1 className="text-xs text-gray-400">
+                            يقضي بأن هذا المستخدم يمتلك كافة الصلاحيات دون
+                            الحاجة لمنحها له تصريحاً
+                          </h1>
+                        </div>
+                        <input
+                          id="default-checkbox"
+                          type="checkbox"
+                          value=""
+                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
                       </div>
-                      <input
-                        id="default-checkbox"
-                        type="checkbox"
-                        value=""
-                        className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
                     </div>
                     <div className="mt-2">
-                    <div className=" flex  items-start  justify-end">
-                      <div className="flex flex-col">
-                        <label htmlFor="" className=" font-bold">
-                        حالة الطاقم{" "}
-                        </label>
-                        <h1 className="text-xs text-gray-400">
-                         يحدد ما إذا كان يمكن للمستخدم الدخول إلى موقع الإدارة هذا
-                        </h1>
+                      <div className=" flex  items-start  justify-end">
+                        <div className="flex flex-col">
+                          <label htmlFor="" className=" font-bold">
+                            حالة الطاقم{" "}
+                          </label>
+                          <h1 className="text-xs text-gray-400">
+                            يحدد ما إذا كان يمكن للمستخدم الدخول إلى موقع
+                            الإدارة هذا
+                          </h1>
+                        </div>
+                        <input
+                          id="default-checkbox"
+                          type="checkbox"
+                          value=""
+                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
                       </div>
-                      <input
-                        id="default-checkbox"
-                        type="checkbox"
-                        value=""
-                        className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
                     </div>
                     <div className="mt-2">
-                    <div className=" flex  items-start  justify-end">
-                      <div className="flex flex-col">
-                        <label htmlFor="" className=" font-bold">
-                        نشط
-                        </label>
-                        <h1 className="text-xs text-gray-400">
-                        يحدد ما إذا كان المستخدم سيُعامل على أنّه نشط. أزل تحديد هذا الحقل بدلاً من حذف الحسابات
-                        </h1>
+                      <div className=" flex  items-start  justify-end">
+                        <div className="flex flex-col">
+                          <label htmlFor="" className=" font-bold">
+                            نشط
+                          </label>
+                          <h1 className="text-xs text-gray-400">
+                            يحدد ما إذا كان المستخدم سيُعامل على أنّه نشط. أزل
+                            تحديد هذا الحقل بدلاً من حذف الحسابات
+                          </h1>
+                        </div>
+                        <input
+                          id="default-checkbox"
+                          type="checkbox"
+                          value=""
+                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
                       </div>
-                      <input
-                        id="default-checkbox"
-                        type="checkbox"
-                        value=""
-                        className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
                     </div>
                   </div>
                 </form>
@@ -286,12 +289,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-              <div className="flex items-center justify-end">
-                <h1 className="text-primaryColo font-bold ">
-                  العودة الى الخلف
-                </h1>
-                <FaArrowRightLong className="ms-4 text-primaryColo" />
-              </div>
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>
@@ -321,7 +319,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-24 bg-white rounded-2xl items-center p-2"
+                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
