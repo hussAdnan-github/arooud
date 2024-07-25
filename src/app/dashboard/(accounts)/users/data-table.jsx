@@ -47,6 +47,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
+import ConfertPassword from "../../_components/ConfertPassword";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -86,7 +87,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة مستخدم
@@ -184,6 +185,46 @@ export function DataTable({ columns, data }) {
                       placeholder="youremail@gmail.com"
                       required
                     />
+                  </div>
+                  <div className="mt-6">
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      رقم الهاتف
+                    </label>
+
+                    <div className="flex justify-between">
+
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-96 p-2.5  text-end"
+                      placeholder="777777777777"
+                      required
+                    />
+                    <Select>
+                      <SelectTrigger className="w-20   border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="+967" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white ">
+                        <SelectGroup>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem  value="+967" className=" text-[#9796A1] text-end">
+                          +967
+                          </SelectItem>
+
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="05"
+                          >
+                            05
+                          </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+
+                    </div>
                   </div>
                   <div className="mt-6">
                     <label

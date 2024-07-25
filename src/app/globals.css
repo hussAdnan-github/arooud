@@ -443,3 +443,16 @@ input:focus{
 }
 
  
+.partents-connect_phone{
+  position: relative;
+}
+.partents-connect_phone::before{
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: #DDDDDD;
+  right: -30px;
+  top: 20%;
+}

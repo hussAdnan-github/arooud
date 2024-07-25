@@ -5,6 +5,7 @@ import { GoBell } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
 import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { TiPlus } from "react-icons/ti";
 
 import {
   Dialog,
@@ -92,7 +93,7 @@ export function DataTable({ columns, data }) {
                   إضافة محل تجاري
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] h-[600px] overflow-scroll bg-white">
+              <DialogContent className="sm:max-w-[570px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة محل تجاري</DialogTitle>
                 </DialogHeader>
@@ -156,19 +157,59 @@ export function DataTable({ columns, data }) {
                     </label>
 
                     <Select>
-                      <SelectTrigger className="w-full   border-gray-300 ">
-                        <SelectValue placeholder="Select a fruit" />
+                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="" />
                       </SelectTrigger>
                       <SelectContent className="bg-white ">
                         <SelectGroup>
-                          <SelectLabel>قيد الأنشــاء</SelectLabel>
-                          <SelectItem value="apple">انتظاار</SelectItem>
-                          <SelectItem value="banana">منشــا</SelectItem>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem className=" text-[#9796A1] text-end">
+                            عميل
+                          </SelectItem>
+
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="apple"
+                          >
+                            انتظاار
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      مجلات المحل التجاري{" "}
+                    </label>
+                    <div className="grid grid-cols-4 " style={{direction:'rtl'}}>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >الكتروتيات</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >مواد غذائية</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >ادوات تجميل</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 >جوالات</h1>
+                      </div>
+                      <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                      <TiPlus className="text-xl"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -183,7 +224,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -198,7 +239,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -213,7 +254,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -228,9 +269,8 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                </form>
-
-                <DialogFooter>
+                  
+                <DialogFooter className={'mt-16'}>
                   <Button
                     type="submit"
                     className="bg-[#D3D3D3] text-white rounded-xl"
@@ -244,6 +284,8 @@ export function DataTable({ columns, data }) {
                     أضافة
                   </Button>
                 </DialogFooter>
+                </form>
+
               </DialogContent>
             </Dialog>
           </div>

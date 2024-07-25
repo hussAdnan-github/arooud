@@ -86,7 +86,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة عرض
@@ -94,18 +94,18 @@ export function DataTable({ columns, data }) {
               </DialogTrigger>
               <DialogContent className="sm:max-w-[540px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
-                  <DialogTitle>إضافة عرض</DialogTitle>
+                  <DialogTitle>إضافة العروض والخصومات</DialogTitle>
                 </DialogHeader>
                 <h1 className="text-end text-[16px] font-medium	mt-4">
                   معلومات شخصية
                 </h1>
                 <form className="w-full text-end">
-                  <div className="mb-4">
+                  <div className="mt-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      الاسم الأول{" "}
+                        اسم العرض{" "}
                     </label>
                     <input
                       type="text"
@@ -115,7 +115,21 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-4">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    نبذة عن العرض 
+                    </label>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                      placeholder="أضف بعض الوصف للعرض"
+                      required
+                    ></textarea>
+                  </div>
+
+
+                  {/* <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -267,7 +281,7 @@ export function DataTable({ columns, data }) {
                         />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </form>
 
                 <DialogFooter>
