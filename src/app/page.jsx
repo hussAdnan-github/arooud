@@ -1,3 +1,4 @@
+'use client'
 import HeaderLine from "@/components/HeaderLine";
 import HeaderText from "@/components/HeaderText";
 import MainSlider from "@/components/MainSlider";
@@ -12,7 +13,21 @@ import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import Partners from "@/components/Partners";
 import MainDropDown from "@/components/MainDropDown";
+import {   delay, motion } from "framer-motion";
 
+const fadeInnimation = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition:{
+      delay : 0.05
+    }
+  },
+};
 export default function Home() {
   return (
     <div className="home" id="home">
@@ -23,13 +38,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="offer" className="section_1 scroll-mt-32 bg-[#F4F4F4] pb-24 pt-10">
+      <div
+        id="offer"
+        className="section_1 scroll-mt-32 bg-[#F4F4F4] pb-24 pt-10"
+      >
         <div className="container mx-auto">
           <div className="">
             <HeaderText titel={"أبرز العروض المحلية"} />
           </div>
 
-          <div className="my-20 mt-14" >
+          <div className="my-20 mt-14">
             <SliderCard />
           </div>
           <div>
@@ -58,9 +76,17 @@ export default function Home() {
 
       <div className="section_2 bg-[#EDEEF2]">
         <div className="container mx-auto">
-          <div className="pt-10 ">
+          <motion.div
+            variants={fadeInnimation}
+            initial="initial"
+            whileInView="animate"
+            className="pt-10 "
+            viewport={{
+              once : true
+            }}
+          >
             <MainTitle title={"العروض والخصومات"} />
-          </div>
+          </motion.div>
           <div className="mt-20 flex items-center justify-end md:flex-row flex-col-reverse">
             <div className="flex mt-4 md:mt-0 ms-0 md:ms-80 md:flex-row flex-col-reverse ">
               <MainDropDown title={"المنطقة"} />
@@ -102,9 +128,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="coupons" className="section_3 scroll-mt-10 bg-[#FAFBFF] pt-36 pb-24">
+      <div
+        id="coupons"
+        className="section_3 scroll-mt-10 bg-[#FAFBFF] pt-36 pb-24"
+      >
         <div className="container mx-auto">
-          <div className="" >
+          <div className="">
             <MainTitle title={"الكوبونات والقسائم"} />
           </div>
           <div className="mt-20">
@@ -139,10 +168,10 @@ export default function Home() {
       </div>
       <div id="about" className="section_4 scroll-mt-28 bg-[#F4F4F4] pb-2">
         <div className="container mx-auto">
-          <div className=" mb-20 pt-12" >
+          <div className=" mb-20 pt-12">
             <MainTitle title={"عن عــروض"} />
           </div>
-          <div >
+          <div>
             <CardAbout />
           </div>
           <div className="my-24 text-center md:text-start btn_after relative">
@@ -152,7 +181,7 @@ export default function Home() {
       </div>
       <div id="partents" className="setion_5 scroll-mt-32 pt-10 bg-[#FAFBFF]">
         <div className="container mx-auto">
-          <div className="me-0 md:me-10" >
+          <div className="me-0 md:me-10">
             <MainTitle title={"شركاء عروضنا "} />
           </div>
           <div className="mt-32">

@@ -77,16 +77,13 @@ export default function ConfertPassword() {
               </label>
               <input
                 type="password"
-                name="confirmpassword"
+                name="confirm"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="* * * * * * * * *"
-                {...register("confirmpassword")}
+                {...register("confirm")}
               />
               <p className="text-primaryColo">
-                {errors.confirmpassword?.message}
-              </p>
-              <p className="text-primaryColo">
-                {errors.o?.message}
+                {errors.confirm?.message}
               </p>
             </div>
             <DialogFooter>

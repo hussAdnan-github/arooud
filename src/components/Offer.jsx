@@ -12,7 +12,7 @@ export default function Offer() {
   return (
     <div className="offer  container mx-auto ">
       <div className=" relative bottom-36 w-full bg-white rounded-xl   dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <div className=" w-48 h-48غ flex justify-center items-center bg-[#F3F3F3] border border-[#C8C9CC] rounded-lg drop-shadow-md p-1 absolute -top-28  md:left-[17%]">
+        <div className=" w-48 h-48 flex justify-center items-center bg-[#F3F3F3] border border-[#C8C9CC] rounded-lg drop-shadow-md p-1 absolute -top-28  md:left-[17%]">
           <Image
             src={cardSADcopons}
             alt="bbfvdf"

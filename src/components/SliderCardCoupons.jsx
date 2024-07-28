@@ -43,7 +43,7 @@ export default function SliderCardCoupons() {
             grabCursor={true}    
 
             modules={[Autoplay]}
-            className="mySwiper slide_coupons h-[420px]"
+            className="mySwiper slide_coupons md:h-[420px]"
           >
             <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
             <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>

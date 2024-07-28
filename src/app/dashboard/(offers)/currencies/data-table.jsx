@@ -86,7 +86,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة عملة
@@ -154,7 +154,7 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      صورة{" "}
+                      رمز العملة{" "}
                     </label>
 
                     <label
@@ -163,7 +163,7 @@ export function DataTable({ columns, data }) {
                     >
                       {" "}
                       <FaCircleChevronLeft className="text-gray-400 text-xl" />
-                      إضافة صورة شعار المتجر
+                      إضافة رمز العملة{" "}
                     </label>
                     <input
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -176,13 +176,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -192,8 +192,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
-
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">
                 {" "}

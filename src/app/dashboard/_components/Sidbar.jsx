@@ -12,7 +12,7 @@ import SideBarItem from "@/components/SideBarItem";
 import { FaBuffer } from "react-icons/fa";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SidbarItem from "./SidbarItem";
-import { TbWorldUpload } from "react-icons/tb";
+import { TbLogin, TbWorldUpload } from "react-icons/tb";
 import { AiTwotoneShop } from "react-icons/ai";
 import { RxEnter } from "react-icons/rx";
 import { FaShield } from "react-icons/fa6";
@@ -73,13 +73,13 @@ export default function SideBar() {
     { id: 5, name: "من نحن", icon: <BsFillExclamationCircleFill className="ms-4"/>, url:"/dashboard/about" },
   ];
   const auth = [{ id: 1, name: "المجموعات", icon: <FaCheckToSlot className="ms-4"/> ,url:'/dashboard/authentications'}];
-  const keys = [{ id: 1, name: "الرموز", icon: <FaKey className="ms-4"/> ,url:'/dashboard/keys'}];
+  const keys = [{ id: 1, name: "الرموز", icon: <FaKey className="ms-4"/> ,url:'/dashboard/symbols'}];
 
   return (
     <>
       <div className="sidebar" style={{ height: "952px" }}>
         <div
-          className="flex flex-col items-center mt-4 me-2  text-gray-700 bg-white rounded-lg"
+          className="flex flex-col items-center mt-4 me-2 relative  text-gray-700 bg-white rounded-lg"
           style={{ height: "96%", width: "200px" }}
         >
           <div className="flex items-center w-full px-3 mt-3">
@@ -189,29 +189,21 @@ export default function SideBar() {
                 </TabsContent>
               </Tabs>
 
-            <div className="flex items-center gap-4 absolute top-full">
-              <div>
-              <RxEnter className="text-[16px] text-[#9796A1]"/>
-              </div>
-              <h1 className="text-[16px] text-[#9796A1]">تسجيل خروج</h1>
-             
-            </div>
  
              
              
             </div>
+            
           </div>
-          {/* <div
-            className="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300"
-            href="#"
-          >
-            <span className="ml-2 text-xs font-bold text-gray-400">
-              تسجيل خروج
-            </span>
-            <TbLogin className="ms-4 text-gray-400 text-2xl" />
-          </div> */}
+       
+          <div className="flex items-center gap-4 absolute bottom-8 cursor-pointer">
+              <h1 className="text-[16px] font-bold text-[#9796A1]">تسجيل خروج</h1>
+              <RxEnter className="text-2xl font-bold text-[#9796A1] rotate-180"/>
+             
+            </div> 
         </div>
       </div>
     </>
   );
 }
+ 

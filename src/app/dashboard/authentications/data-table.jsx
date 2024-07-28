@@ -86,13 +86,13 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة المجموعات
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-white">
+              <DialogContent className="sm:max-w-[425px] overflow-scroll bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة المجموعات</DialogTitle>
                 </DialogHeader>
@@ -120,152 +120,67 @@ export function DataTable({ columns, data }) {
                     <h1 className="text-[16px]">الصلاحيات</h1>
                   </div>
                   <div className="auth mt-4">
-                    <h1 className="text-sm text-[#9796A1] mb-2">صلاحيات المستخدم</h1>
+                    <h1 className="text-sm text-[#9796A1] mb-4">صلاحيات المستخدم</h1>
                     <div className="auth_check flex justify-between">
-                      <div className="auth_show">
-                        <label htmlFor="" className="text-sm">عرض </label>
+                      <div className="auth_show flex">
+                        <label htmlFor="" className="text-sm font-medium me-2">عرض </label>
 
                         <input
                           id="default-checkbox"
                           type="checkbox"
                           value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                      <div className="auth_delte">
-                        <label htmlFor="" className="text-sm">حذف </label>
+                   
+                      <div className="auth_show flex">
+                        <label htmlFor="" className="text-sm font-medium me-2">حذف  </label>
 
                         <input
                           id="default-checkbox"
                           type="checkbox"
                           value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                      <div className="auth_edit">
-                        <label htmlFor="" className="text-sm">تعديل </label>
+                   
+                      <div className="auth_show flex">
+                        <label htmlFor="" className="text-sm font-medium me-2">تعديل  </label>
 
                         <input
                           id="default-checkbox"
                           type="checkbox"
                           value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                      <div className="auth_add">
-                        <label htmlFor="" className="text-sm">اضافة </label>
+                   
+                      <div className="auth_show flex">
+                        <label htmlFor="" className="text-sm font-medium me-2">اضافة  </label>
 
                         <input
                           id="default-checkbox"
                           type="checkbox"
                           value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
+                   
                     </div>
                   </div>
-                  <div className="auth mt-4">
-                    <h1 className="text-sm text-[#9796A1] mb-2">صلاحيات المواقع العالمية</h1>
-                    <div className="auth_check flex justify-between">
-                      <div className="auth_show">
-                        <label htmlFor="" className="text-sm">عرض </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_delte">
-                        <label htmlFor="" className="text-sm">حذف </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_edit">
-                        <label htmlFor="" className="text-sm">تعديل </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_add">
-                        <label htmlFor="" className="text-sm">اضافة </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="auth mt-4">
-                    <h1 className="text-sm text-[#9796A1] mb-2">صلاحيات محل تجاري</h1>
-                    <div className="auth_check flex justify-between">
-                      <div className="auth_show">
-                        <label htmlFor="" className="text-sm">عرض </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_delte">
-                        <label htmlFor="" className="text-sm">حذف </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_edit">
-                        <label htmlFor="" className="text-sm">تعديل </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                      <div className="auth_add">
-                        <label htmlFor="" className="text-sm">اضافة </label>
-
-                        <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  
                 </form>
 
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -305,7 +220,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-9 bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

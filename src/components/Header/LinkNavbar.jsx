@@ -14,7 +14,7 @@ export default function LinkNavbar() {
   const [activeSection, setactiveSection] = useState("الرئيسية");
 
   return (
-    <div className=" nav_links flex gap-4 md:gap-16 flex-1 justify-end me-28 ">
+    <div className=" nav_links flex gap-4 md:gap-16 flex-1 justify-end md:me-28 ">
       {navLinks.map((link) => {
         return (
           <Link key={link.id} href={link.hash} onClick={()=> setactiveSection(link.name)}>

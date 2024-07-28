@@ -47,6 +47,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
+import DatePicker from "../../_components/DatePicker";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -86,7 +87,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة إعلان
@@ -118,10 +119,9 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      حالة القسم
+                      حالة الاعلان
                     </label>
 
-                  
                     <Select>
                       <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
                         <SelectValue placeholder="" />
@@ -158,6 +158,36 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-4">
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        تاريخ انتهاء القسية{" "}
+                      </label>
+                      <DatePicker />
+                    </div>
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        وقت انتهاء القسية{" "}
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          id="first_name"
+                          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                          placeholder="حسيننن"
+                          required
+                        />
+                        {/* <Clock8 /> */}
+                      </div>
+                    </div>
+                  </div>
                   <div className="mt-4">
                     <label
                       for="first_name"
@@ -185,13 +215,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -201,8 +231,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
-
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>

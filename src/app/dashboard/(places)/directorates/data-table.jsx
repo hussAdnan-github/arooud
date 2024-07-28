@@ -45,7 +45,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import Dropdown from "../../_components/Dropdown"
+import Dropdown from "../../_components/Dropdown";
 import { BiEdit } from "react-icons/bi";
 import ButtonBack from "../../_components/ButtonBack";
 export function DataTable({ columns, data }) {
@@ -86,7 +86,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة مديرية
@@ -103,7 +103,7 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      اسم المحافظة  
+                      اسم المديرية{" "}
                     </label>
                     <input
                       type="text"
@@ -114,22 +114,37 @@ export function DataTable({ columns, data }) {
                     />
                   </div>
                   <div className="mb-4">
-    <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">أسـم القسم</label>
-  
-<div className="flex items-center gap-5 justify-end">
-<FaRegEye className="text-2xl text-gray-500"/>
-<BiEdit className="text-2xl"/>
-<FaPlus className="text-xl"/>
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      محافضة المديرية{" "}
+                    </label>
 
-<input type="text" id="first_name" className="bg-gray-50 border w-60 border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end" placeholder="حسيننن" required />
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
 
-</div>
-</div>
- 
+                      <input
+                        type="text"
+                        id="first_name"
+                        className="bg-gray-50 border w-60 border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                        placeholder="حسيننن"
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div className="mt-6">
-<label for="first_name" className="block mb-4 text-sm font-medium text-gray-500 dark:text-white">حالة الدولة</label>
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      حالة المحافظة{" "}
+                    </label>
 
-<Select>
+                    <Select>
                       <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
                         <SelectValue placeholder="" />
                       </SelectTrigger>
@@ -149,19 +164,19 @@ export function DataTable({ columns, data }) {
                         </SelectGroup>
                       </SelectContent>
                     </Select>
-</div>
+                  </div>
                 </form>
 
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -171,8 +186,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
-
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
             </div>
@@ -202,7 +216,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-9 bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

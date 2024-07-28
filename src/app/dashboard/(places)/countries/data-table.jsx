@@ -85,7 +85,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة دولة
@@ -146,13 +146,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -192,7 +192,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-9 bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

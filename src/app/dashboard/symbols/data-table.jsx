@@ -2,11 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import { FaRegEye } from "react-icons/fa";
-import { BiEdit } from "react-icons/bi";
+import { FiEdit } from "react-icons/fi";
 
 import {
   Dialog,
@@ -48,6 +47,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../_components/Dropdown";
+import ButtonBack from "../_components/ButtonBack";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -64,7 +64,7 @@ export function DataTable({ columns, data }) {
   });
 
   return (
-    <div className="">
+    <div>
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
@@ -87,43 +87,43 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة رمز
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-white">
+              <DialogContent className="sm:max-w-[540px]  bg-white">
                 <DialogHeader>
-                  <DialogTitle>إضافة رمز</DialogTitle>
+                  <DialogTitle> إضافة رمز </DialogTitle>
                 </DialogHeader>
 
                 <form className="w-full text-end mt-8">
-                  <div className="mb-4">
+                  <div className="mt-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 me-12 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      أسـم القسم
+                      المستخدم{" "}
                     </label>
 
-                    <div className="flex items-center gap-5 justify-end">
-                      <FaRegEye className="text-2xl text-gray-500" />
-                      <BiEdit className="text-2xl" />
-                      <FaPlus className="text-xl" />
+                   <div className="flex items-center justify-center gap-4">
+                   <FaRegEye className="text-2xl text-[#7D8592]" />
+                   <FiEdit className="text-2xl"/>
 
-                      <input
-                        type="text"
-                        id="first_name"
-                        className="bg-gray-50 border w-60 border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
-                        placeholder="حسيننن"
-                        required
-                      />
-                    </div>
+                   <FaPlus className="text-2xl"/>
+                   <input
+                      type="text"
+                      id="first_name"
+                      className="bg-gray-50 ms-4   border border-gray-300 text-gray-500 text-sm rounded-lg block w-64 p-2.5  text-end"
+                      placeholder="حسيننن"
+                      required
+                    />
+                   </div>
                   </div>
                 </form>
 
-                <DialogFooter>
+                <DialogFooter className={'mt-10'}>
                   <Button
                     type="submit"
                     className="bg-[#D3D3D3] text-white rounded-xl"
@@ -142,43 +142,83 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-              <div className="flex items-center justify-end">
-                <h1 className="text-primaryColo font-bold ">
-                  العودة الى الخلف
-                </h1>
-                <FaArrowRightLong className="ms-4 text-primaryColo" />
-              </div>
+              <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+              <h1 className="text-3xl font-bold my-4">
+                {" "}
+                العروضات والخصومات <span>(28)</span>
+              </h1>
             </div>
           </div>
         </div>
-
-        <div className="flex w-full flex-col gap-2 ">
-          {table.getRowModel().rows.length ? (
-            table.getRowModel().rows.map((row) => (
-              <div
-                className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <div key={cell.id} className="">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </div>
-                ))}
+        <div className="">
+          <div className="flex w-full flex-col gap-2">
+            {/* <TableHeader>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <TableRow key={headerGroup.id}>
+              {headerGroup.headers.map((header) => {
+                return (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                 </TableHead>
+                )
+              })}
+            </TableRow>
+          ))}
+        </TableHeader> */}
+            {/* <TableBody className="bg-blue-700 rounded-full"> */}
+            {table.getRowModel().rows.length ? (
+              table.getRowModel().rows.map((row) => (
+                <div
+                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <div key={cell.id} className="">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))
+            ) : (
+              <div>
+                <div colSpan={columns.length} className="h-24 text-center">
+                  ليس هناك مدخلات
+                </div>
               </div>
-            ))
-          ) : (
-            <div>
-              <div colSpan={columns.length} className="h-24 text-center">
-                ليس هناك مدخلات
-              </div>
-            </div>
-          )}
+            )}
+            {/* </TableBody> */}
+          </div>
         </div>
       </div>
-      <div className="flex items-start absolute bottom-8 gap-4 p-2 rounded-lg drop-shadow-lg">
+      {/* <div className="flex items-center justify-end space-x-2 py-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+        >
+          Previous
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+        >
+          Next
+        </Button>
+      </div> */}
+      <div className="flex items-start gap-4">
         <div>
           <button
             className="me-4 text-primaryColo"

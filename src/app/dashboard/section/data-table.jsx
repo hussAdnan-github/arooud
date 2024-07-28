@@ -85,7 +85,7 @@ export function DataTable({ columns, data }) {
         <div>
           <Dialog className="gap-0">
             <DialogTrigger asChild>
-              <Button className="bg-primaryColo text-white w-36">
+              <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                 {" "}
                 <FaPlus className="me-2" />
                 أضافة قـسم
@@ -120,27 +120,26 @@ export function DataTable({ columns, data }) {
                     حالة القسم
                   </label>
 
-            
                   <Select>
-                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
-                        <SelectValue placeholder="" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white ">
-                        <SelectGroup>
-                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                          <SelectItem className=" text-[#9796A1] text-end">
-                            قيد الانشاء
-                          </SelectItem>
+                    <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
+                      <SelectValue placeholder="" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white ">
+                      <SelectGroup>
+                        {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                        <SelectItem className=" text-[#9796A1] text-end">
+                          قيد الانشاء
+                        </SelectItem>
 
-                          <SelectItem
-                            className=" text-[#9796A1] text-end"
-                            value="apple"
-                          >
-                            انتظاار
-                          </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                        <SelectItem
+                          className=" text-[#9796A1] text-end"
+                          value="apple"
+                        >
+                          انتظاار
+                        </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="mt-6">
                   <label
@@ -156,7 +155,7 @@ export function DataTable({ columns, data }) {
                   >
                     {" "}
                     <FaCircleChevronLeft className="text-gray-400 text-xl" />
-                    إضافة صورة شعار المتجر
+                    إضافة صورة القسم{" "}
                   </label>
                   <input
                     className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -169,13 +168,13 @@ export function DataTable({ columns, data }) {
               <DialogFooter>
                 <Button
                   type="submit"
-                  className="bg-[#D3D3D3] text-white rounded-xl"
+                  className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                 >
                   أضافة مع أضافة أخرى
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-primaryColo  text-white rounded-xl"
+                  className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                 >
                   أضافة
                 </Button>
@@ -185,8 +184,7 @@ export function DataTable({ columns, data }) {
         </div>
         <div>
           <div className="text-end my-2">
-          <ButtonBack />
-
+            <ButtonBack />
 
             <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
           </div>

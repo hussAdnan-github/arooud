@@ -1,23 +1,17 @@
 "use client";
-import CardIconImg from "../../public/img/cardicon.svg";
-import market from "../../public/img/mrket.svg";
-import hotel from "../../public/img/hotel.svg";
-import world from "../../public/img/world.svg";
-import music from "../../public/img/music.svg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// import 'swiper/css/navigation';
+import "swiper/css/navigation";
 
-// Import Swiper styles
+import React, { useRef } from "react";
 
 import { Navigation } from "swiper/modules";
 
-import CardIcon from "./CardIcon";
-import { useRef } from "react";
+import CardProduct from "./CardProduct";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-export default function SliderCategries() {
+export default function SliderOfferDetailes() {
   const swiperRef = useRef(null);
 
   const handlePrevClick = () => {
@@ -33,11 +27,12 @@ export default function SliderCategries() {
   };
 
   return (
-    <div className="mainslider_categries ms-8">
+    <div className="mainslider_categries">
       <Swiper
         ref={swiperRef}
         spaceBetween={10}
         loop={true}
+        
         // navigation={true}
         modules={[Navigation]}
         breakpoints={{
@@ -50,48 +45,40 @@ export default function SliderCategries() {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 10,
           },
         }}
-        className="mySwiper slider_categries "
+        className="mySwiper h-[520px]"
       >
         <SwiperSlide>
           {" "}
-          <CardIcon title={"الجمال والعافية"} img={CardIconImg} />
+          <CardProduct />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <CardIcon title={"الترفيه"} img={music} />{" "}
+          <CardProduct />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <CardIcon title={"التسوق"} img={market} />
+          <CardProduct />
         </SwiperSlide>
         <SwiperSlide>
-          <CardIcon title={"السفر والسياحة"} img={world} />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <CardIcon title={"الضيافة"} img={hotel} />
+          <CardProduct />
         </SwiperSlide>
 
         <SwiperSlide>
-          <CardIcon title={"الضيافة"} img={hotel} />
+          <CardProduct />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <CardProduct />
         </SwiperSlide>
       </Swiper>
-      <div className="relative w-full -top-28">
-        <button
-          className="absolute -left-14 bg-[#D9D9D9] p-2 rounded-full"
-          onClick={handlePrevClick}
-        >
-          <FaAngleLeft />
+      <div className="relative w-full -top-72">
+        <button className="absolute -left-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handlePrevClick}><FaAngleLeft />
         </button>
-        <button
-          className="absolute  -right-10 bg-[#D9D9D9] p-2 rounded-full"
-          onClick={handleNextClick}
-        >
-          <FaAngleRight />
+        <button className="absolute  -right-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handleNextClick}><FaAngleRight />
         </button>
       </div>
     </div>

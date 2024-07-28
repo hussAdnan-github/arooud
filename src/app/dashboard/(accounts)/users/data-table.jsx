@@ -48,6 +48,8 @@ import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 import ConfertPassword from "../../_components/ConfertPassword";
+import DatePicker from "../../_components/DatePicker";
+import { Clock8 } from "lucide-react";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -195,35 +197,36 @@ export function DataTable({ columns, data }) {
                     </label>
 
                     <div className="flex justify-between">
+                      <input
+                        type="text"
+                        id="first_name"
+                        className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-96 p-2.5  text-end"
+                        placeholder="777777777777"
+                        required
+                      />
+                      <Select>
+                        <SelectTrigger className="w-20   border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="+967" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem
+                              value="+967"
+                              className=" text-[#9796A1] text-end"
+                            >
+                              +967
+                            </SelectItem>
 
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-96 p-2.5  text-end"
-                      placeholder="777777777777"
-                      required
-                    />
-                    <Select>
-                      <SelectTrigger className="w-20   border-gray-300 text-[#9796A1]">
-                        <SelectValue placeholder="+967" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white ">
-                        <SelectGroup>
-                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                          <SelectItem  value="+967" className=" text-[#9796A1] text-end">
-                          +967
-                          </SelectItem>
-
-                          <SelectItem
-                            className=" text-[#9796A1] text-end"
-                            value="05"
-                          >
-                            05
-                          </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="05"
+                            >
+                              05
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                   <div className="mt-6">
@@ -254,6 +257,36 @@ export function DataTable({ columns, data }) {
                         </SelectGroup>
                       </SelectContent>
                     </Select>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-4">
+                    <div className="w-full">
+                    <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        تاريخ الانضمام{" "}
+                      </label>
+                      <DatePicker />
+                    </div>
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        وقت الانضمام{" "}
+                      </label>
+                   <div>
+                   <input
+                        type="text"
+                        id="first_name"
+                        className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                        placeholder="حسيننن"
+                        required
+                      />
+                      <Clock8 />
+                   </div>
+                    </div>
                   </div>
                   <div className="checkbox_user mt-4">
                     <div className="mt-2">
@@ -319,13 +352,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>

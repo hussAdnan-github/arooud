@@ -4,6 +4,7 @@ import details from "../../../public/img/details.svg";
 import Offer from "@/components/Offer";
 import HeaderText from "@/components/HeaderText";
 import SlideOffer from "@/components/SlideOffer";
+import SliderOfferDetailes from "@/components/SliderOfferDetailes";
 export default function page() {
   return (
     <div>
@@ -23,7 +24,8 @@ export default function page() {
               <HeaderText titel={"عروض محلات صدى الرنين"} />
             </div>
             <div>
-              <SlideOffer />
+              {/* <SlideOffer /> */}
+              <SliderOfferDetailes/>
             </div>
           </div>
         </div>

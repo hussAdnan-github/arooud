@@ -105,7 +105,7 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                        اسم العرض{" "}
+                      اسم العرض{" "}
                     </label>
                     <input
                       type="text"
@@ -117,7 +117,7 @@ export function DataTable({ columns, data }) {
                   </div>
                   <div className="mt-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-                    نبذة عن العرض 
+                      نبذة عن العرض 
                     </label>
                     <textarea
                       id="message"
@@ -127,7 +127,28 @@ export function DataTable({ columns, data }) {
                       required
                     ></textarea>
                   </div>
+                  <div className="mt-6">
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      صورة غلاف العرض{" "}
+                    </label>
 
+                    <label
+                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      for="file_input"
+                    >
+                      {" "}
+                      <FaCircleChevronLeft className="text-gray-400 text-xl" />
+                      إضافة صورة غلاف العرض{" "}
+                    </label>
+                    <input
+                      className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                      id="file_input"
+                      type="file"
+                    />
+                  </div>
 
                   {/* <div className="mb-4">
                     <label
@@ -287,13 +308,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>

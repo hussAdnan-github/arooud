@@ -9,6 +9,7 @@ import SliderCategries from "@/components/SliderCategries";
 import SlideOffer from "@/components/SlideOffer";
 import HeaderText from "@/components/HeaderText";
 import { LuPhone } from "react-icons/lu";
+import SliderOfferDetailes from "@/components/SliderOfferDetailes";
 
 export default function Partners() {
   return (
@@ -59,7 +60,7 @@ export default function Partners() {
         <div className="mt-44 mb-16">
           <HeaderText titel={"عروض محلات صدى الرنين"} />
         </div>
-        <SlideOffer />
+        <SliderOfferDetailes />
       </div>
     </div>
   );
