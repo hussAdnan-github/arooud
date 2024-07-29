@@ -39,9 +39,14 @@ export default function CardCoupons() {
               <span className=" font-bold text-2xl">كوبون</span> من محلات صدى
               الرنين للهواتف الذكية وجميع مستلزمات الجوال
             </h1>
-            <div className="detials_coupons md:w-[140%] flex w-full justify-end gap-6 bg-[#F4F4F4] rounded-lg px-4 py-1 items-center"style={{zIndex:'-1'}}>
+            <div
+              className="detials_coupons md:w-[140%] flex w-full justify-end gap-6 bg-[#F4F4F4] rounded-lg px-4 py-1 items-center"
+              style={{ zIndex: "-1" }}
+            >
               <div className="date_coupons">
-                <h1 className=" text-gray-400 text-sm md:text-xs text-end">تاريخ</h1>
+                <h1 className=" text-gray-400 text-sm md:text-xs text-end">
+                  الكوبون صالح لغاية
+                </h1>
                 <div className="flex items-center gap-2">
                   <p className="text-gray-400 text-sm md:text-xl">
                     20/21/2024{" "}
@@ -73,7 +78,6 @@ export default function CardCoupons() {
             </div>
           </div>
         </div>
-   
       </div>
     </div>
   );

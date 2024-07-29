@@ -37,7 +37,7 @@ export default function MainCoupons() {
               <div className="detials_coupons flex  px-4 py-1 items-center">
                 <div className="date_coupons me-20 text-end">
                   <h1 className="text-xs md:text-xl text-gray-400 me-14 mb-1">
-                    صلاحية الكوبون إلى تاريخ
+                  الكوبون صالح لغاية
                   </h1>
                   <div className="flex items-center gap-5">
                     <p className="text-gray-400 font-bold text-xs md:text-4xl">
