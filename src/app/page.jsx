@@ -153,7 +153,7 @@ export default function Home() {
             <SliderCardCoupons />
           </div>
           <div>
-            <HeaderLine title={"لمزيد من الكوبونات الحصرية "} />
+            <HeaderLine title={"المزيد من الكوبونات حصرية  "} />
           </div>
           <div className="mt-14">
             <HeaderText titel={"القسائم الشرائية"} />

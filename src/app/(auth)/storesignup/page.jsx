@@ -47,15 +47,11 @@ export default function page() {
 
           <form className="w-full md:w-[543px] text-center md:text-end">
             <div className="mb-4  text-end">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white "
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white ">
                 صورة الشعار
               </label>
 
-              <label
-                className="block mb-2 text-sm font-medium update_img text-[#9796A1]  dark:text-white"
-              >
+              <label className="block mb-2 text-sm font-medium update_img text-[#9796A1]  dark:text-white">
                 {" "}
                 <FaCircleChevronLeft className="text-[#9796A1] text-xl" />
                 إضافة صورة شعار المحل
@@ -70,9 +66,7 @@ export default function page() {
             <MainInput lable={"اسم المتجر"} title={"صدى الرنين"} />
 
             <div className="mb-4 text-end">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 نبذة عن المتجر
               </label>
               <textarea
@@ -83,12 +77,45 @@ export default function page() {
                 required
               ></textarea>
             </div>
-            <MainInput lable={"أسـم المسجل"} title={"حسيننن"} />
-            <MainInput lable={"مجال عمل المحل التجاري"} title={"حسيننن"} />
+            <MainInput lable={"اسـم المسجل"} title={"حسيننن"} />
+            <div className="mb-4 text-end">
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
+                مجال عمل المتجر الالكتروني
+              </label>
+              <Select className="bg-white">
+                <SelectTrigger className="w-full md:h-14 text-[#9796A1] border-[#DADADA] md:text-xl">
+                  <SelectValue placeholder=" سيؤن" className="font-bold " />
+                </SelectTrigger>
+                <SelectContent
+                  className="bg-white text-[#9796A1]"
+                  style={{ zIndex: "99999" }}
+                >
+                  <SelectGroup className="">
+                    <SelectItem
+                      value="all"
+                      className="flex w-full justify-end text-[#9796A1]"
+                    >
+                      سيؤؤؤؤن{" "}
+                    </SelectItem>
+                    <SelectItem
+                      value="est"
+                      className="flex w-full justify-end "
+                    >
+                      يشسيشسيشسي{" "}
+                    </SelectItem>
+                    <SelectItem
+                      value="cst"
+                      className="flex w-full justify-end "
+                    >
+                      شسيسشيسشيسشي{" "}
+                    </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
             <div className="mb-4   flex flex-col items-end ">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 البريد الإلكتروني{" "}
               </label>
               <input
@@ -101,9 +128,7 @@ export default function page() {
             </div>
 
             <div className="mb-4 text-end">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 رقم الهاتف
               </label>
               <input
@@ -116,9 +141,7 @@ export default function page() {
               />
             </div>
             <div className="mb-4 text-end">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 المدينة
               </label>
               <Select className="bg-white">

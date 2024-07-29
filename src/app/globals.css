@@ -8,6 +8,9 @@
 body {
   background-color: #ffffff;
 }
+h1 , p{
+  color: black;
+}
 @layer components {
   .header_line.header_line {
     font-size: 20px;
@@ -51,9 +54,17 @@ body {
   align-items: center;
 }
 
-.footer_img {
+.footer_img ,.card_coupon {
   background-image: url(../../public/img/footer.svg);
 }
+.footer_img{
+  background-color: rgba(0, 0, 0, 0.288);
+
+}
+.card_coupon ,.card_coupon_two{
+  background-image: url(../../public/img/couponsCode.jpg);
+}
+ 
 .main_slider .swiper-button-prev {
   background-color: black;
   border-radius: 50%;
@@ -396,4 +407,8 @@ input:focus {
   background-color: #dddddd;
   right: -30px;
   top: 20%;
+}
+
+.wrapper_img{
+    
 }

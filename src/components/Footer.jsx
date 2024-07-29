@@ -10,10 +10,10 @@ export default function Footer() {
   return (
     <div className="footer z-20 w-full mt-28">
       <div className="footer_img">
-        <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4">
+        <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4" style={{backgroundColor:'rgba(0, 0, 0, 0.188);'}}>
           <div className="flex flex-col items-center md:items-end gap-4">
-            <p className="font-bold text-2xl">تابعنا</p>
-            <h1 className="text-xl">
+            <p className="font-bold text-2xl text-white">تابعنا</p>
+            <h1 className="text-xl text-white">
               يمكنك متابعتنا على منصات التواصل الإجتماعى
             </h1>
             <div className="flex items-center">
@@ -33,13 +33,13 @@ export default function Footer() {
               <div>
                 <FaPhone className="text-[#FFDE17] text-2xl" />{" "}
               </div>
-              <h1 className="font-bold text-2xl">اتصل بنا</h1>
+              <h1 className="font-bold text-2xl text-white">اتصل بنا</h1>
             </div>
-            <h1 className="text-2xl">+967 785×××××5</h1>
-            <h1 className="text-2xl">+967 785×××××5</h1>
+            <h1 className="text-2xl text-white">+967 785×××××5</h1>
+            <h1 className="text-2xl text-white">+967 785×××××5</h1>
           </div>
           <div className="mt-8 mb-6 md:mb-0">
-            <h1 className="text-5xl text-center md:text-end mb-4">
+            <h1 className="text-5xl text-center md:text-end mb-4 text-white">
               عروض في أي وقت
             </h1>
             <h1 className="text-5xl text-center md:text-end text-[#FFDE17]">

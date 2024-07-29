@@ -74,7 +74,7 @@ export default function page() {
 
             <div className="mb-4">
               <label
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
               >
                 نبذة عن المحل
               </label>
@@ -86,8 +86,44 @@ export default function page() {
                 required
               ></textarea>
             </div>
-            <MainInput lable={"أسـم المسجل"} title={"حسيننن"} />
-            <MainInput lable={"مجال عمل المحل التجاري"} title={"حسيننن"} />
+            <MainInput lable={"اسـم المسجل"} title={"حسيننن"} />
+            <div className="mb-4">
+              <label
+                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
+              >
+                مجال عمل المحل التجاري
+              </label>
+              <Select className="bg-white">
+                <SelectTrigger className="w-full md:h-14 text-[#9796A1] border-[#DADADA] md:text-xl">
+                  <SelectValue placeholder=" سيؤن" className="font-bold " />
+                </SelectTrigger>
+                <SelectContent
+                  className="bg-white text-[#9796A1]"
+                  style={{ zIndex: "99999" }}
+                >
+                  <SelectGroup className="">
+                    <SelectItem
+                      value="all"
+                      className="flex w-full justify-end text-[#9796A1]"
+                    >
+                      سيؤؤؤؤن{" "}
+                    </SelectItem>
+                    <SelectItem
+                      value="est"
+                      className="flex w-full justify-end "
+                    >
+                      يشسيشسيشسي{" "}
+                    </SelectItem>
+                    <SelectItem
+                      value="cst"
+                      className="flex w-full justify-end "
+                    >
+                      شسيسشيسشيسشي{" "}
+                    </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
 
             <div className="mb-8 flex flex-col items-end ">
               <label

@@ -10,6 +10,22 @@ import { FaAngleDoubleLeft } from "react-icons/fa";
 
 export default function page() {
   return (
+  //   <div className="relative w-[464px] h-[233px] ">
+  //   {/* <div className="bg-black opacity-40 w-full h-full absolute z-40">
+
+  //   </div> */}
+  //   <input id="file" type="file" />
+  //   <label htmlFor="file" className=" ">
+  //     <Image
+  //       src={login}
+  //       alt="asdasd"
+  //       className="rounded-lg w-full cursor-pointer h-full border border-black object-contain"
+  //     />
+  //     <FaAngleDoubleLeft className="absolute top-1/2 left-1/2" />
+  //   </label>
+
+  //   {/* <Link href={'#'}> <h1 className="text-primaryColo underline mt-10 text-2xl  font-normal flex items-center"> <FaAngleDoubleLeft /> إضافة</h1></Link> */}
+  // </div>
     <div className="customer container m-auto mt-10">
       <div className="profile flex justify-between mb-20">
         <div className="profile_img_user flex gap-4 items-center">

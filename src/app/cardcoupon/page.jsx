@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "../../../public/img/logo.png";
+import code from "../../../public/img/code.png";
 import { RxEnter } from "react-icons/rx";
 import { BiSolidDiscount } from "react-icons/bi";
 import { CgTimelapse } from "react-icons/cg";
@@ -10,16 +11,16 @@ import { FaYoutube } from "react-icons/fa6";
 
 export default function page() {
   return (
-    <div className="card_coupon">
+    <div className="card_coupon mt-20">
       <div className="flex justify-between h-[460px]">
-        <div className="price_card_coupon w-full flex flex-col items-end relative me-10 ">
-          <div className="flex gap-4 px-8 mt-24">
-            <h1>askdpas[kdp[as]]</h1>
-            <h1 className="text-xl  text-end font-bold">
+        <div className="price_card_coupon w-full flex flex-col items-end relative me-10 ps-10">
+          <div className="flex gap-4 px-8 mt-14">
+            <Image src={code}  alt="BaraCode" width={100} height={100}/>
+            <h1 className="text-2xl  text-end font-bold px-10">
               كوبون من محلات صدى الرنين للهواتف الذكية وجميع مستلازمات الجوال
             </h1>
           </div>
-          <div className="flex items-center mt-12  gap-4">
+          <div className="flex items-center gap-4">
             <div className="">
               <h1 className="text-xl">
                 قسيمة بقيمة <span>100</span> ريال{" "}
@@ -49,7 +50,7 @@ export default function page() {
               <MdDiscount   className=" text-4xl  text-gray-400" />
             </div>
           </div>
-          <div className='mt-10'>
+          <div className='mt-2'>
             <h1 className="text-xl">شروط استخدام الكوبون</h1>
           </div>
           <div className="flex w-full justify-start gap-2 ps-10 items-center absolute bottom-0">
@@ -64,9 +65,11 @@ export default function page() {
             </div>
         </div>
         <div
-          className="details_card_coupon items-center w-full gap-6 relative border-l-4 border-primaryColo border-dashed mt-10"
+          className="details_card_coupon items-center w-[85%] gap-6 relative border-l-2 border-primaryColo border-dashed pt-10"
           style={{ display: "flex", flexDirection: "column" }}
         >
+        <h1 className="absolute top-[50%] -right-40 text-gray-300 -rotate-90 text-xl">في حال تغيير او تعديل على  القسيمة تلغى القسيمة</h1>
+
           <div className="card_coupon_logo w-[260px] mb-6">
             <Image src={logo} alt="Logo" className="w-full" height={100} />
           </div>
