@@ -113,7 +113,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -149,7 +149,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"

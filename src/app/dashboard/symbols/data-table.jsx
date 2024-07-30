@@ -126,13 +126,13 @@ export function DataTable({ columns, data }) {
                 <DialogFooter className={'mt-10'}>
                   <Button
                     type="submit"
-                    className="bg-[#D3D3D3] text-white rounded-xl"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
                   >
                     أضافة مع أضافة أخرى
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-primaryColo  text-white rounded-xl"
+                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
                   >
                     أضافة
                   </Button>
@@ -146,7 +146,7 @@ export function DataTable({ columns, data }) {
 
               <h1 className="text-3xl font-bold my-4">
                 {" "}
-                العروضات والخصومات <span>(28)</span>
+                الرموز <span>(28)</span>
               </h1>
             </div>
           </div>

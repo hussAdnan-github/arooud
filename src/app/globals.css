@@ -408,7 +408,19 @@ input:focus {
   right: -30px;
   top: 20%;
 }
+ 
+.DialogContent::-webkit-scrollbar{
+  width: 8px;
+}
+.info-scroll::-webkit-scrollbar {
+  width: 3px;
+  height: 4px; 
+}
+.info-scroll::-webkit-scrollbar-track,.DialogContent::-webkit-scrollbar-track {
+  background-color: white; /* Color of the scroll thumb */
+}
+.info-scroll::-webkit-scrollbar-thumb ,.DialogContent::-webkit-scrollbar-thumb{
+  background-color: #D3DBEB; /* Color of the scroll thumb on hover */
+  border-radius: 6px; /* Rounded corners of the scroll thumb */
 
-.wrapper_img{
-    
 }

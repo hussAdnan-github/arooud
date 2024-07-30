@@ -6,16 +6,16 @@ import { FaRegEyeSlash } from "react-icons/fa";
 export default function Password() {
   const [showPassword, setShowPassword] = useState(true);
   return (
-    <div className="mb-4 flex items-center">
-      <div>
+    <div className="mb-4 flex items-center relative">
+      <div className="absolute left-4">
         {showPassword ? (
           <FaRegEyeSlash
-            className="text-3xl cursor-pointer"
+            className="text-3xl cursor-pointer text-[#7D8592]"
             onClick={() => setShowPassword(false)}
           />
         ) : (
           <FaRegEye
-            className="text-3xl cursor-pointer"
+            className="text-3xl cursor-pointer text-[#7D8592]"
             onClick={() => setShowPassword(true)}
           />
         )}

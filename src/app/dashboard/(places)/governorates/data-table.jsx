@@ -126,13 +126,26 @@ export function DataTable({ columns, data }) {
                       <BiEdit className="text-2xl" />
                       <FaPlus className="text-xl" />
 
-                      <input
-                        type="text"
-                        id="first_name"
-                        className="bg-gray-50 border w-60 border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
-                        placeholder="حسيننن"
-                        required
-                      />
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 
@@ -184,6 +197,7 @@ export function DataTable({ columns, data }) {
               </DialogContent>
             </Dialog>
           </div>
+          
           <div>
             <div className="text-end my-2">
               <ButtonBack />

@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
@@ -47,6 +47,8 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
+import { BiEdit } from "react-icons/bi";
+import { TiPlus } from "react-icons/ti";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -92,7 +94,7 @@ export function DataTable({ columns, data }) {
                   إضافة محل تجاري
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] h-[600px] overflow-scroll bg-white">
+              <DialogContent className="sm:max-w-[570px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة محل تجاري</DialogTitle>
                 </DialogHeader>
@@ -125,7 +127,7 @@ export function DataTable({ columns, data }) {
                       required
                     ></textarea>
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -147,27 +149,74 @@ export function DataTable({ columns, data }) {
                       type="file"
                     />
                   </div>
-                  <div className="mt-6">
+
+                  <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      حالة القسم
+                      مالك المتجر{" "}
                     </label>
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
 
-                    <Select>
-                      <SelectTrigger className="w-full   border-gray-300 ">
-                        <SelectValue placeholder="Select a fruit" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white ">
-                        <SelectGroup>
-                          <SelectLabel>قيد الأنشــاء</SelectLabel>
-                          <SelectItem value="apple">انتظاار</SelectItem>
-                          <SelectItem value="banana">منشــا</SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
+                    
+                  <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      مجالات المتحر الإلكتروني{" "}
+                    </label>
+                    <div className="grid grid-cols-4 " style={{direction:'rtl'}}>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">الكتروتيات</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">مواد غذائية</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">ادوات تجميل</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                      <TiPlus className="text-xl"/>
+                      </div>
+                    </div>
+                  </div>
+           
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -183,7 +232,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -238,6 +287,40 @@ export function DataTable({ columns, data }) {
                       placeholder="youremail@gmail.com"
                       required
                     />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      المدينة{" "}
+                    </label>
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
+
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                   <div className="mb-4">
                     <label

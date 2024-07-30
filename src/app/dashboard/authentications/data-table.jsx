@@ -192,7 +192,7 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
             <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+              <h1 className="text-3xl font-bold my-4">(1215) المجموعات</h1>
             </div>
           </div>
         </div>

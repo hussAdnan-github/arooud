@@ -3,16 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../../public/img/logo.png";
 import { FaRegUserCircle, FaUserEdit } from "react-icons/fa";
-import { RiDiscountPercentFill, RiH1 } from "react-icons/ri";
+import { RiDiscountPercentFill } from "react-icons/ri";
 import { FaFolderPlus } from "react-icons/fa";
-import { BsShieldFill } from "react-icons/bs";
+
 import { GoPasskeyFill } from "react-icons/go";
-import React, { useState } from "react";
-import SideBarItem from "@/components/SideBarItem";
+
 import { FaBuffer } from "react-icons/fa";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SidbarItem from "./SidbarItem";
-import { TbLogin, TbWorldUpload } from "react-icons/tb";
+import { TbWorldUpload } from "react-icons/tb";
 import { AiTwotoneShop } from "react-icons/ai";
 import { RxEnter } from "react-icons/rx";
 import { FaShield } from "react-icons/fa6";
@@ -28,9 +27,7 @@ import { BiSolidOffer } from "react-icons/bi";
 import { RiCoupon2Line } from "react-icons/ri";
 
 export default function SideBar() {
-  const titleSidebar =[
-
-  ]
+  const titleSidebar = [];
   const account = [
     {
       id: 1,
@@ -44,12 +41,7 @@ export default function SideBar() {
       icon: <TbWorldUpload className="ms-4" />,
       url: "/dashboard/website",
     },
-    {
-      id: 3,
-      name: "المواقع العالمية",
-      icon: <TbWorldWww className="ms-4" />,
-      url: "",
-    },
+
     {
       id: 4,
       name: "محلات تجارية",
@@ -58,22 +50,85 @@ export default function SideBar() {
     },
   ];
   const offer = [
-    { id: 1, name: "أنوع العملة", icon: <BsCurrencyExchange  className="ms-4" /> , url:"/dashboard/currencies"},
-    { id: 2, name: "العروضات والخصومات", icon: <BiSolidOffer  className="ms-4" /> , url:"/dashboard/discounts"},
-    { id: 3, name: "القسائم", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/coupons"},
-    { id: 4, name: "القسائم المحلية", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/couponsLocal"},
-    { id: 5, name: "الكوبونات العالمية", icon: <RiCoupon2Line   className="ms-4" /> , url:"/dashboard/couponsGlobal"},
- 
+    {
+      id: 1,
+      name: "أنوع العملة",
+      icon: <BsCurrencyExchange className="ms-4" />,
+      url: "/dashboard/currencies",
+    },
+    {
+      id: 2,
+      name: "العروضات والخصومات",
+      icon: <BiSolidOffer className="ms-4" />,
+      url: "/dashboard/discounts",
+    },
+    {
+      id: 3,
+      name: "القسائم",
+      icon: <RiCoupon2Line className="ms-4" />,
+      url: "/dashboard/coupons",
+    },
+    {
+      id: 4,
+      name: "القسائم المحلية",
+      icon: <RiCoupon2Line className="ms-4" />,
+      url: "/dashboard/couponsLocal",
+    },
+    {
+      id: 5,
+      name: "الكوبونات العالمية",
+      icon: <RiCoupon2Line className="ms-4" />,
+      url: "/dashboard/couponsGlobal",
+    },
   ];
   const place = [
-    { id: 1, name: "الاعلانات", icon: <HiSpeakerphone className="ms-4"/>, url: "/dashboard/advertisements"},
-    { id: 2, name: "البلدان", icon: <IoLocationSharp className="ms-4"/>, url: "/dashboard/countries" },
-    { id: 3, name: "المحافظات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/governorates" },
-    { id: 4, name: "المديريات", icon: <IoLocationSharp className="ms-4"/>, url:"/dashboard/directorates" },
-    { id: 5, name: "من نحن", icon: <BsFillExclamationCircleFill className="ms-4"/>, url:"/dashboard/about" },
+    {
+      id: 1,
+      name: "الاعلانات",
+      icon: <HiSpeakerphone className="ms-4" />,
+      url: "/dashboard/advertisements",
+    },
+    {
+      id: 2,
+      name: "البلدان",
+      icon: <IoLocationSharp className="ms-4" />,
+      url: "/dashboard/countries",
+    },
+    {
+      id: 3,
+      name: "المحافظات",
+      icon: <IoLocationSharp className="ms-4" />,
+      url: "/dashboard/governorates",
+    },
+    {
+      id: 4,
+      name: "المديريات",
+      icon: <IoLocationSharp className="ms-4" />,
+      url: "/dashboard/directorates",
+    },
+    {
+      id: 5,
+      name: "من نحن",
+      icon: <BsFillExclamationCircleFill className="ms-4" />,
+      url: "/dashboard/about",
+    },
   ];
-  const auth = [{ id: 1, name: "المجموعات", icon: <FaCheckToSlot className="ms-4"/> ,url:'/dashboard/authentications'}];
-  const keys = [{ id: 1, name: "الرموز", icon: <FaKey className="ms-4"/> ,url:'/dashboard/symbols'}];
+  const auth = [
+    {
+      id: 1,
+      name: "المجموعات",
+      icon: <FaCheckToSlot className="ms-4" />,
+      url: "/dashboard/authentications",
+    },
+  ];
+  const keys = [
+    {
+      id: 1,
+      name: "الرموز",
+      icon: <FaKey className="ms-4" />,
+      url: "/dashboard/symbols",
+    },
+  ];
 
   return (
     <>
@@ -110,46 +165,43 @@ export default function SideBar() {
                     </Link>
                   </TabsTrigger>
                   <TabsTrigger value="offer" className="w-full">
-                   
-                      <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                        <RiDiscountPercentFill className="ms-6 text-gray-400 text-[16px] " />
+                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
+                      <RiDiscountPercentFill className="ms-6 text-gray-400 text-[16px] " />
 
-                        <span className="ml-2 text-[16px] font-bold text-gray-400">
+                      <span className="ml-2 text-[16px] font-bold text-gray-400">
                         العروض
-                        </span>
-                      </div>
-                   
+                      </span>
+                    </div>
                   </TabsTrigger>
                   <TabsTrigger value="place" className="w-full">
-                      <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                        <FaFolderPlus className="ms-6 text-gray-400 text-[16px] " />
+                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
+                      <FaFolderPlus className="ms-6 text-gray-400 text-[16px] " />
 
-                        <span className="ml-2 text-[16px] font-bold text-gray-400">
+                      <span className="ml-2 text-[16px] font-bold text-gray-400">
                         الاماكن
-                        </span>
-                      </div>
+                      </span>
+                    </div>
                   </TabsTrigger>
-              
+
                   <TabsTrigger value="auth" className="w-full">
-                      <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                        <FaShield  className="ms-6 text-gray-400 text-[16px] " />
+                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
+                      <FaShield className="ms-6 text-gray-400 text-[16px] " />
 
-                        <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        المصادقة والتفويض 
-                        </span>
-                      </div>
+                      <span className="ml-2 text-[16px] font-bold text-gray-400">
+                        المصادقة والتفويض
+                      </span>
+                    </div>
                   </TabsTrigger>
-              
+
                   <TabsTrigger value="keys" className="w-full">
-                      <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                        <GoPasskeyFill  className="ms-6 text-gray-400 text-[16px] " />
+                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
+                      <GoPasskeyFill className="ms-6 text-gray-400 text-[16px] " />
 
-                        <span className="ml-2 text-[16px] font-bold text-gray-400">
+                      <span className="ml-2 text-[16px] font-bold text-gray-400">
                         رمز التفويض
-                        </span>
-                      </div>
+                      </span>
+                    </div>
                   </TabsTrigger>
-                  
                 </TabsList>
                 <TabsContent
                   value="account"
@@ -167,43 +219,36 @@ export default function SideBar() {
                   value="offer"
                   className=" relative right-56 bottom-20"
                 >
-                  <SidbarItem data={offer}/>
+                  <SidbarItem data={offer} />
                 </TabsContent>
                 <TabsContent
                   value="place"
                   className=" relative right-56 bottom-20"
                 >
-                  <SidbarItem data={place}/>
+                  <SidbarItem data={place} />
                 </TabsContent>
                 <TabsContent
                   value="keys"
                   className=" relative right-56 bottom-20"
                 >
-                  <SidbarItem data={keys}/>
+                  <SidbarItem data={keys} />
                 </TabsContent>
                 <TabsContent
                   value="auth"
                   className=" relative right-56 bottom-20"
                 >
-                  <SidbarItem data={auth}/>
+                  <SidbarItem data={auth} />
                 </TabsContent>
               </Tabs>
-
- 
-             
-             
             </div>
-            
           </div>
-       
+
           <div className="flex items-center gap-4 absolute bottom-8 cursor-pointer">
-              <h1 className="text-[16px] font-bold text-[#9796A1]">تسجيل خروج</h1>
-              <RxEnter className="text-2xl font-bold text-[#9796A1] rotate-180"/>
-             
-            </div> 
+            <h1 className="text-[16px] font-bold text-[#9796A1]">تسجيل خروج</h1>
+            <RxEnter className="text-2xl font-bold text-[#9796A1] rotate-180" />
+          </div>
         </div>
       </div>
     </>
   );
 }
- 

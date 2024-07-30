@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
@@ -50,6 +50,8 @@ import ButtonBack from "../../_components/ButtonBack";
 import ConfertPassword from "../../_components/ConfertPassword";
 import DatePicker from "../../_components/DatePicker";
 import { Clock8 } from "lucide-react";
+import { BiEdit } from "react-icons/bi";
+import Password from "@/components/Password";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -87,7 +89,7 @@ export function DataTable({ columns, data }) {
       <div className="w-[880px]">
         <div className="flex justify-between items-center">
           <div>
-            <Dialog className="gap-0">
+            <Dialog className="gap-0 ">
               <DialogTrigger asChild>
                 <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
                   {" "}
@@ -95,7 +97,7 @@ export function DataTable({ columns, data }) {
                   إضافة مستخدم
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[540px] h-[600px] overflow-scroll bg-white">
+              <DialogContent className="DialogContent sm:max-w-[540px] h-[600px]   overflow-scroll bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة مستخدم</DialogTitle>
                 </DialogHeader>
@@ -138,41 +140,36 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      البريد الاكتروني
+                      المدينة{" "}
                     </label>
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                      placeholder="youremail@gmail.com"
-                      required
-                    />
-                  </div>
-                  <div className="mt-6">
-                    <label
-                      for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
-                    >
-                      الصورة الشخصية{" "}
-                    </label>
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
 
-                    <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
-                    >
-                      {" "}
-                      <FaCircleChevronLeft className="text-gray-400 text-xl" />
-                      إضافة صورة الشخصية
-                    </label>
-                    <input
-                      className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                      id="file_input"
-                      type="file"
-                    />
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
-                  <h1 className="text-end text-[16px] font-medium	mt-8 mb-3">
-                    معلومات الحساب
-                  </h1>
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -234,6 +231,56 @@ export function DataTable({ columns, data }) {
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
                     >
+                      الصورة الشخصية{" "}
+                    </label>
+
+                    <label
+                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      for="file_input"
+                    >
+                      {" "}
+                      <FaCircleChevronLeft className="text-gray-400 text-xl" />
+                      إضافة صورة الشخصية
+                    </label>
+                    <input
+                      className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                      id="file_input"
+                      type="file"
+                    />
+                  </div>
+                  <h1 className="text-end text-[16px] font-medium	mt-8 mb-3">
+                    معلومات الحساب
+                  </h1>
+
+                  <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      اسم المستخدم
+                    </label>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                      placeholder="youremail@gmail.com"
+                      required
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      كلمة المرور{" "}
+                    </label>
+                    <Password />
+                  </div>
+                  <div className="mt-6">
+                    <label
+                      for="first_name"
+                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                    >
                       نوع المستخدم
                     </label>
 
@@ -259,9 +306,9 @@ export function DataTable({ columns, data }) {
                     </Select>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between gap-4">
+                  <div className="mb-4 flex items-center justify-between gap-4">
                     <div className="w-full">
-                    <label
+                      <label
                         for="first_name"
                         className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                       >
@@ -276,16 +323,48 @@ export function DataTable({ columns, data }) {
                       >
                         وقت الانضمام{" "}
                       </label>
-                   <div>
-                   <input
-                        type="text"
-                        id="first_name"
-                        className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                        placeholder="حسيننن"
-                        required
-                      />
-                      <Clock8 />
-                   </div>
+                      <div className="relative flex items-center">
+                        <input
+                          type="text"
+                          id="first_name"
+                          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                          placeholder="حسيننن"
+                          required
+                        />
+                        <div className="absolute left-4 text-[#858D97] text-xl">
+                          <Clock8 />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-4 ">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                    >
+                      صلاحيات المستخدم
+                    </label>
+                    <div className="border rounded-lg info-scroll overflow-y-scroll h-52">
+                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                    <h1 className="text-sm   px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                    <h1 className="text-sm px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                    <h1 className="text-sm px-2 py-3">
+                      يمكن اضافة مستخدم
+                      </h1>
+                  
                     </div>
                   </div>
                   <div className="checkbox_user mt-4">

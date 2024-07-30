@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
@@ -47,6 +47,9 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
+import { BiEdit } from "react-icons/bi";
+import DatePicker from "../../_components/DatePicker";
+import { Clock8 } from "lucide-react";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -100,7 +103,7 @@ export function DataTable({ columns, data }) {
                   معلومات شخصية
                 </h1>
                 <form className="w-full text-end">
-                  <div className="mt-4">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
@@ -115,7 +118,7 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  <div className="mt-4">
+                  <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
                       نبذة عن العرض 
                     </label>
@@ -127,7 +130,7 @@ export function DataTable({ columns, data }) {
                       required
                     ></textarea>
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -149,160 +152,216 @@ export function DataTable({ columns, data }) {
                       type="file"
                     />
                   </div>
-
-                  {/* <div className="mb-4">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      الاسم الأخير{" "}
+                      الموقع الالكتوني{" "}
                     </label>
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                      placeholder="حسيننن"
-                      required
-                    />
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
+
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                   <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      البريد الاكتروني
+                      المحل التجاري{" "}
                     </label>
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                      placeholder="youremail@gmail.com"
-                      required
-                    />
-                  </div>
-                  <div className="mt-6">
-                    <label
-                      for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
-                    >
-                      الصورة الشخصية{" "}
-                    </label>
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
 
-                    <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
-                    >
-                      {" "}
-                      <FaCircleChevronLeft className="text-gray-400 text-xl" />
-                      إضافة صورة الشخصية
-                    </label>
-                    <input
-                      className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                      id="file_input"
-                      type="file"
-                    />
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
-                  <h1 className="text-end text-[16px] font-medium	mt-8 mb-3">
-                    معلومات الحساب
-                  </h1>
                   <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      البريد الاكتروني
+                      القسم{" "}
                     </label>
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                      placeholder="youremail@gmail.com"
-                      required
-                    />
+                    <div className="flex items-center gap-5 justify-end">
+                      <FaRegEye className="text-2xl text-gray-500" />
+                      <BiEdit className="text-2xl" />
+                      <FaPlus className="text-xl" />
+
+                      <Select>
+                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
+                          <SelectValue placeholder="" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white ">
+                          <SelectGroup>
+                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                            <SelectItem className=" text-[#9796A1] text-end">
+                              قيد الانشاء
+                            </SelectItem>
+
+                            <SelectItem
+                              className=" text-[#9796A1] text-end"
+                              value="apple"
+                            >
+                              انتظاار
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
-                  <div className="mt-6">
+
+                  <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      نوع المستخدم
+                      حالة العرض{" "}
                     </label>
-
                     <Select>
-                      <SelectTrigger className="w-full   border-gray-300 ">
-                        <SelectValue
-                          placeholder="عميل"
-                          className="placeholder:text-gray-400 text-gray-400  "
-                        />
+                      <SelectTrigger className="w-full border-gray-300 text-[#9796A1]">
+                        <SelectValue placeholder="" />
                       </SelectTrigger>
                       <SelectContent className="bg-white ">
                         <SelectGroup>
-                          <SelectLabel>قيد الأنشــاء</SelectLabel>
-                          <SelectItem value="apple">انتظاار</SelectItem>
-                          <SelectItem value="banana">منشــا</SelectItem>
+                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
+                          <SelectItem className=" text-[#9796A1] text-end">
+                            قيد الانشاء
+                          </SelectItem>
+
+                          <SelectItem
+                            className=" text-[#9796A1] text-end"
+                            value="apple"
+                          >
+                            انتظاار
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="checkbox_user mt-4">
-                    <div className="mt-2">
-                      <div className=" flex  items-start  justify-end">
-                        <div className="flex flex-col">
-                          <label htmlFor="" className=" font-bold">
-                            حالة المستخدم الفائق{" "}
-                          </label>
-                          <h1 className="text-xs text-gray-400">
-                            يقضي بأن هذا المستخدم يمتلك كافة الصلاحيات دون
-                            الحاجة لمنحها له تصريحاً
-                          </h1>
-                        </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-4">
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        تاريخ الانضمام{" "}
+                      </label>
+                      <DatePicker />
+                    </div>
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        وقت الانضمام{" "}
+                      </label>
+                      <div className="relative flex items-center">
                         <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          type="text"
+                          id="first_name"
+                          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                          placeholder="حسيننن"
+                          required
                         />
+                        <div className="absolute left-4 text-[#858D97] text-xl">
+                          <Clock8 />
+                        </div>
                       </div>
                     </div>
-                    <div className="mt-2">
-                      <div className=" flex  items-start  justify-end">
-                        <div className="flex flex-col">
-                          <label htmlFor="" className=" font-bold">
-                            حالة الطاقم{" "}
-                          </label>
-                          <h1 className="text-xs text-gray-400">
-                            يحدد ما إذا كان يمكن للمستخدم الدخول إلى موقع
-                            الإدارة هذا
-                          </h1>
-                        </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between gap-4">
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        السعر قبل{" "}
+                      </label>
+                      <DatePicker />
+                    </div>
+                    <div className="w-full">
+                      <label
+                        for="first_name"
+                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      >
+                        السعر بغد{" "}
+                      </label>
+                      <div className="relative flex items-center">
                         <input
-                          id="default-checkbox"
-                          type="checkbox"
-                          value=""
-                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          type="text"
+                          id="first_name"
+                          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
+                          placeholder="حسيننن"
+                          required
                         />
+                        <div className="absolute left-4 text-[#858D97] text-xl">
+                          <Clock8 />
+                        </div>
                       </div>
                     </div>
-                    <div className="mt-2">
-                      <div className=" flex  items-start  justify-end">
-                        <div className="flex flex-col">
-                          <label htmlFor="" className=" font-bold">
-                            نشط
-                          </label>
-                          <h1 className="text-xs text-gray-400">
-                            يحدد ما إذا كان المستخدم سيُعامل على أنّه نشط. أزل
-                            تحديد هذا الحقل بدلاً من حذف الحسابات
-                          </h1>
-                        </div>
-                        <input
-                          id="default-checkbox"
+                  </div>
+
+                  <div className="mt-8">
+                    <div className="flex justify-end w-full text-center gap-4">
+                    <label htmlFor="">
+                    هل العرض مميز
+                    </label>
+                  <input
                           type="checkbox"
-                          value=""
-                          className="accent-primaryColo mt-1 me-2 w-6 h-6 ms-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          id="first_name"
+                          className="w-[16px]"
+                          placeholder="حسيننن"
+                          required
                         />
-                      </div>
                     </div>
-                  </div> */}
+            
+                  </div>
                 </form>
 
                 <DialogFooter>

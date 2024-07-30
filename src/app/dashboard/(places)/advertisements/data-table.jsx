@@ -20,7 +20,7 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
+ 
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -48,6 +48,7 @@ import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 import DatePicker from "../../_components/DatePicker";
+import { Clock8 } from "lucide-react";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -93,7 +94,7 @@ export function DataTable({ columns, data }) {
                   إضافة إعلان
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-white">
+              <DialogContent className="sm:max-w-[425px] h-full bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة إعلان</DialogTitle>
                 </DialogHeader>
@@ -176,7 +177,7 @@ export function DataTable({ columns, data }) {
                       >
                         وقت انتهاء القسية{" "}
                       </label>
-                      <div>
+                      <div className="relative flex items-center">
                         <input
                           type="text"
                           id="first_name"
@@ -184,7 +185,9 @@ export function DataTable({ columns, data }) {
                           placeholder="حسيننن"
                           required
                         />
-                        {/* <Clock8 /> */}
+                     <div className=" absolute left-4">
+                     <Clock8 className="text-[#858D97]"/>
+                     </div>
                       </div>
                     </div>
                   </div>
@@ -233,31 +236,13 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+              <h1 className="text-3xl font-bold my-4">(1215) الاعلانات</h1>
             </div>
           </div>
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2 ">
-            {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-            {/* <TableBody className="bg-blue-700 rounded-full"> */}
+            
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
