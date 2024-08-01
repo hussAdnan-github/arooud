@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import phone from "../../public/img/phone.svg";
-import { MdOutlineaDateRange, MdOutlineDateRange } from "react-icons/md";
+import {   MdOutlineDateRange } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa";
 import cardSADcopons from "../../public/img/cardSADcopons.svg";

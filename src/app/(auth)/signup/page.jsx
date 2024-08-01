@@ -1,5 +1,4 @@
 import ActiveButtonUser from "@/components/ActiveButtonUser";
-import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import login from "../../../../public/img/login.png";
 import Image from "next/image";

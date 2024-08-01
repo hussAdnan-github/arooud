@@ -22,7 +22,7 @@
 
 
 async function getData(){
-    console.log(img)
+ 
     return [
  
         {
@@ -33,7 +33,7 @@ async function getData(){
           price: '1000.00',
           number_users: '3000.00',
           type:'ري',
-         image: img,
+        //  image: img,
         },
         
      
@@ -44,7 +44,7 @@ async function getData(){
       ]
   }
 
-import img from '../../../../../public/dashboard/person.svg'
+// import img from '../../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/(offers)/coupons/data-table"
 import { columns } from "./columns"
 export default async function Page() {

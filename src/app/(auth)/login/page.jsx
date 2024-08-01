@@ -1,11 +1,9 @@
 import ActiveButtonUser from "@/components/ActiveButtonUser";
-import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import login from "../../../../public/img/login.png";
 import facebook from "../../../../public/img/facebook.png";
 import google from "../../../../public/img/google.png";
 import Image from "next/image";
-import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
 import BtnBack from "@/components/BtnBack";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";

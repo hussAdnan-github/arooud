@@ -5,8 +5,7 @@ import mainpartent from "../../../public/img/mainpartent.svg";
 import CADpatents from "../../../public/img/CADpatents.svg";
 import MainTitle from "@/components/MainTitle";
 import { IoLocationOutline } from "react-icons/io5";
-import SliderCategries from "@/components/SliderCategries";
-import SlideOffer from "@/components/SlideOffer";
+ 
 import HeaderText from "@/components/HeaderText";
 import { LuPhone } from "react-icons/lu";
 import SliderOfferDetailes from "@/components/SliderOfferDetailes";

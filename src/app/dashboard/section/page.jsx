@@ -1,28 +1,22 @@
 
 async function getData(){
-    console.log(img)
+ 
     return [
  
         {
         id: 1,
         state: "قيد الأنشاء",
         title: "الاكترونيات",
-        image: img,
+        // image: img,
         },
         
         {
         id: 1,
         state: "قيد الأنشاء",
         title: "الاكترونيات",
-        image: img,
+        // image: img,
         },
-        
-        {
-        id: 1,
-        state: "قيد الأنشاء",
-        title: "الاكترونيات",
-        image: img,
-        },
+       
         
         // ...
       ]
@@ -33,7 +27,7 @@ async function getData(){
   
 //   return <></>
 // }
-import img from '../../../../public/dashboard/person.svg'
+// import img from '../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/section/data-table"
 import { Payment, columns } from "./columns"
 export default async function Page() {

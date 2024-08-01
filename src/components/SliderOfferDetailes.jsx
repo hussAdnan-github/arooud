@@ -76,9 +76,9 @@ export default function SliderOfferDetailes() {
         </SwiperSlide>
       </Swiper>
       <div className="relative w-full -top-72">
-        <button className="absolute -left-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handlePrevClick}><FaAngleLeft />
+        <button className=" btn-prev absolute -left-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handlePrevClick}><FaAngleLeft />
         </button>
-        <button className="absolute  -right-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handleNextClick}><FaAngleRight />
+        <button className="btn-next absolute  -right-14 bg-[#D9D9D9] p-2 rounded-full" onClick={handleNextClick}><FaAngleRight />
         </button>
       </div>
     </div>

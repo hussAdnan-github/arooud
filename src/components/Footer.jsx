@@ -1,5 +1,5 @@
 import Image from "next/image";
-import footer from "../../public/img/footer.svg";
+ 
 import twitter from "../../public/img/twitter.svg";
 import facebook from "../../public/img/facebook.svg";
 import instgram from "../../public/img/instgram.svg";
@@ -10,17 +10,17 @@ export default function Footer() {
   return (
     <div className="footer z-20 w-full mt-28">
       <div className="footer_img">
-        <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4" style={{backgroundColor:'rgba(0, 0, 0, 0.188);'}}>
+        <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4 bg__fotter">
           <div className="flex flex-col items-center md:items-end gap-4">
             <p className="font-bold text-2xl text-white">تابعنا</p>
             <h1 className="text-xl text-white">
               يمكنك متابعتنا على منصات التواصل الإجتماعى
             </h1>
             <div className="flex items-center">
-              <div className="flex">
-                <Image src={facebook} width={45} alt="twintter imgae" />
-                <Image src={instgram} width={45} alt="twintter imgae" />
-                <Image src={twitter} width={45} alt="twintter imgae" />
+              <div className="flex gap-4 me-3">
+                <Image src={facebook} width={20} alt="facebook imgae " className="ease-out duration-300 cursor-pointer hover:scale-125 "/>
+                <Image src={instgram} width={20} alt="instgram imgae " className="ease-out duration-300 cursor-pointer hover:scale-125"/>
+                <Image src={twitter} width={20} alt="twintter imgae " className="ease-out duration-300 cursor-pointer hover:scale-125"/>
               </div>
               <h1
                 className="text-white text-xl"

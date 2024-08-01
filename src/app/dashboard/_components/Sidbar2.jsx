@@ -25,26 +25,68 @@ import { BsCurrencyExchange } from "react-icons/bs";
 import { TbWorldWww } from "react-icons/tb";
 import { BiSolidOffer } from "react-icons/bi";
 import { RiCoupon2Line } from "react-icons/ri";
+import { useState } from "react";
+import clsx from "clsx";
 
-export default function SideBar() {
+export default function SideBar2() {
+  const [activeSection, setactiveSection] = useState("الحسابات");
+
+  const titleSidebar = [
+    {
+      id: 1,
+      name: "الحسابات",
+      icon: <FaUserEdit />,
+      value: "account",
+    },
+    {
+      id: 2,
+      name: "الاقسام",
+      icon: <FaBuffer />,
+      value: "section",
+    },
+    {
+      id: 3,
+      name: "العروض",
+      icon: <RiDiscountPercentFill />,
+      value: "offer",
+    },
+    {
+      id: 4,
+      name: "الاماكن",
+      icon: <FaFolderPlus />,
+      value: "place",
+    },
+    {
+      id: 5,
+      name: "المصادقة والتفويض",
+      icon: <FaShield />,
+      value: "keys",
+    },
+    {
+      id: 6,
+      name: "رمز التفويض",
+      icon: <GoPasskeyFill />,
+      value: "auth",
+    },
+  ];
   const account = [
     {
       id: 1,
       name: "المستخدمين",
-      icon: <FaRegUserCircle className="ms-4" />,
-      url: "/dashboard/user",
+      icon: <FaRegUserCircle />,
+      url: "/dashboard/users",
     },
     {
       id: 2,
       name: " المواقع الالكترونية",
-      icon: <TbWorldUpload className="ms-4" />,
+      icon: <TbWorldUpload />,
       url: "/dashboard/website",
     },
 
     {
       id: 4,
       name: "محلات تجارية",
-      icon: <AiTwotoneShop className="ms-4" />,
+      icon: <AiTwotoneShop />,
       url: "/dashboard/shops",
     },
   ];
@@ -52,31 +94,31 @@ export default function SideBar() {
     {
       id: 1,
       name: "أنوع العملة",
-      icon: <BsCurrencyExchange className="ms-4" />,
+      icon: <BsCurrencyExchange />,
       url: "/dashboard/currencies",
     },
     {
       id: 2,
       name: "العروضات والخصومات",
-      icon: <BiSolidOffer className="ms-4" />,
+      icon: <BiSolidOffer />,
       url: "/dashboard/discounts",
     },
     {
       id: 3,
       name: "القسائم",
-      icon: <RiCoupon2Line className="ms-4" />,
+      icon: <RiCoupon2Line />,
       url: "/dashboard/coupons",
     },
     {
       id: 4,
       name: "القسائم المحلية",
-      icon: <RiCoupon2Line className="ms-4" />,
+      icon: <RiCoupon2Line />,
       url: "/dashboard/couponsLocal",
     },
     {
       id: 5,
       name: "الكوبونات العالمية",
-      icon: <RiCoupon2Line className="ms-4" />,
+      icon: <RiCoupon2Line />,
       url: "/dashboard/couponsGlobal",
     },
   ];
@@ -84,31 +126,31 @@ export default function SideBar() {
     {
       id: 1,
       name: "الاعلانات",
-      icon: <HiSpeakerphone className="ms-4" />,
+      icon: <HiSpeakerphone />,
       url: "/dashboard/advertisements",
     },
     {
       id: 2,
       name: "البلدان",
-      icon: <IoLocationSharp className="ms-4" />,
+      icon: <IoLocationSharp />,
       url: "/dashboard/countries",
     },
     {
       id: 3,
       name: "المحافظات",
-      icon: <IoLocationSharp className="ms-4" />,
+      icon: <IoLocationSharp />,
       url: "/dashboard/governorates",
     },
     {
       id: 4,
       name: "المديريات",
-      icon: <IoLocationSharp className="ms-4" />,
+      icon: <IoLocationSharp />,
       url: "/dashboard/directorates",
     },
     {
       id: 5,
       name: "من نحن",
-      icon: <BsFillExclamationCircleFill className="ms-4" />,
+      icon: <BsFillExclamationCircleFill />,
       url: "/dashboard/about",
     },
   ];
@@ -116,7 +158,7 @@ export default function SideBar() {
     {
       id: 1,
       name: "المجموعات",
-      icon: <FaCheckToSlot className="ms-4" />,
+      icon: <FaCheckToSlot />,
       url: "/dashboard/authentications",
     },
   ];
@@ -124,83 +166,72 @@ export default function SideBar() {
     {
       id: 1,
       name: "الرموز",
-      icon: <FaKey className="ms-4" />,
+      icon: <FaKey />,
       url: "/dashboard/symbols",
     },
   ];
 
   return (
     <>
-      <div className="sidebar " style={{ height: "952px" }}>
+      <div className="sidebar" style={{ height: "952px" }}>
         <div
-          className="flex flex-col items-center mt-4 me-2 relative  text-gray-700 bg-white drop-shadow-md rounded-2xl"
+          className="flex flex-col items-center mt-4 me-2 relative  text-gray-700 bg-white rounded-3xl drop-shadow-sm"
           style={{ height: "96%", width: "200px" }}
         >
-          <div className="flex items-center w-36 px-3 mt-6">
+          <div className="flex items-center w-40 px-3 ms-4 mt-10">
             <Image src={logo} alt="logo" />
           </div>
 
           <div className="w-full ">
-            <div className="flex flex-col items-center w-full mt-3  ">
+            <div className="flex flex-col items-center w-full mt-3   ">
               <Tabs defaultValue="account" className=" w-full">
                 <TabsList>
-                  <TabsTrigger value="account" className="w-full">
-                    <div className="cursor-pointer flex flex-row-reverse justify-start items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                      <FaUserEdit className="ms-4 text-gray-400 text-[16px] " />
-                      <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        الحسابات
-                      </span>
-                    </div>
-                  </TabsTrigger>
-                  <TabsTrigger value="section" className="w-full">
-                    <Link href={"/dashboard/section"} className="w-full">
-                      <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                        <FaBuffer className="ms-4 text-gray-400 text-[16px] " />
-
-                        <span className="ml-2 text-[16px] font-bold text-gray-400">
-                          الاقسام
-                        </span>
-                      </div>
-                    </Link>
-                  </TabsTrigger>
-                  <TabsTrigger value="offer" className="w-full">
-                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                      <RiDiscountPercentFill className="ms-6 text-gray-400 text-[16px] " />
-
-                      <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        العروض
-                      </span>
-                    </div>
-                  </TabsTrigger>
-                  <TabsTrigger value="place" className="w-full">
-                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                      <FaFolderPlus className="ms-6 text-gray-400 text-[16px] " />
-
-                      <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        الاماكن
-                      </span>
-                    </div>
-                  </TabsTrigger>
-
-                  <TabsTrigger value="auth" className="w-full">
-                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                      <FaShield className="ms-6 text-gray-400 text-[16px] " />
-
-                      <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        المصادقة والتفويض
-                      </span>
-                    </div>
-                  </TabsTrigger>
-
-                  <TabsTrigger value="keys" className="w-full">
-                    <div className="flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300">
-                      <GoPasskeyFill className="ms-6 text-gray-400 text-[16px] " />
-
-                      <span className="ml-2 text-[16px] font-bold text-gray-400">
-                        رمز التفويض
-                      </span>
-                    </div>
-                  </TabsTrigger>
+                  {titleSidebar.map((title) => (
+                    <TabsTrigger
+                    key={title.id}
+                      value={title.value}
+                      className="w-full pe-2"
+                      onClick={() => setactiveSection(title.name)}
+                    >
+                      {title.value == "section" ? (
+                        <Link href={"/dashboard/section"} className="w-full">
+                          <div
+                            className={clsx(
+                              "flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300",
+                              {
+                                "border-l-4 border-primaryColo bg-[#CFCFCF]":
+                                  activeSection == title.name,
+                              }
+                            )}
+                          >
+                            <div className="ms-6 text-gray-400 text-2xl ">
+                              {title.icon}
+                            </div>
+                            <span className="ml-2 text-[16px] font-bold text-gray-400">
+                              {title.name}
+                            </span>
+                          </div>
+                        </Link>
+                      ) : (
+                        <div
+                          className={clsx(
+                            "flex flex-row-reverse items-center w-full py-3 mt-2 rounded hover:bg-gray-300",
+                            {
+                              "border-l-4 border-primaryColo bg-[#CFCFCF]":
+                                activeSection == title.name,
+                            }
+                          )}
+                        >
+                          <div className="ms-6 text-gray-400 text-2xl ">
+                            {title.icon}
+                          </div>
+                          <span className="ml-2 text-[16px] font-bold text-gray-400">
+                            {title.name}
+                          </span>
+                        </div>
+                      )}
+                    </TabsTrigger>
+                  ))}
                 </TabsList>
                 <TabsContent
                   value="account"

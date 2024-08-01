@@ -81,12 +81,12 @@ export function DataTable({ columns, data }) {
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
       </div>
-      <div className="w-[880px]">
+      <div className="w-[870px]">
         <div className="flex justify-between items-center">
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة محافظة
@@ -202,7 +202,7 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+              <h1 className="text-3xl font-bold my-4">(1215) المحافضات</h1>
             </div>
           </div>
         </div>

@@ -8,7 +8,8 @@
 body {
   background-color: #ffffff;
 }
-h1 , p{
+h1,
+p {
   color: black;
 }
 @layer components {
@@ -54,17 +55,18 @@ h1 , p{
   align-items: center;
 }
 
-.footer_img ,.card_coupon {
+.footer_img,
+.card_coupon {
   background-image: url(../../public/img/footer.svg);
 }
-.footer_img{
+.footer_img {
   background-color: rgba(0, 0, 0, 0.288);
-
 }
-.card_coupon ,.card_coupon_two{
+.card_coupon,
+.card_coupon_two {
   background-image: url(../../public/img/couponsCode.jpg);
 }
- 
+
 .main_slider .swiper-button-prev {
   background-color: black;
   border-radius: 50%;
@@ -78,6 +80,7 @@ h1 , p{
   margin-left: 0px;
   right: 10px !important;
 }
+
 .main_slider .swiper-button-prev:after,
 .main_slider .swiper-button-next:after {
   font-size: 24px !important;
@@ -99,14 +102,21 @@ h1 , p{
   transition: 0.5;
 }
 
-/* @keyframes bounces1 {
+.main_slider .swiper-button-next:hover,
+.main_slider .swiper-button-prev:hover ,
+.btn-prev:hover ,
+.btn-next:hover{
+  animation: bounces 1s infinite;
+
+}
+@keyframes bounces {
   0%,
   100% {
-    transform: translateX(-10%);
+    transform: translateX(0%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
-    transform: translateX(0);
+    transform: translateX(-10);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
@@ -120,7 +130,7 @@ h1 , p{
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
-} */
+}
 
 .slider_categries .swiper-button-next {
   background-color: rgb(202, 202, 202);
@@ -251,33 +261,6 @@ input[type="file"] {
   font-size: 24px;
 }
 
-/* Style the select element */
-/* select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: transparent;
-  border: none;
-  border-left: solid rgb(228, 227, 227) 1px;
-  color: #333;
-  font-size: 16px;
-  padding: 8px 12px;
-  height: 100%;
-} */
-
-/* Style the select element's options */
-/* select option {
-  background-color: #fff;
-  color: #333;
-  text-align: end;
-} */
-
-/* Style the hovered option */
-/* select option:hover {
-  background-color: transparent none !important;
-  color: #333;
-}  */
-/* Add a custom arrow icon */
 .a:hover {
   background-color: red;
 }
@@ -408,19 +391,23 @@ input:focus {
   right: -30px;
   top: 20%;
 }
- 
-.DialogContent::-webkit-scrollbar{
+
+.DialogContent::-webkit-scrollbar {
   width: 8px;
 }
 .info-scroll::-webkit-scrollbar {
   width: 3px;
-  height: 4px; 
+  height: 4px;
 }
-.info-scroll::-webkit-scrollbar-track,.DialogContent::-webkit-scrollbar-track {
+.info-scroll::-webkit-scrollbar-track,
+.DialogContent::-webkit-scrollbar-track {
   background-color: white; /* Color of the scroll thumb */
 }
-.info-scroll::-webkit-scrollbar-thumb ,.DialogContent::-webkit-scrollbar-thumb{
-  background-color: #D3DBEB; /* Color of the scroll thumb on hover */
+.info-scroll::-webkit-scrollbar-thumb,
+.DialogContent::-webkit-scrollbar-thumb {
+  background-color: #d3dbeb; /* Color of the scroll thumb on hover */
   border-radius: 6px; /* Rounded corners of the scroll thumb */
-
+}
+.bg__fotter {
+  background-color: rgba(0, 0, 0, 0.188);
 }

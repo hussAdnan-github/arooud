@@ -1,28 +1,7 @@
-// import {
-//     Dialog,
-//     DialogContent,
-//     DialogDescription,
-//     DialogFooter,
-//     DialogHeader,
-//     DialogTitle,
-//     DialogTrigger,
-//   } from "@/components/ui/dialog"
-//   import {
-//     Select,
-//     SelectContent,
-//     SelectGroup,
-//     SelectItem,
-//     SelectLabel,
-//     SelectTrigger,
-//     SelectValue,
-//   } from "@/components/ui/select"
-//   import { Button } from "@/components/ui/button"
-// import { FaPlus } from "react-icons/fa"
-// import { FaCircleChevronLeft } from "react-icons/fa6"
-
+ 
 
 async function getData(){
-    console.log(img)
+ 
     return [
  
         {
@@ -33,7 +12,7 @@ async function getData(){
           post_price: '1000.00',
           pre_price: '3000.00',
           type:'ري',
-         image: img,
+        //  image: img,
         },
         
      
@@ -44,7 +23,7 @@ async function getData(){
       ]
   }
 
-import img from '../../../../../public/dashboard/person.svg'
+// import img from '../../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/(offers)/discounts/data-table"
 import { columns } from "./columns"
 export default async function Page() {

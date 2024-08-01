@@ -2,14 +2,12 @@ import ActiveButtonUser from "@/components/ActiveButtonUser";
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
 import { FaCircleChevronLeft } from "react-icons/fa6";
-import { FaChevronLeft } from "react-icons/fa";
 import Link from "next/link";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";

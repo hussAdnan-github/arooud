@@ -1,28 +1,6 @@
-// import {
-//     Dialog,
-//     DialogContent,
-//     DialogDescription,
-//     DialogFooter,
-//     DialogHeader,
-//     DialogTitle,
-//     DialogTrigger,
-//   } from "@/components/ui/dialog"
-//   import {
-//     Select,
-//     SelectContent,
-//     SelectGroup,
-//     SelectItem,
-//     SelectLabel,
-//     SelectTrigger,
-//     SelectValue,
-//   } from "@/components/ui/select"
-//   import { Button } from "@/components/ui/button"
-// import { FaPlus } from "react-icons/fa"
-// import { FaCircleChevronLeft } from "react-icons/fa6"
-
+ 
 async function getData() {
-  console.log(img);
-  return [
+   return [
     {
       id: 1,
       title: "شبام - حضرموت - اليمن",
@@ -30,7 +8,6 @@ async function getData() {
   ];
 }
 
-import img from "../../../../../public/dashboard/person.svg";
 import { DataTable } from "@/app/dashboard/(places)/directorates/data-table";
 import { columns } from "./columns";
 export default async function Page() {

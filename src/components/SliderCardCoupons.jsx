@@ -1,5 +1,4 @@
-'use client'
-import React, { useRef, useState } from 'react';
+ 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,7 +9,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
-import CardProduct from './CardProduct';
+ 
 import CardCoupons from './CardCoupons';
 import Link from 'next/link';
 

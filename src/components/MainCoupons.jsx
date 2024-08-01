@@ -1,14 +1,11 @@
 import Image from "next/image";
-import { MdOutlineDateRange } from "react-icons/md";
+
 import cardcouponsGray from "../../public/img/cardcouponsGray.svg";
 import Coupons from "../../public/img/Coupons.svg";
-import { FaRegStar } from "react-icons/fa";
-import { IoLocationOutline } from "react-icons/io5";
+
 import numcoupons from "../../public/img/numcoupons.svg";
-import cardSADcopons from "../../public/img/cardSADcopons.svg";
+
 import { IoTimerSharp } from "react-icons/io5";
-import ButtonRoundedSocendary from "./ButtonRoundedSocendary";
-import ButtonRounded from "./ButtonRoundedPrimary";
 
 export default function MainCoupons() {
   return (
@@ -37,7 +34,7 @@ export default function MainCoupons() {
               <div className="detials_coupons flex  px-4 py-1 items-center">
                 <div className="date_coupons me-20 text-end">
                   <h1 className="text-xs md:text-xl text-gray-400 me-14 mb-1">
-                  الكوبون صالح لغاية
+                    الكوبون صالح لغاية
                   </h1>
                   <div className="flex items-center gap-5">
                     <p className="text-gray-400 font-bold text-xs md:text-4xl">

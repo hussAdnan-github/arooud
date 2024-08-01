@@ -72,7 +72,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -81,17 +81,17 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10 bg-white drop-shadow-sm border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
       </div>
-      <div className="w-[880px]">
+      <div className="w-[870px]">
         <div className="flex justify-between items-center">
           <div>
             <Dialog className="gap-0 ">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة مستخدم
@@ -276,7 +276,7 @@ export function DataTable({ columns, data }) {
                     </label>
                     <Password />
                   </div>
-                  <div className="mt-6">
+                  <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
@@ -346,25 +346,18 @@ export function DataTable({ columns, data }) {
                       صلاحيات المستخدم
                     </label>
                     <div className="border rounded-lg info-scroll overflow-y-scroll h-52">
-                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
-                      يمكن اضافة مستخدم
+                      <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                        يمكن اضافة مستخدم
                       </h1>
-                    <h1 className="text-sm   px-2 py-3">
-                      يمكن اضافة مستخدم
+                      <h1 className="text-sm   px-2 py-3">يمكن اضافة مستخدم</h1>
+                      <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                        يمكن اضافة مستخدم
                       </h1>
-                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
-                      يمكن اضافة مستخدم
+                      <h1 className="text-sm px-2 py-3">يمكن اضافة مستخدم</h1>
+                      <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
+                        يمكن اضافة مستخدم
                       </h1>
-                    <h1 className="text-sm px-2 py-3">
-                      يمكن اضافة مستخدم
-                      </h1>
-                    <h1 className="text-sm bg-[#E9E9E940] px-2 py-3">
-                      يمكن اضافة مستخدم
-                      </h1>
-                    <h1 className="text-sm px-2 py-3">
-                      يمكن اضافة مستخدم
-                      </h1>
-                  
+                      <h1 className="text-sm px-2 py-3">يمكن اضافة مستخدم</h1>
                     </div>
                   </div>
                   <div className="checkbox_user mt-4">
@@ -449,35 +442,16 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+              <h1 className="text-3xl font-bold my-4">(1215) المستخدمين</h1>
             </div>
           </div>
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2">
-            {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-            {/* <TableBody className="bg-blue-700 rounded-full"> */}
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
+                  className="w-full flex justify-between h-[91px] bg-white drop-shadow-sm rounded-2xl items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -498,32 +472,14 @@ export function DataTable({ columns, data }) {
                 </div>
               </div>
             )}
-            {/* </TableBody> */}
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
-      <div className="flex items-start gap-4">
+
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

@@ -21,8 +21,115 @@
 // import { FaCircleChevronLeft } from "react-icons/fa6"
 
 async function getData() {
-  console.log(img);
   return [
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
+    {
+      id: 1,
+      title: "حضرموت - اليمن",
+    },
     {
       id: 1,
       title: "حضرموت - اليمن",
@@ -30,7 +137,6 @@ async function getData() {
   ];
 }
 
-import img from "../../../../../public/dashboard/person.svg";
 import { DataTable } from "@/app/dashboard/(places)/governorates/data-table";
 import { columns } from "./columns";
 export default async function Page() {

@@ -82,13 +82,13 @@ export default function SliderCategries() {
       </Swiper>
       <div className="relative w-full -top-28">
         <button
-          className="absolute -left-14 bg-[#D9D9D9] p-2 rounded-full"
+          className="btn-prev absolute -left-14 bg-[#D9D9D9] p-2 rounded-full"
           onClick={handlePrevClick}
         >
           <FaAngleLeft />
         </button>
         <button
-          className="absolute  -right-10 bg-[#D9D9D9] p-2 rounded-full"
+          className="btn-next absolute  -right-10 bg-[#D9D9D9] p-2 rounded-full"
           onClick={handleNextClick}
         >
           <FaAngleRight />

@@ -1,9 +1,8 @@
 import Image from "next/image";
 import logo from "../../../public/img/logo.png";
-import { FaChevronLeft } from "react-icons/fa";
+
 import Link from "next/link";
-import SearchBar from "@/components/SearchBar";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import login from "../../../public/img/login.png";
 import { FaAngleDoubleLeft } from "react-icons/fa";

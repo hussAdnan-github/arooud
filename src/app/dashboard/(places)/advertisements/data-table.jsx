@@ -3,13 +3,12 @@ import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -20,28 +19,16 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
- 
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -83,12 +70,12 @@ export function DataTable({ columns, data }) {
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
       </div>
-      <div className="w-[880px]">
+      <div className="w-[870px]">
         <div className="flex justify-between items-center">
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة إعلان
@@ -185,9 +172,9 @@ export function DataTable({ columns, data }) {
                           placeholder="حسيننن"
                           required
                         />
-                     <div className=" absolute left-4">
-                     <Clock8 className="text-[#858D97]"/>
-                     </div>
+                        <div className=" absolute left-4">
+                          <Clock8 className="text-[#858D97]" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -242,7 +229,6 @@ export function DataTable({ columns, data }) {
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2 ">
-            
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
@@ -267,28 +253,9 @@ export function DataTable({ columns, data }) {
                 </div>
               </div>
             )}
-            {/* </TableBody> */}
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
 
       <div className="flex items-start gap-4 absolute bottom-10 p-3 rounded-xl bg-white">
         <div>

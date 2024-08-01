@@ -22,7 +22,7 @@
 
 
 async function getData(){
-    console.log(img)
+    // console.log(img)/
     return [
  
         {
@@ -33,7 +33,7 @@ async function getData(){
           type: 'جوالات',
           location: 'المكلا',
           state:'نشط',
-         image: img,
+        //  image: img,
         },
         
      
@@ -44,7 +44,7 @@ async function getData(){
       ]
   }
 
-import img from '../../../../../public/dashboard/person.svg'
+// import img from '../../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/(accounts)/shops/data-table"
 import { columns } from "./columns"
 export default async function Page() {

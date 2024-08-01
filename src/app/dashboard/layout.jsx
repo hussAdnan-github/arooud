@@ -1,5 +1,6 @@
 import Password from "@/components/Password";
 import SideBar from "./_components/Sidbar";
+import SideBar2 from "./_components/Sidbar2";
 
 
 export const metadata = {
@@ -11,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     
     <div className=" flex flex-row-reverse bg-[#F7F7F7]">
-          <SideBar/>
+          <SideBar2/>
           {children}
         
     </div>

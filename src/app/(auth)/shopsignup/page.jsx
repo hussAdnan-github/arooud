@@ -1,15 +1,12 @@
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import NonActiveButtonUser from "@/components/NonActiveButtonUser";
-import ButtonRoundedSocendary from "@/components/ButtonRoundedSocendary";
-import { FaChevronLeft } from "react-icons/fa";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -50,15 +47,11 @@ export default function page() {
           />
           <form className="w-full md:w-[543px] text-end ">
             <div className="mb-4">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white "
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white ">
                 صورة الشعار
               </label>
 
-              <label
-                className="block mb-2 text-sm font-medium update_img text-[#9796A1]  dark:text-white"
-              >
+              <label className="block mb-2 text-sm font-medium update_img text-[#9796A1]  dark:text-white">
                 {" "}
                 <FaCircleChevronLeft className="text-[#9796A1] text-xl" />
                 إضافة صورة شعار المحل
@@ -73,9 +66,7 @@ export default function page() {
             <MainInput lable={"اسم المحل"} title={"صدى الرنين"} />
 
             <div className="mb-4">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 نبذة عن المحل
               </label>
               <textarea
@@ -88,9 +79,7 @@ export default function page() {
             </div>
             <MainInput lable={"اسـم المسجل"} title={"حسيننن"} />
             <div className="mb-4">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 مجال عمل المحل التجاري
               </label>
               <Select className="bg-white">
@@ -126,9 +115,7 @@ export default function page() {
             </div>
 
             <div className="mb-8 flex flex-col items-end ">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 البريد الإلكتروني{" "}
               </label>
               <input
@@ -141,9 +128,7 @@ export default function page() {
             </div>
 
             <div className="mb-4">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 رقم الهاتف
               </label>
               <input
@@ -156,9 +141,7 @@ export default function page() {
               />
             </div>
             <div className="mb-4">
-              <label
-                className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white"
-              >
+              <label className="font-normal  block mb-2 text-sm md:text-[16px] text-[#9796A1] me-4 dark:text-white">
                 المدينة
               </label>
               <Select className="bg-white">

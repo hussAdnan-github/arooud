@@ -22,7 +22,6 @@
 
 
 async function getData(){
-    console.log(img)
     return [
  
         {
@@ -37,7 +36,6 @@ async function getData(){
       ]
   }
 
-import img from '../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/authentications/data-table"
 import { columns } from "./columns"
 export default async function Page() {

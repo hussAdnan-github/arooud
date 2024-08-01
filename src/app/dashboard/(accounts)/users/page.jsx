@@ -1,63 +1,90 @@
-// import {
-//     Dialog,
-//     DialogContent,
-//     DialogDescription,
-//     DialogFooter,
-//     DialogHeader,
-//     DialogTitle,
-//     DialogTrigger,
-//   } from "@/components/ui/dialog"
-//   import {
-//     Select,
-//     SelectContent,
-//     SelectGroup,
-//     SelectItem,
-//     SelectLabel,
-//     SelectTrigger,
-//     SelectValue,
-//   } from "@/components/ui/select"
-//   import { Button } from "@/components/ui/button"
-// import { FaPlus } from "react-icons/fa"
-// import { FaCircleChevronLeft } from "react-icons/fa6"
+async function getData() {
+  console.log(img);
+  return [
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
 
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
 
-async function getData(){
-    console.log(img)
-    return [
- 
-        {
-        id: 1,
-          name:'احمد الكاف',
-          email:'evanyates@gmail.com',
-          phone: '+966507666777',
-          type: 'عميل',
-          location: 'المكلا',
-          state:'نشط',
-         image: img,
-        },
-        
-     
-        
- 
-        
-        // ...
-      ]
-  }
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
 
-import img from '../../../../../public/dashboard/person.svg'
-import { DataTable } from "@/app/dashboard/(accounts)/users/data-table"
-import { columns } from "./columns"
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
+
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
+
+    {
+      id: 1,
+      name: "احمد الكاف",
+      email: "evanyates@gmail.com",
+      phone: "+966507666777",
+      type: "عميل",
+      location: "المكلا",
+      state: "نشط",
+      image: img,
+    },
+
+    // ...
+  ];
+}
+
+import img from "../../../../../public/dashboard/person.svg";
+import { DataTable } from "@/app/dashboard/(accounts)/users/data-table";
+import { columns } from "./columns";
 export default async function Page() {
-    const data = await getData()
-  
-    return (
-      <div className="container mx-auto">
-        <DataTable columns={columns} data={data} />
-      </div>
-    )
-  }
-  
-    // Dialog
+  const data = await getData();
+
+  return (
+    <div className="container mx-auto">
+      <DataTable columns={columns} data={data} />
+    </div>
+  );
+}
+
+// Dialog
 //     <div>
 //               <Dialog className='gap-0'>
 //       <DialogTrigger asChild>
@@ -67,10 +94,9 @@ export default async function Page() {
 //       <DialogContent className="sm:max-w-[580px] bg-white">
 //         <DialogHeader>
 //           <DialogTitle>أضافة محل تجاري</DialogTitle>
-          
+
 //         </DialogHeader>
-  
-           
+
 //           <form className="w-full text-end mt-8">
 //   <div className="mb-4">
 //     <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">أسـم المحل التجاري</label>
@@ -93,24 +119,24 @@ export default async function Page() {
 //     <label for="first_name" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">مجالات المحل التجاري</label>
 //    <div className="grid grid-cols-4 gap-4">
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
 //    <div className="border border-gray-500 text-center rounded-lg px-1 py-1">
-//     <h1>الكتروتيات</h1>    
+//     <h1>الكتروتيات</h1>
 //     </div>
-//     </div>  
+//     </div>
 // </div>
 // {/* select */}
 // {/* <div className="mt-6">
@@ -131,13 +157,8 @@ export default async function Page() {
 
 // </div> */}
 
-
-
- 
 // </form>
-        
- 
-        
+
 //         <DialogFooter>
 //           <Button type="submit" className='bg-[#D3D3D3] text-white rounded-xl'>أضافة مع أضافة أخرى</Button>
 //           <Button type="submit" className='bg-primaryColo  text-white rounded-xl'>أضافة</Button>

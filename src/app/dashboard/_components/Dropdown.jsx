@@ -17,7 +17,7 @@ export default function Dropdown({ id }) {
       <div className="flex items-center justify-center">
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="w-24 md:w-48 px-0 md:px-4 py-1 md:py-3  md:text-sm leading-5 text-black font-normal md:font-bold bg-white transition duration-150 ease-in-out "
+            className="w-24 md:w-48 px-0 md:px-4 py-1 md:py-3  md:text-sm leading-5 text-black font-normal md:font-bold bg-white drop-shadow-sm transition duration-150 ease-in-out "
             asChild
           >
             <Button variant="outline" className="rounded-md border-0">

@@ -3,7 +3,7 @@ import card from "../../public/img/phone.svg";
 import iconCard from "../../public/img/iconCard.svg";
 import cardSAD from "../../public/img/cardSAD.svg";
 import { CiLocationOn } from "react-icons/ci";
-import Link from "next/link";
+ 
 
 export default function CardProduct() {
   return (

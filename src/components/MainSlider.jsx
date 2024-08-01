@@ -32,13 +32,13 @@ export default function MainSlider() {
             className="mySwiper main_slider"
           >
             <SwiperSlide>
-              <Image src={mainSlider} alt='Image Main Carsoule' />
+              <Image className="w-full" src={mainSlider} alt='Image Main Carsoule' />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={mainSlider} alt='Image Main Carsoule' />
+              <Image className="w-full" src={mainSlider} alt='Image Main Carsoule' />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={mainSlider} alt='Image Main Carsoule' />
+              <Image className="w-full" src={mainSlider} alt='Image Main Carsoule' />
             </SwiperSlide>
            
           </Swiper>

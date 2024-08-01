@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import HeaderLine from "@/components/HeaderLine";
 import HeaderText from "@/components/HeaderText";
 import MainSlider from "@/components/MainSlider";
@@ -13,21 +13,9 @@ import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
 import Partners from "@/components/Partners";
 import MainDropDown from "@/components/MainDropDown";
-import {   delay, motion } from "framer-motion";
-
-const fadeInnimation = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition:{
-      delay : 0.05
-    }
-  },
-};
+import { motion } from "framer-motion";
+import { fadIn } from "@/lib/frameMotion";
+ 
 export default function Home() {
   return (
     <div className="home" id="home">
@@ -43,9 +31,14 @@ export default function Home() {
         className="section_1 scroll-mt-32 bg-[#F4F4F4] pb-24 pt-10"
       >
         <div className="container mx-auto">
-          <div className="">
+          <motion.div
+          variants={fadIn('up',0.1)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once:false , amount:0.7}}
+          className="">
             <HeaderText titel={"أبرز العروض المحلية"} />
-          </div>
+          </motion.div>
 
           <div className="my-20 mt-14">
             <SliderCard />
@@ -65,7 +58,7 @@ export default function Home() {
           </div>
 
           <div className="mt-20">
-            <Image src={cashBack} alt="cashBack" />
+            <Image src={cashBack} alt="cashBack" className="w-full"/>
           </div>
 
           <div className="mt-24">
@@ -76,17 +69,9 @@ export default function Home() {
 
       <div className="section_2 bg-[#EDEEF2]">
         <div className="container mx-auto">
-          <motion.div
-            variants={fadeInnimation}
-            initial="initial"
-            whileInView="animate"
-            className="pt-10 "
-            viewport={{
-              once : true
-            }}
-          >
+          <div>
             <MainTitle title={"العروض والخصومات"} />
-          </motion.div>
+          </div>
           <div className="mt-20 flex items-center justify-end md:flex-row flex-col-reverse">
             <div className="flex mt-4 md:mt-0 ms-0 md:ms-80 md:flex-row flex-col-reverse ">
               <MainDropDown title={"المنطقة"} />
@@ -123,7 +108,7 @@ export default function Home() {
           </div>
 
           <div className="relative top-20  ">
-            <Image src={cashBack} alt="cashBack" />
+            <Image src={cashBack} alt="cashBack" className="w-full"/>
           </div>
         </div>
       </div>

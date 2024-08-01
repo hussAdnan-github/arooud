@@ -1,5 +1,4 @@
 "use client";
-import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
 import Image from "next/image";
 
 import logo from "../../../../public/img/logo.png";
