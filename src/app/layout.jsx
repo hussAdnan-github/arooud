@@ -1,11 +1,10 @@
- 
 import localfont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Provider from "./Provider";
-import Header from "@/components/Header/Header";
 
- 
+import Providers from "@/providers/Provider";
+import { QueryProvider } from "@/providers/QueryProvider";
+
 const fontLoacl = localfont({
   src: [
     {
@@ -24,10 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body style={fontLoacl.style} className={fontLoacl.variable}>
-        <Provider>
-          {children}
+        <Providers>
+          <QueryProvider>{children}</QueryProvider>
           <Footer />
-        </Provider>
+        </Providers>
       </body>
     </html>
   );

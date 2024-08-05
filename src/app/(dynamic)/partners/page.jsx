@@ -1,8 +1,8 @@
 // copy
 import Header from "@/components/Header/Header";
 import Image from "next/image";
-import mainpartent from "../../../public/img/mainpartent.svg";
-import CADpatents from "../../../public/img/CADpatents.svg";
+import mainpartent from "../../../../public/img/mainpartent.svg";
+import CADpatents from "../../../../public/img/CADpatents.svg";
 import MainTitle from "@/components/MainTitle";
 import { IoLocationOutline } from "react-icons/io5";
  

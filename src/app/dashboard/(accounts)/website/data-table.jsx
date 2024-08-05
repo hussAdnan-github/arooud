@@ -69,7 +69,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -78,7 +78,7 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10 bg-white drop-shadow-sm border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
@@ -88,15 +88,15 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo rounded-xl shadow-md shadow-red-300 hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
-                  إضافة محل تجاري
+                  إضافة موقع الالكتروني{" "}
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[570px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
-                  <DialogTitle>إضافة محل تجاري</DialogTitle>
+                  <DialogTitle>اضافة المتجر إلكتروني</DialogTitle>
                 </DialogHeader>
 
                 <form className="w-full text-end mt-8">
@@ -164,18 +164,13 @@ export function DataTable({ columns, data }) {
 
                       <Select>
                         <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
+                          <SelectValue placeholder="انتظاار" />
                         </SelectTrigger>
-                        <SelectContent className="bg-white ">
-                          <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
+                        <SelectContent className="bg-white text-end">
+                          <SelectGroup className="text-end">
                             <SelectItem
                               className=" text-[#9796A1] text-end"
-                              value="apple"
+                              value="انتظاار"
                             >
                               انتظاار
                             </SelectItem>
@@ -184,7 +179,7 @@ export function DataTable({ columns, data }) {
                       </Select>
                     </div>
                   </div>
-                    
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -192,7 +187,10 @@ export function DataTable({ columns, data }) {
                     >
                       مجالات المتحر الإلكتروني{" "}
                     </label>
-                    <div className="grid grid-cols-4 " style={{direction:'rtl'}}>
+                    <div
+                      className="grid grid-cols-4 "
+                      style={{ direction: "rtl" }}
+                    >
                       <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
                         <h1 className="text-[#7D7E80]">الكتروتيات</h1>
                       </div>
@@ -212,11 +210,11 @@ export function DataTable({ columns, data }) {
                         <h1 className="text-[#7D7E80]">جوالات</h1>
                       </div>
                       <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                      <TiPlus className="text-xl"/>
+                        <TiPlus className="text-xl" />
                       </div>
                     </div>
                   </div>
-           
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -302,14 +300,11 @@ export function DataTable({ columns, data }) {
 
                       <Select>
                         <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
+                          <SelectValue placeholder="المكلا" />
                         </SelectTrigger>
                         <SelectContent className="bg-white ">
                           <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
+                           
 
                             <SelectItem
                               className=" text-[#9796A1] text-end"
@@ -375,7 +370,10 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) المواقع الالكترونية </h1>
+              <h1 className="text-3xl font-bold my-4">
+                <span> (1215) </span>
+                المواقع الالكترونية{" "}
+              </h1>
             </div>
           </div>
         </div>
@@ -403,7 +401,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
+                  className="w-full flex justify-between h-[91px] drop-shadow-sm bg-white rounded-2xl items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -446,10 +444,10 @@ export function DataTable({ columns, data }) {
           Next
         </Button>
       </div> */}
-      <div className="flex items-start gap-4">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

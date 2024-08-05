@@ -13,7 +13,7 @@ export default function CardCoupons() {
           <Image
             className=" object-fill hover:scale-125 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300 rounded-t-lg w-full h-full  "
             src={Coupons}
-            alt="image Coupons"
+            alt="صورة الكوبون"
           />
         </div>
         <div className="flex flex-col-reverse md:flex-row mt-2 w-full md:px-2 px-1 ps-2 md:ps-8 gap-0 md:gap-10 card_bodycoupons">
@@ -22,7 +22,7 @@ export default function CardCoupons() {
               <Image
                 className=""
                 src={cardSADcopons}
-                alt="cardSADcopons"
+                alt="شعار الكوبون"
                 width={92}
                 height={64}
               />
@@ -64,7 +64,7 @@ export default function CardCoupons() {
                   <span>
                     <Image
                       src={numcoupons}
-                      alt="numcoupons"
+                      alt="عدد الاستخدام"
                       width={16}
                       height={16}
                     />

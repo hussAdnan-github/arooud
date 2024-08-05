@@ -25,7 +25,7 @@ export default function page() {
 
     <div className="email_user flex justify-between items-center md:items-start mt-10 flex-col md:flex-row">
       <div className="img_ligin_user w-full flex justify-center">
-         <Image src={login} className="w-4/5 md:w-3/4"/>
+         <Image src={login} className="w-4/5 md:w-3/4" alt="صورة التسجيل"/>
       </div>
 
       <div className="form_user_login text-end mt-10 flex flex-col w-4/5">

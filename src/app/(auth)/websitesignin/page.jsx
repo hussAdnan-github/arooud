@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import logo from "../../../../public/img/logo.png";
 import Link from "next/link";
@@ -19,7 +18,7 @@ export default function page() {
           </div>
         </div>
         <Link href={"/"} className="img_logo">
-          <Image src={logo} alt="logo" className="w-28" />
+          <Image src={logo} alt="شعار عروض" className="w-28" />
         </Link>
       </div>
 

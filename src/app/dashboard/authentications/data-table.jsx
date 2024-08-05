@@ -67,7 +67,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -76,7 +76,7 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10 drop-shadow-sm bg-white border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
@@ -86,7 +86,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo rounded-xl shadow-md shadow-red-300 hover:bg-primaryColo text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة المجموعات
@@ -120,10 +120,14 @@ export function DataTable({ columns, data }) {
                     <h1 className="text-[16px]">الصلاحيات</h1>
                   </div>
                   <div className="auth mt-4">
-                    <h1 className="text-sm text-[#9796A1] mb-4">صلاحيات المستخدم</h1>
+                    <h1 className="text-sm text-[#9796A1] mb-4">
+                      صلاحيات المستخدم
+                    </h1>
                     <div className="auth_check flex justify-between">
                       <div className="auth_show flex">
-                        <label htmlFor="" className="text-sm font-medium me-2">عرض </label>
+                        <label htmlFor="" className="text-sm font-medium me-2">
+                          عرض{" "}
+                        </label>
 
                         <input
                           id="default-checkbox"
@@ -132,9 +136,11 @@ export function DataTable({ columns, data }) {
                           className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                   
+
                       <div className="auth_show flex">
-                        <label htmlFor="" className="text-sm font-medium me-2">حذف  </label>
+                        <label htmlFor="" className="text-sm font-medium me-2">
+                          حذف{" "}
+                        </label>
 
                         <input
                           id="default-checkbox"
@@ -143,9 +149,11 @@ export function DataTable({ columns, data }) {
                           className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                   
+
                       <div className="auth_show flex">
-                        <label htmlFor="" className="text-sm font-medium me-2">تعديل  </label>
+                        <label htmlFor="" className="text-sm font-medium me-2">
+                          تعديل{" "}
+                        </label>
 
                         <input
                           id="default-checkbox"
@@ -154,9 +162,11 @@ export function DataTable({ columns, data }) {
                           className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                   
+
                       <div className="auth_show flex">
-                        <label htmlFor="" className="text-sm font-medium me-2">اضافة  </label>
+                        <label htmlFor="" className="text-sm font-medium me-2">
+                          اضافة{" "}
+                        </label>
 
                         <input
                           id="default-checkbox"
@@ -165,10 +175,8 @@ export function DataTable({ columns, data }) {
                           className="accent-primaryColo mt-0 me-2 w-5 h-5 t ext-blue-600 bg-gray-100 border-gray-300 rounded "
                         />
                       </div>
-                   
                     </div>
                   </div>
-                  
                 </form>
 
                 <DialogFooter>
@@ -190,7 +198,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) المجموعات</h1>
             </div>
@@ -220,7 +228,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-9 bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-9  drop-shadow-sm bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -263,10 +271,11 @@ export function DataTable({ columns, data }) {
           Next
         </Button>
       </div> */}
-      <div className="flex items-start gap-4">
+
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

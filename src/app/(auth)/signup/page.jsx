@@ -17,13 +17,13 @@ export default function page() {
           </div>
         </div>
         <div className="flex flex-col-reverse sm:flex-row gap-3">
-          <Link href={"/storesignin"} div>
+          <Link href={"/websitesignin"} div>
             <NonActiveButtonUser title={"التسجيل كمتجر إلكتروني"} />
           </Link>
           <Link href={"/shopsignin"}>
             <NonActiveButtonUser title={"التسجيل كمحل تجاري"} />
           </Link>
-          <Link href={"/login"}>
+          <Link href={"/signin"}>
             <ActiveButtonUser title={"التسجيل كمستخدم"} />
           </Link>
         </div>
@@ -31,7 +31,7 @@ export default function page() {
 
       <div className="email_user flex justify-between items-center md:items-start mt-12 flex-col md:flex-row">
         <div className="img_ligin_user w-full flex justify-center">
-          <Image src={login} className="w-4/5 md:w-3/4" />
+          <Image src={login} className="w-4/5 md:w-3/4" alt="شعار عروض" />
         </div>
         <div className="form_user_login text-end flex flex-col mt-8 md:mt-0 w-full md:w-4/5">
           <TitleHeadRegiste

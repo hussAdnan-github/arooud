@@ -8,28 +8,23 @@ import Link from "next/link";
 import Button from "../_components/Button";
 export default function page() {
   return (
-    <div className="login p-4">
-      <div className="flex w-full">
-        <div className="img_login w-full relative">
-          <Image
-            src={Bglogin}
-            className="absolute "
-            style={{ height: "600px" }}
-          />
-          <Image src={logo} className="absolute left-1/4 top-24" />
-          <div className="flex w-full items-center justify-center absolute bottom-4">
-              <div className="flex">
-                <Image src={facebook} width={24} alt="twintter imgae" />
-                <Image src={instgram} width={24} alt="twintter imgae" />
-                <Image src={twitter} width={24} alt="twintter imgae" />
-              </div>
-              <h1
-                className="text-white text-[16px]"
-                style={{ letterSpacing: "3px" }}
-              >
-                @eurud_yemen
-              </h1>
+    <div className="login_code p-4 h-auto md:h-[660px]">
+      <div className="flex flex-col md:flex-row w-full h-full">
+      <div className="img_login w-full flex flex-col justify-center items-center gap-y-20 p-14 md:p-0 mb-10 md:mb-0">
+          <Image src={logo} className="  w-56 md:w-[300px]" height={356} />
+          <div className="flex w-full items-center justify-center ">
+            <div className="flex gap-2 me-2">
+              <Image src={facebook} width={20} alt="twintter imgae" />
+              <Image src={instgram} width={20} alt="twintter imgae" />
+              <Image src={twitter} width={20} alt="twintter imgae" />
             </div>
+            <h1
+              className="text-white text-[16px]"
+              style={{ letterSpacing: "3px" }}
+            >
+              @eurud_yemen
+            </h1>
+          </div>
         </div>
         <div className="info_login w-full mt-20">
           <div className="flex flex-col items-center">

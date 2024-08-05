@@ -38,7 +38,7 @@ export default function page() {
 
     <div className="email_user flex justify-between items-center md:items-start mt-10 flex-col md:flex-row">
       <div className="img_ligin_user w-full flex justify-center">
-         <Image src={login} className="w-4/5 md:w-3/4"/>
+         <Image src={login} className="w-4/5 md:w-3/4" alt="image صورة التسجيل"/>
       </div>
 
       <div className="form_user_login text-end  flex flex-col w-4/5">
@@ -66,10 +66,10 @@ export default function page() {
 
         <div className="media_user flex justify-end gap-4 mt-4">
           <div className="border h-9 px-4 border-gray-400 rounded-2xl flex items-center gap-4">
-          <Image src={facebook} width={24} height={24}/> <h1 className="text-xs">Facebook</h1>
+          <Image src={facebook} width={24} height={24} alt="فيس بوك"/> <h1 className="text-xs">Facebook</h1>
           </div>
           <div className="border h-9 px-4 border-gray-400 rounded-2xl flex items-center gap-4">
-          <Image src={google} width={24} height={24}/> <h1 className="text-xs">Facebook</h1>
+          <Image src={google} width={24} height={24} alt="قوقل"/> <h1 className="text-xs">Facebook</h1>
           </div>
         </div>
       </div>

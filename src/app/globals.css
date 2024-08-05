@@ -59,6 +59,10 @@ p {
 .card_coupon {
   background-image: url(../../public/img/footer.svg);
 }
+.img_login{
+  background-image: url(../../public/dashboard/bg_login.svg);
+
+}
 .footer_img {
   background-color: rgba(0, 0, 0, 0.288);
 }

@@ -9,7 +9,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -33,15 +32,6 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -67,7 +57,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -76,7 +66,7 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10 drop-shadow-sm bg-white border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
@@ -85,7 +75,7 @@ export function DataTable({ columns, data }) {
         <div>
           <Dialog className="gap-0">
             <DialogTrigger asChild>
-              <Button className="bg-primaryColo hover:bg-primaryColo text-white w-36">
+              <Button className="bg-primaryColo shadow-md shadow-red-300 hover:bg-primaryColo text-white w-36">
                 {" "}
                 <FaPlus className="me-2" />
                 أضافة قـسم
@@ -165,7 +155,7 @@ export function DataTable({ columns, data }) {
                 </div>
               </form>
 
-              <DialogFooter>
+              <DialogFooter className={'mt-8'}>
                 <Button
                   type="submit"
                   className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
@@ -214,7 +204,7 @@ export function DataTable({ columns, data }) {
           {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
               <div
-                className="w-full flex justify-between h-[91px] bg-white rounded-lg items-center p-2"
+                className="w-full flex justify-between h-[91px]  bg-white rounded-lg items-center p-2"
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
@@ -254,10 +244,10 @@ export function DataTable({ columns, data }) {
         </Button>
       </div> */}
 
-      <div className="flex items-start gap-4 absolute bottom-10 p-3 rounded-xl bg-white">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

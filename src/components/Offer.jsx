@@ -15,7 +15,7 @@ export default function Offer() {
         <div className=" w-48 h-48 flex justify-center items-center bg-[#F3F3F3] border border-[#C8C9CC] rounded-lg drop-shadow-md p-1 absolute -top-28  md:left-[17%]">
           <Image
             src={cardSADcopons}
-            alt="bbfvdf"
+            alt="شعار العرض "
             className="w-[150px] h-auto rounded-xl"
           />
         </div>
@@ -60,7 +60,7 @@ export default function Offer() {
             <Image
               className="offer_Img transition w-full h-full object-contain"
               src={phone}
-              alt=""
+              alt="صورة العرض"
             />
           </div>
         </div>

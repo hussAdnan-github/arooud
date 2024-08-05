@@ -67,7 +67,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -76,7 +76,7 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10  drop-shadow-sm bg-white border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
@@ -86,7 +86,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-44">
+                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo shadow-md shadow-red-300 text-white w-44">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة من نحن
@@ -100,7 +100,7 @@ export function DataTable({ columns, data }) {
                 <form className="w-full text-end mt-8 mb-4">
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-                    الهدف 
+                      الهدف 
                     </label>
                     <textarea
                       id="message"
@@ -134,7 +134,7 @@ export function DataTable({ columns, data }) {
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-                    الرسالة  
+                      الرسالة  
                     </label>
                     <textarea
                       id="message"
@@ -168,7 +168,7 @@ export function DataTable({ columns, data }) {
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-                    الفكرة  
+                      الفكرة  
                     </label>
                     <textarea
                       id="message"
@@ -202,7 +202,7 @@ export function DataTable({ columns, data }) {
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-                    الرؤية
+                      الرؤية
                     </label>
                     <textarea
                       id="message"
@@ -234,7 +234,7 @@ export function DataTable({ columns, data }) {
                       type="file"
                     />
                   </div>
-                  
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -243,7 +243,6 @@ export function DataTable({ columns, data }) {
                       حالة المحافظة
                     </label>
 
-                  
                     <Select>
                       <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
                         <SelectValue placeholder="" />
@@ -286,7 +285,7 @@ export function DataTable({ columns, data }) {
           </div>
           <div>
             <div className="text-end my-2">
-            <ButtonBack />
+              <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">(1215) من نحن</h1>
             </div>
@@ -316,7 +315,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-9 bg-white rounded-lg items-center p-2"
+                  className="w-full flex justify-between h-9  drop-shadow-sm bg-white rounded-lg items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -359,10 +358,10 @@ export function DataTable({ columns, data }) {
           Next
         </Button>
       </div> */}
-      <div className="flex items-start gap-4">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

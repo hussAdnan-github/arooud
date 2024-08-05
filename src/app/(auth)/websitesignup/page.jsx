@@ -22,13 +22,13 @@ export default function page() {
           <BtnBack />
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link href={"/storesignin"} div>
+          <Link href={"/websitesignin"} div>
             <ActiveButtonUser title={"التسجيل كمتجر إلكتروني"} />
           </Link>
           <Link href={"/shopsignin"}>
             <NonActiveButtonUser title={"التسجيل كمحل تجاري"} />
           </Link>
-          <Link href={"/login"}>
+          <Link href={"/signin"}>
             <NonActiveButtonUser title={"التسجيل كمستخدم"} />
           </Link>
         </div>

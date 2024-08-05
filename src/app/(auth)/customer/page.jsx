@@ -19,7 +19,7 @@ export default function page() {
           </div>
         </div>
         <Link href={"/"} className="img_logo">
-          <Image src={logo} alt="logo" className="w-28" />
+          <Image src={logo} alt="شعار عروض " className="w-28" />
         </Link>
       </div>
 
@@ -29,7 +29,7 @@ export default function page() {
             <div className="customer_img h-80 w-80    md:h-[360px] md:w-[360px] object-cover">
               <Image
                 src={login}
-                alt="asdasd"
+                alt="صورة التسجيل"
                 className="rounded-full w-full h-full border border-black object-contain"
               />
             </div>

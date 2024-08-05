@@ -1,7 +1,7 @@
 import Password from "@/components/Password";
 import SideBar from "./_components/Sidbar";
 import SideBar2 from "./_components/Sidbar2";
-
+import Login from "@/components/form/Login";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,11 +10,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    
-    <div className=" flex flex-row-reverse bg-[#F7F7F7]">
-          <SideBar2/>
-          {children}
-        
+    // flex flex-row-reverse bg-[#F7F7F7]
+    <div className="flex flex-row-reverse bg-[#F7F7F7]">
+      <SideBar2 />
+
+      {children}
     </div>
   );
 }

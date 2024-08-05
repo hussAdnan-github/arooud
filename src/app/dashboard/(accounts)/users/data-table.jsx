@@ -91,7 +91,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0 ">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo rounded-xl shadow-md shadow-red-300  hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة مستخدم
@@ -149,15 +149,10 @@ export function DataTable({ columns, data }) {
 
                       <Select>
                         <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
+                          <SelectValue placeholder="المكلا" />
                         </SelectTrigger>
                         <SelectContent className="bg-white ">
                           <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
                             <SelectItem
                               className=" text-[#9796A1] text-end"
                               value="apple"
@@ -360,7 +355,7 @@ export function DataTable({ columns, data }) {
                       <h1 className="text-sm px-2 py-3">يمكن اضافة مستخدم</h1>
                     </div>
                   </div>
-                  <div className="checkbox_user mt-4">
+                  <div className="checkbox_user mt-14">
                     <div className="mt-2">
                       <div className=" flex  items-start  justify-end">
                         <div className="flex flex-col">
@@ -421,7 +416,7 @@ export function DataTable({ columns, data }) {
                   </div>
                 </form>
 
-                <DialogFooter>
+                <DialogFooter className={"mt-12"}>
                   <Button
                     type="submit"
                     className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
@@ -442,7 +437,10 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) المستخدمين</h1>
+              <h1 className="text-3xl font-bold my-4">
+                <span>(1215) </span>
+                المستخدمين
+              </h1>
             </div>
           </div>
         </div>

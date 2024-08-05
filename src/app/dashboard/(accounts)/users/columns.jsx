@@ -54,7 +54,7 @@ export const columns = [
         <div className="text-right font-bold ">
           <div className="text-end text-sm text-[#91929E]">حالة المستخدم</div>
 
-          <div className="state_cusomer text-right text-sm font-bold">
+          <div className="state_cusomer text-green-500 text-right text-sm font-bold">
             {state}
           </div>
         </div>

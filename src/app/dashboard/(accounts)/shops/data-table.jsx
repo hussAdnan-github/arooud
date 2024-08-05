@@ -69,7 +69,7 @@ export function DataTable({ columns, data }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center  gap-6">
           <Dropdown />
-          <GoBell className="text-black rounded-lg p-1 text-4xl  bg-white" />
+          <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
@@ -78,7 +78,7 @@ export function DataTable({ columns, data }) {
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className="max-w-md text-end rounded-full pe-10 bg-white border-0"
+            className="max-w-md text-end rounded-full pe-10 drop-shadow-sm bg-white border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
         </div>
@@ -88,7 +88,7 @@ export function DataTable({ columns, data }) {
           <div>
             <Dialog className="gap-0">
               <DialogTrigger asChild>
-                <Button className="bg-primaryColo rounded-xl hover:bg-primaryColo text-white w-36">
+                <Button className="bg-primaryColo rounded-xl shadow-md shadow-red-300 hover:bg-primaryColo text-white w-36">
                   {" "}
                   <FaPlus className="me-2" />
                   إضافة محل تجاري
@@ -183,7 +183,7 @@ export function DataTable({ columns, data }) {
                       </Select>
                     </div>
                   </div>
-            
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -191,7 +191,10 @@ export function DataTable({ columns, data }) {
                     >
                       مجلات المحل التجاري{" "}
                     </label>
-                    <div className="grid grid-cols-4 " style={{direction:'rtl'}}>
+                    <div
+                      className="grid grid-cols-4 "
+                      style={{ direction: "rtl" }}
+                    >
                       <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
                         <h1 className="text-[#7D7E80]">الكتروتيات</h1>
                       </div>
@@ -211,11 +214,11 @@ export function DataTable({ columns, data }) {
                         <h1 className="text-[#7D7E80]">جوالات</h1>
                       </div>
                       <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                      <TiPlus className="text-xl"/>
+                        <TiPlus className="text-xl" />
                       </div>
                     </div>
                   </div>
-                
+
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -310,23 +313,22 @@ export function DataTable({ columns, data }) {
                       required
                     />
                   </div>
-                  
-                <DialogFooter className={'mt-16'}>
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                  >
-                    أضافة مع أضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                  >
-                    أضافة
-                  </Button>
-                </DialogFooter>
-                </form>
 
+                  <DialogFooter className={"mt-16"}>
+                    <Button
+                      type="submit"
+                      className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
+                    >
+                      أضافة مع أضافة أخرى
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
+                    >
+                      أضافة
+                    </Button>
+                  </DialogFooter>
+                </form>
               </DialogContent>
             </Dialog>
           </div>
@@ -334,7 +336,10 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) المحلات التجارية </h1>
+              <h1 className="text-3xl font-bold my-4">
+                <span>   (1215) </span>
+             المحلات التجارية{" "}
+              </h1>
             </div>
           </div>
         </div>
@@ -362,7 +367,7 @@ export function DataTable({ columns, data }) {
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
-                  className="w-full flex justify-between h-[91px] bg-white rounded-2xl items-center p-2"
+                  className="w-full flex justify-between h-[91px] drop-shadow-sm bg-white rounded-2xl items-center p-2"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -405,10 +410,10 @@ export function DataTable({ columns, data }) {
           Next
         </Button>
       </div> */}
-      <div className="flex items-start gap-4">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
         <div>
           <button
-            className="me-4 text-primaryColo"
+            className="me-4 text-primaryColo "
             onClick={() => {
               table.previousPage();
             }}

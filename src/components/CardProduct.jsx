@@ -16,10 +16,10 @@ export default function CardProduct() {
           <Image
             className=" w-full  hover:scale-125 hover:rotate-12 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300"
             src={card}
-            alt="product image"
+            alt="صورة العرض"
           />
           <span className="absolute top-0 right-0" style={{ right: "-14px" }}>
-            <Image src={iconCard} />
+            <Image src={iconCard} alt="ايقونه"/>
           </span>
         </div>
         <div className=" px-4 pb-5 card_body mt-1 text-end">
@@ -33,7 +33,7 @@ export default function CardProduct() {
             <div className="card_sad w-16 h-16 bg-[#F4F4F4] border border-[#C8C9CC] flex justify-center items-center rounded-full relative -top-6 left-3">
               <Image
                 src={cardSAD}
-                alt="image cardSAD"
+                alt="شعار العرض"
                 className=""
                 width={46}
                 height={46}

@@ -1,10 +1,11 @@
 import Header from "@/components/Header/Header";
 import Image from "next/image";
-import details from "../../../public/img/details.svg";
+import details from "../../../..//public/img/details.svg";
 import Offer from "@/components/Offer";
-import HeaderText from "@/components/HeaderText";
+ ;
  
 import SliderOfferDetailes from "@/components/SliderOfferDetailes";
+import HeaderText from "@/components/HeaderText";
 export default function page() {
   return (
     <div>

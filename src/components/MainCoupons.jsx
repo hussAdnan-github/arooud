@@ -26,7 +26,7 @@ export default function MainCoupons() {
               </div>
               <Image
                 src={cardcouponsGray}
-                alt="cardcouponsGray"
+                alt="ايقونه الخصم"
                 className="w-7 h-auto"
               />
             </div>
@@ -53,7 +53,7 @@ export default function MainCoupons() {
                     <span>
                       <Image
                         src={numcoupons}
-                        alt="numcoupons"
+                        alt="ايقونه عدد الاستخدام"
                         width={34}
                         height={38}
                       />
@@ -67,7 +67,7 @@ export default function MainCoupons() {
             <Image
               className="coupons_mainimg transition w-full h-full object-cover rounded-t-2xl"
               src={Coupons}
-              alt=""
+              alt="صورة الكابون"
             />
           </div>
         </div>

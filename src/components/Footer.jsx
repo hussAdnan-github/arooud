@@ -18,9 +18,9 @@ export default function Footer() {
             </h1>
             <div className="flex items-center">
               <div className="flex gap-4 me-3">
-                <Image src={facebook} width={20} alt="facebook imgae " className="ease-out duration-300 cursor-pointer hover:scale-125 "/>
-                <Image src={instgram} width={20} alt="instgram imgae " className="ease-out duration-300 cursor-pointer hover:scale-125"/>
-                <Image src={twitter} width={20} alt="twintter imgae " className="ease-out duration-300 cursor-pointer hover:scale-125"/>
+                <Image src={facebook} width={20} alt="فيس بوك " className="ease-out duration-300 cursor-pointer hover:scale-125 "/>
+                <Image src={instgram} width={20} alt="انستقرام " className="ease-out duration-300 cursor-pointer hover:scale-125"/>
+                <Image src={twitter} width={20} alt="أكس" className="ease-out duration-300 cursor-pointer hover:scale-125"/>
               </div>
               <h1
                 className="text-white text-xl"
