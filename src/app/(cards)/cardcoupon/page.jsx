@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logo from "../../../public/img/logo.png";
-import code from "../../../public/img/code.png";
+import logo from "../../../../public/img/logo.png";
+import code from "../../../../public/img/code.png";
 import { RxEnter } from "react-icons/rx";
 import { BiSolidDiscount } from "react-icons/bi";
 import { CgTimelapse } from "react-icons/cg";

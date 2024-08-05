@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../public/img/logo.png";
+import logo from "../../../../public/img/logo.png";
 import { RxEnter } from "react-icons/rx";
 import { BiSolidDiscount } from "react-icons/bi";
 import { CgTimelapse } from "react-icons/cg";
@@ -7,7 +7,7 @@ import { MdDiscount } from "react-icons/md";
 import { BsTwitterX } from "react-icons/bs";
 import { FaInstagram, FaSnapchatGhost, FaTiktok } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
-import code from "../../../public/img/code.png";
+import code from "../../../..//public/img/code.png";
 
 export default function page() {
   return (

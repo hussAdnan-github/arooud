@@ -1,10 +1,10 @@
 import Image from "next/image";
-import logo from "../../../public/img/logo.png";
+import logo from "../../../../public/img/logo.png";
 
 import Link from "next/link";
 
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
-import login from "../../../public/img/login.png";
+import login from "../../../../public/img/login.png";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 
 export default function page() {
