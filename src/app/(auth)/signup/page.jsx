@@ -20,7 +20,7 @@ export default function page() {
           <Link href={"/websitesignin"} div>
             <NonActiveButtonUser title={"التسجيل كمتجر إلكتروني"} />
           </Link>
-          <Link href={"/shopsignin"}>
+          <Link href={"/marketsignin"}>
             <NonActiveButtonUser title={"التسجيل كمحل تجاري"} />
           </Link>
           <Link href={"/signin"}>

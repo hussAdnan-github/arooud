@@ -2,15 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
-import { FaPlus, FaRegEye } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
+import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -20,13 +18,10 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -34,20 +29,13 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import Dropdown from "../../_components/Dropdown";
 import { BiEdit } from "react-icons/bi";
 import ButtonBack from "../../_components/ButtonBack";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import Dropdown from "../../_components/Dropdown";
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
   const table = useReactTable({
@@ -61,7 +49,53 @@ export function DataTable({ columns, data }) {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
   });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm({
+    defaultValues: {},
+  });
+  const createPost = async (data) => {
+    console.log(data);
+    const formData = new FormData();
 
+    formData.append("goal_ar", data.goalName);
+    formData.append("goal_en", data.goalName);
+    formData.append("image_goal", data.goalimage[0]);
+    formData.append("message_ar", data.messageName);
+    formData.append("message_en", data.messageName);
+    formData.append("image_message", data.messageimage[0]);
+    formData.append("idea_ar", data.ideaName);
+    formData.append("idea_en", data.ideaName);
+    formData.append("image_idea", data.ideaimage[0]);
+    formData.append("vision_ar", data.visionName);
+    formData.append("vision_en", data.visionName);
+    formData.append("image_vision", data.visionimage[0]);
+    formData.append("status", 2);
+
+    try {
+      await axios
+        .post(
+          "https://offers.pythonanywhere.com/v1/api/places/arewe/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
+    }
+  };
+  const onSubmit = async (data) => {
+    createPost(data);
+  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -72,9 +106,9 @@ export function DataTable({ columns, data }) {
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
             placeholder="بحـث"
-            value={table.getColumn("name")?.getFilterValue() ?? ""}
+            value={table.getColumn("create_at")?.getFilterValue() ?? ""}
             onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
+              table.getColumn("create_at")?.setFilterValue(event.target.value)
             }
             className="max-w-md text-end rounded-full pe-10  drop-shadow-sm bg-white border-0"
           />
@@ -97,18 +131,25 @@ export function DataTable({ columns, data }) {
                   <DialogTitle>إضافة من نحن</DialogTitle>
                 </DialogHeader>
 
-                <form className="w-full text-end mt-8 mb-4">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="w-full text-end mt-8 mb-4"
+                >
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
                       الهدف 
                     </label>
                     <textarea
-                      id="message"
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الهدف "
-                      required
+                      {...register("goalName", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.goalName?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -120,7 +161,7 @@ export function DataTable({ columns, data }) {
 
                     <label
                       className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
+                      htmlFor="file_input"
                     >
                       {" "}
                       <FaCircleChevronLeft className="text-gray-400 text-xl" />
@@ -130,7 +171,13 @@ export function DataTable({ columns, data }) {
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                       id="file_input"
                       type="file"
+                      {...register("goalimage", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.goalimage?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
@@ -141,8 +188,13 @@ export function DataTable({ columns, data }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الرسالة  "
-                      required
+                      {...register("messageName", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.messageName?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -154,7 +206,7 @@ export function DataTable({ columns, data }) {
 
                     <label
                       className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
+                      htmlFor="file_input2"
                     >
                       {" "}
                       <FaCircleChevronLeft className="text-gray-400 text-xl" />
@@ -162,9 +214,15 @@ export function DataTable({ columns, data }) {
                     </label>
                     <input
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                      id="file_input"
+                      id="file_input2"
                       type="file"
+                      {...register("messageimage", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.goal_ar?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
@@ -175,8 +233,13 @@ export function DataTable({ columns, data }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الفكرة  "
-                      required
+                      {...register("ideaName", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.ideaName?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -188,7 +251,7 @@ export function DataTable({ columns, data }) {
 
                     <label
                       className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
+                      htmlFor="file_input3"
                     >
                       {" "}
                       <FaCircleChevronLeft className="text-gray-400 text-xl" />
@@ -196,9 +259,15 @@ export function DataTable({ columns, data }) {
                     </label>
                     <input
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                      id="file_input"
+                      id="file_input3"
                       type="file"
+                      {...register("ideaimage", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.ideaimage?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
@@ -209,8 +278,13 @@ export function DataTable({ columns, data }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الرؤية"
-                      required
+                      {...register("visionName", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.visionName?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -222,7 +296,7 @@ export function DataTable({ columns, data }) {
 
                     <label
                       className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                      for="file_input"
+                      htmlFor="file_input4"
                     >
                       {" "}
                       <FaCircleChevronLeft className="text-gray-400 text-xl" />
@@ -230,17 +304,23 @@ export function DataTable({ columns, data }) {
                     </label>
                     <input
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                      id="file_input"
+                      id="file_input4"
                       type="file"
+                      {...register("visionimage", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.visionimage?.message}
+                    </p>
                   </div>
 
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      حالة المحافظة
+                      الحالة
                     </label>
 
                     <Select>
@@ -264,22 +344,21 @@ export function DataTable({ columns, data }) {
                       </SelectContent>
                     </Select>
                   </div>
+                  <div className="felx flex-row space-x-4 mt-8">
+                    <Button
+                      type="submit"
+                      className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
+                    >
+                      حفظ مع إضافة أخرى{" "}
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
+                    >
+                      إضافة
+                    </Button>
+                  </div>
                 </form>
-
-                <DialogFooter>
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                  >
-                    أضافة مع أضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                  >
-                    أضافة
-                  </Button>
-                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
@@ -287,31 +366,14 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) من نحن</h1>
+              <h1 className="text-3xl font-bold my-4">
+                ({data.length}) من نحن
+              </h1>
             </div>
           </div>
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2 ">
-            {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-            {/* <TableBody className="bg-blue-700 rounded-full"> */}
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
@@ -336,29 +398,11 @@ export function DataTable({ columns, data }) {
                 </div>
               </div>
             )}
-            {/* </TableBody> */}
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
-      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
+
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md absolute -bottom-80">
         <div>
           <button
             className="me-4 text-primaryColo "

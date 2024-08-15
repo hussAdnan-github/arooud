@@ -1,18 +1,13 @@
 async function getData() {
-  return [
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/accounts/webs/",
     {
-      id: 1,
-      name: "موقع نون",
-      email: "evanyates@gmail.com",
-      phone: "+966507666777",
-      type: "الاكترونيات",
-      location: "المكلا",
-      state: "نشط",
-      //  image: img,
-    },
+      cache: "no-store",
+    }
+  );
+  const section = await response.json();
 
-    // ...
-  ];
+  return section["result"];
 }
 
 // import img from '../../../../../public/dashboard/person.svg'

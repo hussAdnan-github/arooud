@@ -9,8 +9,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -20,28 +18,16 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -50,6 +36,7 @@ import ButtonBack from "../../_components/ButtonBack";
 import { BiEdit } from "react-icons/bi";
 import DatePicker from "../../_components/DatePicker";
 import { Clock8 } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -64,7 +51,19 @@ export function DataTable({ columns, data }) {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
   });
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm({
+    defaultValues: {},
+  });
+  const createPost = async (data) => {
+    console.log(data);
+  };
+  const onSubmit = async (data) => {
+    createPost(data);
+  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -99,10 +98,11 @@ export function DataTable({ columns, data }) {
                 <DialogHeader>
                   <DialogTitle>إضافة قسيمة</DialogTitle>
                 </DialogHeader>
-                <h1 className="text-end text-[16px] font-medium	mt-4">
-                  معلومات شخصية
-                </h1>
-                <form className="w-full text-end">
+
+                <form
+                  className="w-full text-end"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -115,8 +115,11 @@ export function DataTable({ columns, data }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="قسيمة"
-                      required
+                      {...register("name", {
+                        required: "يجب أضافة أسم القسيمة",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.name?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
@@ -127,8 +130,13 @@ export function DataTable({ columns, data }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف القسيمة"
-                      required
+                      {...register("description", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.description?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
@@ -139,8 +147,13 @@ export function DataTable({ columns, data }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الشروط الاستخدام"
-                      required
+                      {...register("trem_use", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.trem_use?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -162,14 +175,18 @@ export function DataTable({ columns, data }) {
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                       id="file_input"
                       type="file"
+                      {...register("image", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.image?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label
                       for="first_name"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      الموقع الالكتوني{" "}
+                      المتجر الإلكتروني
                     </label>
                     <div className="flex items-center gap-5 justify-end">
                       <FaRegEye className="text-2xl text-gray-500" />
@@ -319,7 +336,6 @@ export function DataTable({ columns, data }) {
                           id="first_name"
                           className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                           placeholder="حسيننن"
-                          required
                         />
                         <div className="absolute left-4 text-[#858D97] text-xl">
                           <Clock8 />
@@ -341,8 +357,13 @@ export function DataTable({ columns, data }) {
                           id="first_name"
                           className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                           placeholder="حسيننن"
-                          required
+                          {...register("number_use", {
+                            required: "يجب أضافة أسم القسم",
+                          })}
                         />
+                        <p className="text-primaryColo">
+                          {errors.number_use?.message}
+                        </p>
                       </div>
                     </div>
                     <div className="w-full">
@@ -357,27 +378,31 @@ export function DataTable({ columns, data }) {
                           type="text"
                           id="first_name"
                           className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
-                          placeholder="حسيننن"
-                          required
+                          {...register("price", {
+                            required: "يجب أضافة قيمة لقسيمة",
+                          })}
                         />
+                        <p className="text-primaryColo">
+                          {errors.price?.message}
+                        </p>
                       </div>
                     </div>
                   </div>
+                  <div className="felx flex-row space-x-4 mt-8">
+                    <Button
+                      type="submit"
+                      className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
+                    >
+                      حفظ مع إضافة أخرى
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
+                    >
+                      إضافة
+                    </Button>
+                  </div>
                 </form>
-                <DialogFooter className={"mt-10"}>
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                  >
-                    أضافة مع أضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                  >
-                    أضافة
-                  </Button>
-                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
@@ -386,32 +411,13 @@ export function DataTable({ columns, data }) {
               <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">
-                القسائم <span>(28)</span>
+                القسائم <span>({data.length})</span>
               </h1>
             </div>
           </div>
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2">
-            {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-            {/* <TableBody className="bg-blue-700 rounded-full"> */}
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
@@ -440,25 +446,8 @@ export function DataTable({ columns, data }) {
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
-      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
+
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md absolute -bottom-80">
         <div>
           <button
             className="me-4 text-primaryColo "

@@ -1,23 +1,16 @@
 async function getData() {
-  return [
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/places/advertising/",
     {
-      id: 1,
-      state: "قيد الأنشاء",
-      title: "اعلان رمضان بشركة دن",
-      // image: img,
-    },
+      cache: "no-store",
+    }
+  );
+  const advertisements = await response.json();
 
-
-    // ...
-  ];
+  return advertisements;
 }
-
-// async function page() {
-//   // Fetch data from your API here.
-
-//   return <></>
-// }
-// import img from "../../../../../public/dashboard/person.svg";
+ 
+ 
 import { DataTable } from "@/app/dashboard/(places)/advertisements/data-table";
 import { Payment, columns } from "./columns";
 export default async function Page() {

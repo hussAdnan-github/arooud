@@ -1,31 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -33,12 +20,17 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../_components/Dropdown";
 import ButtonBack from "../_components/ButtonBack";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { Input } from "@/components/ui/input";
+import { IoSearchSharp } from "react-icons/io5";
 
 export function DataTable({ columns, data }) {
+  const formData = new FormData();
+
   const [columnFilters, setColumnFilters] = useState([]);
   const table = useReactTable({
     data,
@@ -51,7 +43,40 @@ export function DataTable({ columns, data }) {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
   });
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm({
+    defaultValues: {},
+  });
+  const createPost = async (data) => {
+    formData.append("name_ar", data.sectionName);
+    formData.append("name_en", data.sectionName);
+    formData.append("status", data.status);
+    formData.append("image", data.image[0]);
+    try {
+      await axios
+        .post(
+          "https://offers.pythonanywhere.com/v1/api/departments/departments/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
+    }
+  };
+  const onSubmit = async (data) => {
+    createPost(data);
+  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -62,9 +87,9 @@ export function DataTable({ columns, data }) {
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
             placeholder="بحـث"
-            value={table.getColumn("name")?.getFilterValue() ?? ""}
+            value={table.getColumn("name_ar")?.getFilterValue() ?? ""}
             onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
+              table.getColumn("name_ar")?.setFilterValue(event.target.value)
             }
             className="max-w-md text-end rounded-full pe-10 drop-shadow-sm bg-white border-0"
           />
@@ -86,54 +111,51 @@ export function DataTable({ columns, data }) {
                 <DialogTitle>أضافة قـسم</DialogTitle>
               </DialogHeader>
 
-              <form className="w-full text-end mt-8">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="w-full text-end mt-8"
+              >
                 <div className="mb-4">
                   <label
-                    for="first_name"
+                    // for="first_name"
                     className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                   >
-                    أسـم القسم
+                    اسم القسم
                   </label>
                   <input
-                    type="text"
-                    id="first_name"
                     className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                     placeholder="حسيننن"
-                    required
+                    {...register("sectionName", {
+                      required: "يجب أضافة أسم القسم",
+                    })}
                   />
+                  <p className="text-primaryColo">
+                    {errors.sectionName?.message}
+                  </p>
                 </div>
                 <div className="mt-6">
                   <label
-                    for="first_name"
+                    // for="first_name"
                     className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
                   >
                     حالة القسم
                   </label>
-
-                  <Select>
-                    <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
-                      <SelectValue placeholder="" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white ">
-                      <SelectGroup>
-                        {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                        <SelectItem className=" text-[#9796A1] text-end">
-                          قيد الانشاء
-                        </SelectItem>
-
-                        <SelectItem
-                          className=" text-[#9796A1] text-end"
-                          value="apple"
-                        >
-                          انتظاار
-                        </SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
+                  <select
+                   {...register("status", {
+                    required: "يجب أضافة أسم القسم",
+                  })}
+                    className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                    style={{ direction: "rtl" }}
+                  >
+                    <option value="1">قيد الانشاء</option>
+                    <option value="2">تم الانشاء</option>
+                    <option value="3">تم التوقف</option>
+                  </select>
+                  <p className="text-primaryColo">{errors.status?.message}</p>
                 </div>
                 <div className="mt-6">
                   <label
-                    for="first_name"
+                    // for="first_name"
                     className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
                   >
                     صورة{" "}
@@ -141,7 +163,7 @@ export function DataTable({ columns, data }) {
 
                   <label
                     className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                    for="file_input"
+                    htmlFor="file_input"
                   >
                     {" "}
                     <FaCircleChevronLeft className="text-gray-400 text-xl" />
@@ -150,25 +172,28 @@ export function DataTable({ columns, data }) {
                   <input
                     className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     id="file_input"
+                    {...register("image", {
+                      required: "يجب أضافة صورة القسم",
+                    })}
                     type="file"
                   />
+                  <p className="text-primaryColo">{errors.image?.message}</p>
+                </div>
+                <div className="felx flex-row space-x-4 mt-8">
+                  <Button
+                    type="submit"
+                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-2xl"
+                  >
+                    حفظ مع إضافة أخرى
+                  </Button>
+                  <Button
+                    type="submit"
+                    className="bg-primaryColo px-8 py-2 hover:bg-primaryColo text-white rounded-2xl"
+                  >
+                    إضافة
+                  </Button>
                 </div>
               </form>
-
-              <DialogFooter className={'mt-8'}>
-                <Button
-                  type="submit"
-                  className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                >
-                  أضافة مع أضافة أخرى
-                </Button>
-                <Button
-                  type="submit"
-                  className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                >
-                  أضافة
-                </Button>
-              </DialogFooter>
             </DialogContent>
           </Dialog>
         </div>
@@ -176,31 +201,14 @@ export function DataTable({ columns, data }) {
           <div className="text-end my-2">
             <ButtonBack />
 
-            <h1 className="text-3xl font-bold my-4">(1215) الأقســام</h1>
+            <h1 className="text-3xl font-bold my-4">
+              <span>({data.length})</span> الأقســام
+            </h1>
           </div>
         </div>
       </div>
       <div className="">
         <div className="flex w-full flex-col gap-2 ">
-          {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-          {/* <TableBody className="bg-blue-700 rounded-full"> */}
           {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
               <div
@@ -208,6 +216,7 @@ export function DataTable({ columns, data }) {
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
+              
                 {row.getVisibleCells().map((cell) => (
                   <div key={cell.id} className="">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -222,32 +231,13 @@ export function DataTable({ columns, data }) {
               </div>
             </div>
           )}
-          {/* </TableBody> */}
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
 
-      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md absolute -bottom-80">
         <div>
           <button
-            className="me-4 text-primaryColo "
+            className="me-4 text-primaryColo cursor-pointer"
             onClick={() => {
               table.previousPage();
             }}
@@ -256,7 +246,7 @@ export function DataTable({ columns, data }) {
             <FaArrowLeft />
           </button>
           <button
-            className="text-primaryColo "
+            className="text-primaryColo cursor-pointer"
             onClick={() => {
               table.nextPage();
             }}
@@ -269,7 +259,7 @@ export function DataTable({ columns, data }) {
           <h1 className="text-black text-sm font-bold">
             {table.getState().pagination.pageIndex + 1} {" - "}{" "}
             {table.getPageCount()} {"of"}
-            {" 28"}
+            {table.getRowModel().rows.length}
           </h1>
         </div>
       </div>

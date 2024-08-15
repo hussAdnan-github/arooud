@@ -13,49 +13,33 @@ import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import Edite from "./Edite";
 
 // const [email , setEmail] = useState();
 
 // const email = '';
 export const columns = [
   {
-    id: "actions",
+    accessorKey: "id",
+
     cell: ({ row }) => {
       const payment = row.original;
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0 bg-[#F4F9FD] rounded-full rotate-90">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
+      const id = row.getValue("id");
+
+      return <Edite dataRow={row} />;
     },
   },
   {
-    accessorKey: "type",
+    accessorKey: "departments",
     cell: ({ row }) => {
-      const type = row.getValue("type");
+      const departments = row.getValue("departments");
       return (
         <div className="text-right font-bold ">
           <div className="text-end text-sm text-[#91929E]">مجال المحل</div>
 
-          <div className="type_cusomer text-right text-sm font-bold">
-            {type}
+          <div className="departments text-right text-sm font-bold">
+            {departments}
           </div>
         </div>
       );
@@ -68,59 +52,70 @@ export const columns = [
     },
   },
   {
-    accessorKey: "location",
+    accessorKey: "directorate",
     cell: ({ row }) => {
-      const location = row.getValue("location");
+      const directorate = row.getValue("directorate");
 
       return (
         <div className="text-end">
           <div className="text-end text-sm text-[#91929E]">المدينة</div>
-          <div className="location_cusomer text-right text-sm font-bold">
-            {location}
+          <div className="directorate text-right text-sm font-bold">
+            {directorate}
           </div>
         </div>
       );
     },
   },
   {
-    accessorKey: "state",
+    accessorKey: "status",
     cell: ({ row }) => {
-      const state = row.getValue("state");
-
+      const status = row.getValue("status");
+      let statusTitle = "";
+      switch (status) {
+        case 1:
+          statusTitle = "قيد الانشاء";
+          break;
+        case 2:
+          statusTitle = "تم الانشاء";
+          break;
+        case 3:
+          statusTitle = "تم التوقف";
+          break;
+      }
       return (
         <div className="text-end">
-          <div className="text-end text-sm text-[#91929E]">حالة المحل</div>
-          <div className="state_cusomer text-right text-sm font-bold">
-            {state}
+          <div className="text-end text-sm text-[#91929E]">حالة الموقع</div>
+          <div className="status_cusomer text-right text-sm font-bold">
+            {statusTitle}
           </div>
         </div>
       );
     },
   },
   {
-    accessorKey: "phone",
+    accessorKey: "whatsapp",  
     cell: ({ row }) => {
-      const phone = row.getValue("phone");
+      const whatsapp = row.getValue("whatsapp");
 
       return (
-        <div className="text-end">
+        <div className="text-end pohne">
           <div className="text-end text-sm text-[#91929E]">رقم الهاتف</div>
           <div className="name_cusomer text-sm text-right  font-bold">
-            {phone}
+            {whatsapp}
           </div>
         </div>
       );
     },
   },
   {
-    accessorKey: "name",
+    accessorKey: "name_ar",
     cell: ({ row }) => {
-      const name = row.getValue("name");
+      const name_ar = row.getValue("name_ar");
       const email = row.getValue("email");
       return (
         <div>
           <div className="name_cusomer text-right text-[16px] font-bold">
-            {name}
+            {name_ar}
           </div>
           <div className="email_cusomer text-right text-sm font-bold">
             {email}
@@ -131,13 +126,13 @@ export const columns = [
   },
 
   {
-    accessorKey: "image",
+    accessorKey: "image_ar",
     cell: ({ row }) => {
-      const image = row.getValue("image");
+      const image_ar = row.getValue("image_ar");
       return (
         <div className="flex justify-end">
           <Image
-            src={row.getValue("image")}
+            src={row.getValue("image_ar")}
             alt="sadasdsad"
             width={50}
             height={50}

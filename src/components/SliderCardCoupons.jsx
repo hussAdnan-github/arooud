@@ -1,56 +1,72 @@
-'use client'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import CardCoupons from "./CardCoupons";
+import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { Skeleton } from "./ui/skeleton";
 
-
-// import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
- 
-import CardCoupons from './CardCoupons';
-import Link from 'next/link';
+const fetchCoupons = async () => {
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/offers/coupons/"
+  );
+  return await response.json();
+};
 
 export default function SliderCardCoupons() {
+  const { data, isLoading, isError, error, isSuccess } = useQuery({
+    queryKey: ["Coupons"],
+    queryFn: fetchCoupons,
+  });
+
+  if (isLoading) {
     return (
-        <>
-          <Swiper
-            loop={true}
-            // slidesPerView={'2'}
-            centeredSlides={false}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            spaceBetween={5}   
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-              },
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 5,
-              },
-            }}
-            grabCursor={true}    
-
-            modules={[Autoplay]}
-            className="mySwiper slide_coupons md:h-[420px]"
-          >
-            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
-            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
-            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
-            <SwiperSlide><Link href={'/coupons'}><CardCoupons /></Link></SwiperSlide>
-
-
-          </Swiper>
-        </>
-      );
+      <div className="flex gap-4 justify-center">
+        <Skeleton className="h-[380px] w-[600px] rounded-xl border bg-black" />
+        <Skeleton className="h-[380px] w-[600px] rounded-xl border bg-black" />
+      </div>
+    );
+  }
+  if (isError) {
+    return <div className="text-red-400">{error.message}</div>;
+  }
+  if (isSuccess) {
+    // console.log(data["result"]);
+  }
+  return (
+    <>
+      <Swiper
+        loop={true}
+        centeredSlides={false}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        spaceBetween={10}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+        }}
+        modules={[Autoplay]}
+        className="mySwiper slide_coupons h-[620px] xl:h-[500px]"
+      >
+        {data["result"].map((item) => (
+          <SwiperSlide key={item.id}>
+            <CardCoupons data={item} url={`/loaclcoupon/${item.id}`}/>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
+  );
 }

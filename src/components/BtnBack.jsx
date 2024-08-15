@@ -8,7 +8,7 @@ export default function BtnBack() {
   return (
     <div className="mb-10 md:mb-0 btn_back flex justify-center md:justify-start items-center gap-2 cursor-pointer" onClick={()=>{router.back()}}>
        <FaChevronLeft className="text-sm" />
-        <h1 className="font-bold " >رجوع الى الخلف 
+        <h1 className="font-bold text-black dark:text-white" >رجوع الى الخلف 
         </h1>
     </div>
   )

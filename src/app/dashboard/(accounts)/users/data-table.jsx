@@ -9,7 +9,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -20,28 +19,16 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -164,7 +151,6 @@ export function DataTable({ columns, data }) {
                       </Select>
                     </div>
                   </div>
-
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -246,7 +232,6 @@ export function DataTable({ columns, data }) {
                   <h1 className="text-end text-[16px] font-medium	mt-8 mb-3">
                     معلومات الحساب
                   </h1>
-
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -300,7 +285,6 @@ export function DataTable({ columns, data }) {
                       </SelectContent>
                     </Select>
                   </div>
-
                   <div className="mb-4 flex items-center justify-between gap-4">
                     <div className="w-full">
                       <label
@@ -332,7 +316,6 @@ export function DataTable({ columns, data }) {
                       </div>
                     </div>
                   </div>
-
                   <div className="mb-4 ">
                     <label
                       for="first_name"
@@ -414,22 +397,21 @@ export function DataTable({ columns, data }) {
                       </div>
                     </div>
                   </div>
+                  <div className="felx flex-row space-x-4 mt-8">
+                    <Button
+                      type="submit"
+                      className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
+                    >
+                      حفظ مع إضافة أخرى
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
+                    >
+                      إضافة
+                    </Button>
+                  </div>
                 </form>
-
-                <DialogFooter className={"mt-12"}>
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                  >
-                    أضافة مع أضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                  >
-                    أضافة
-                  </Button>
-                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
@@ -438,7 +420,7 @@ export function DataTable({ columns, data }) {
               <ButtonBack />
 
               <h1 className="text-3xl font-bold my-4">
-                <span>(1215) </span>
+                <span>({data.length}) </span>
                 المستخدمين
               </h1>
             </div>
@@ -474,7 +456,7 @@ export function DataTable({ columns, data }) {
         </div>
       </div>
 
-      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md absolute -bottom-80">
         <div>
           <button
             className="me-4 text-primaryColo "

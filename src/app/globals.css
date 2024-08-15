@@ -59,9 +59,8 @@ p {
 .card_coupon {
   background-image: url(../../public/img/footer.svg);
 }
-.img_login{
+.img_login {
   background-image: url(../../public/dashboard/bg_login.svg);
-
 }
 .footer_img {
   background-color: rgba(0, 0, 0, 0.288);
@@ -107,11 +106,10 @@ p {
 }
 
 .main_slider .swiper-button-next:hover,
-.main_slider .swiper-button-prev:hover ,
-.btn-prev:hover ,
-.btn-next:hover{
+.main_slider .swiper-button-prev:hover,
+.btn-prev:hover,
+.btn-next:hover {
   animation: bounces 1s infinite;
-
 }
 @keyframes bounces {
   0%,
@@ -414,4 +412,16 @@ input:focus {
 }
 .bg__fotter {
   background-color: rgba(0, 0, 0, 0.188);
+}
+  
+button:disabled {
+  color: #d4c7c7; /* Set the desired disabled color */
+  cursor: not-allowed; /* Change the cursor to indicate the element is disabled */
+}
+.bg{
+transition: .2s;
+}
+.bg:hover{
+  background-color: rgb(226, 225, 225) !important;
+  padding-right: 16px;
 }

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadIn } from "@/lib/frameMotion";
 export default function HeaderLine({ title }) {
   return (
-    <div className="header_line mt-20 flex justify-end items-end gap-6 md:gap-4 w-full">
+    <div className="header_line mt-20 flex justify-end items-end gap-6 md:gap-4 w-full dark:text-white">
       <motion.div
         variants={fadIn("right", 0.1)}
         initial="hidden"
@@ -18,7 +18,7 @@ export default function HeaderLine({ title }) {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.1 }}
-        className="headerline_title"
+        className="headerline_title dark:text-white"
       >
         {title}
       </motion.h1>

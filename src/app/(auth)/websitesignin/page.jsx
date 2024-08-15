@@ -3,8 +3,8 @@ import logo from "../../../../public/img/logo.png";
 import Link from "next/link";
 import BtnBack from "@/components/BtnBack";
 
-import StoreIn from "@/components/form/StoreIn";
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
+import WebsiteSgin from "@/components/form/WebsiteSgin";
 
 export default function page() {
   return (
@@ -34,7 +34,7 @@ export default function page() {
               "قم بالتسجيل حتى تتبع طلباتك وتصل بسهولة إلى قائمة مفضلاتك"
             }
           />
-          <StoreIn />
+          <WebsiteSgin />
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ export default function Login() {
             className="md:h-14 md:text-[17px] border-[##DADADA]  placeholder-[#DADADA] bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
             placeholder="@gmail.com"
           />
-          <p className="text-primaryColo">{errors.email?.message}</p>
+          <p clacssName="text-primaryColo">{errors.email?.message}</p>
         </div>
 
         <div className="flex justify-end  gap-8">

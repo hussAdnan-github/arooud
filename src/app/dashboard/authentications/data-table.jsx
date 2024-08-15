@@ -9,8 +9,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -25,23 +23,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -177,22 +164,21 @@ export function DataTable({ columns, data }) {
                       </div>
                     </div>
                   </div>
+                  <div className="felx flex-row space-x-4 mt-8">
+                    <Button
+                      type="submit"
+                      className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
+                    >
+                      حفظ مع إضافة أخرى
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
+                    >
+                      إضافة
+                    </Button>
+                  </div>
                 </form>
-
-                <DialogFooter>
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-xl"
-                  >
-                    أضافة مع أضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo hover:bg-primaryColo text-white rounded-xl"
-                  >
-                    أضافة
-                  </Button>
-                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
@@ -200,31 +186,14 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              <h1 className="text-3xl font-bold my-4">(1215) المجموعات</h1>
+              <h1 className="text-3xl font-bold my-4">
+                ({data.length}) المجموعات
+              </h1>
             </div>
           </div>
         </div>
         <div className="">
           <div className="flex w-full flex-col gap-2 ">
-            {/* <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                 </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader> */}
-            {/* <TableBody className="bg-blue-700 rounded-full"> */}
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <div
@@ -249,30 +218,11 @@ export function DataTable({ columns, data }) {
                 </div>
               </div>
             )}
-            {/* </TableBody> */}
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div> */}
 
-      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md">
+      <div className="inline-flex items-start gap-4 bg-white px-3 py-2 rounded-lg drop-shadow-md absolute -bottom-80">
         <div>
           <button
             className="me-4 text-primaryColo "

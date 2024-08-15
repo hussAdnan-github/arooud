@@ -10,22 +10,22 @@ import CardAbout from "@/components/CardAbout";
 import Header from "@/components/Header/Header";
 import MainTitle from "@/components/MainTitle";
 import ActiveButtonUser from "@/components/ActiveButtonUser";
-import Partners from "@/components/Partners";
 import MainDropDown from "@/components/MainDropDown";
+import Partners from "@/components/Partners";
+import GlobalCoupon from "@/components/GlobalCoupon";
 
 export default function Home() {
   return (
     <div className="home" id="home">
       <Header />
-      <div className="section_0 bg-[#F8F8F8] pb-11">
+      <section className="section_0 bg-[#F8F8F8] dark:bg-socondaryDark pb-11">
         <div className="container mx-auto">
           <MainSlider />
         </div>
-      </div>
-
-      <div
+      </section>
+      <section
         id="offer"
-        className="section_1 scroll-mt-32 bg-[#F4F4F4] pb-24 pt-10"
+        className="section_1 scroll-mt-32 bg-[#F4F4F4] dark:bg-primaryDark pb-24 pt-10"
       >
         <div className="container mx-auto mt-4 ">
           <div className="">
@@ -57,9 +57,8 @@ export default function Home() {
             <SliderCategries />
           </div>
         </div>
-      </div>
-
-      <div className="section_2 bg-[#EDEEF2]">
+      </section>
+      <section className="section_2 bg-[#EDEEF2] dark:bg-primaryDark">
         <div className="container mx-auto">
           <div>
             <MainTitle title={"العروض والخصومات"} />
@@ -103,11 +102,10 @@ export default function Home() {
             <Image src={cashBack} alt="cashBack" className="w-full" />
           </div>
         </div>
-      </div>
-
-      <div
+      </section>
+      <section
         id="coupons"
-        className="section_3 scroll-mt-10 bg-[#FAFBFF] pt-36 pb-24"
+        className="section_3 scroll-mt-10 bg-[#FAFBFF] dark:bg-primaryDark pt-36 pb-24"
       >
         <div className="container mx-auto">
           <div className="">
@@ -117,7 +115,7 @@ export default function Home() {
             <HeaderText titel={"كوبونات المتاجر العالمية"} />
           </div>
           <div className="mt-20">
-            <SliderCardCoupons />
+            <GlobalCoupon />
           </div>
           <div>
             <HeaderLine title={"المزيد من كوبونات المتاجر العالمية"} />
@@ -142,8 +140,11 @@ export default function Home() {
             <HeaderLine title={"المزيد من القسائم الشرائية "} />
           </div>
         </div>
-      </div>
-      <div id="about" className="section_4 scroll-mt-28 bg-[#F4F4F4] pb-2">
+      </section>
+      <section
+        id="about"
+        className="section_4 scroll-mt-28 bg-[#F4F4F4] dark:bg-primaryDark pb-2"
+      >
         <div className="container mx-auto">
           <div className=" mb-20 pt-12">
             <MainTitle title={"عن عــروض"} />
@@ -155,8 +156,11 @@ export default function Home() {
             <ActiveButtonUser title={"انظم معنا"} />
           </div>
         </div>
-      </div>
-      <div id="partents" className="setion_5 scroll-mt-32 pt-10 bg-[#FAFBFF]">
+      </section>
+      <section
+        id="partents"
+        className="setion_5 scroll-mt-32 pt-10 bg-[#FAFBFF] dark:bg-primaryDark"
+      >
         <div className="container mx-auto">
           <div className="me-0 md:me-10">
             <MainTitle title={"شركاء عروضنا "} />
@@ -168,7 +172,7 @@ export default function Home() {
             <ActiveButtonUser title={"المزيـد"} />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

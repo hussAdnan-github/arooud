@@ -10,7 +10,7 @@ export default function HeaderText({titel}) {
     whileInView={'show'}
     viewport={{once:false , amount:0.1}}
     
-    className="md:text-end font-bold text-2xl text-center md:text-4xl text-black">
+    className="md:text-end font-bold text-2xl text-center md:text-4xl text-black dark:text-white">
        {titel}
     </motion.div>
   )

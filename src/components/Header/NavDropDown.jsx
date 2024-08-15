@@ -12,7 +12,7 @@ export default function NavbarDropdown() {
           <div className=" relative inline-block text-left dropdown">
             <span className="rounded-md shadow-sm">
               <button
-                className="hover:-translate-y-1 hover:scale-100   bg-gray-200 hover:bg-gray-100  inline-flex justify-center px-4 py-2 rounded-full w-48 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border  border-gray-300 hover:text-gray-500 focus:outline-none focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+                className="hover:-translate-y-1 hover:scale-100  dark:bg-primaryDark dark:text-white bg-gray-200 hover:bg-gray-100  inline-flex justify-center px-4 py-2 rounded-full w-48 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border  border-gray-300 hover:text-gray-500 focus:outline-none focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="true"
@@ -30,20 +30,20 @@ export default function NavbarDropdown() {
               style={{ zIndex: "99999999", top: "134px" }}
             >
               <div
-                className="absolute right-0 w-full mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                className="absolute right-0 w-full mt-2 origin-top-right  bg-white border border-gray-100 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                 aria-labelledby="headlessui-menu-button-1"
                 id="headlessui-menu-items-117"
                 role="menu"
               >
-                <div className="tablels px-12 bg-[#F8F8F8]">
+                <div className="tablels px-12 dark:bg-primaryDark  bg-[#F8F8F8]">
                   <div className="flex gap-2 py-8">
                     {/* Filter 3 */}
                     <div className="flex flex-col gap-9 items-end  flex-1 md:me-10">
-                      <h1 className="text-2xl mb-1  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
+                      <h1 className="text-2xl mb-1  underline underline-offset-8 dark:text-white decoration-[#DDDDDD] font-medium	">
                         الفلترة حسب السعر
                       </h1>
                       <div
-                        className="filter_price grid md:grid-cols-2 text-[#7D7E80]"
+                        className="filter_price grid md:grid-cols-2  text-[#7D7E80]"
                         style={{ direction: "rtl" }}
                       >
                         <div className="flex items-center">
@@ -54,7 +54,7 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo     me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">مابين 5000 الف</h1>
+                          <h1 className="text-sm font-bold dark:text-white">مابين 5000 الف</h1>
                         </div>
                         <div className="flex items-center">
                           <input
@@ -64,7 +64,7 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">اقل من 5000 الف</h1>
+                          <h1 className="text-sm font-bold dark:text-white">اقل من 5000 الف</h1>
                         </div>
                         <div className="flex items-center mt-6">
                           <input
@@ -74,11 +74,11 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">اقل من 5000 الف</h1>
+                          <h1 className="text-sm font-bold dark:text-white">اقل من 5000 الف</h1>
                         </div>
                       </div>
 
-                      <h1 className="text-2xl  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
+                      <h1 className="text-2xl dark:text-white underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
                         الفلترة حسب اقسام عروض
                       </h1>
 
@@ -94,7 +94,7 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">مواقع عالمية</h1>
+                          <h1 className="text-sm font-bold dark:text-white">مواقع عالمية</h1>
                         </div>
                         <div className="flex items-center">
                           <input
@@ -104,7 +104,7 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">متجر الكتروني</h1>
+                          <h1 className="text-sm font-bold dark:text-white">متجر الكتروني</h1>
                         </div>
                         <div className="flex items-center">
                           <input
@@ -114,27 +114,27 @@ export default function NavbarDropdown() {
                             className="accent-primaryColo  me-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
 
-                          <h1 className="text-sm font-bold">مواقع عالمية</h1>
+                          <h1 className="text-sm font-bold dark:text-white">مواقع عالمية</h1>
                         </div>
                       </div>
                     </div>
 
                     {/* Filter 2 */}
                     <div className="text-end me-2">
-                      <h1 className=" text-2xl mb-8  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
+                      <h1 className=" text-2xl mb-8 dark:text-white underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
                         الفلترة حسب الاقسام
                       </h1>
                       <div
-                        className="filter_work grid md:grid-cols-3 gap-2 text-[#7D7E80]"
+                        className="filter_work grid md:grid-cols-3 gap-2  text-[#7D7E80]"
                         style={{ direction: "rtl" }}
                       >
                         <div
-                          className="text-center border border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center"
+                          className="text-center border  border-gray-500 w-40 overflow-hidden rounded-full h-10 flex justify-center items-center"
                           style={{
                             borderColor: generateRandomColor(),
                           }}
                         >
-                          <h1>قسم السفر والسياحة</h1>
+                          <h1 className="dark:text-white">قسم السفر والسياحة</h1>
                         </div>
 
                         <div
@@ -143,7 +143,7 @@ export default function NavbarDropdown() {
                             borderColor: generateRandomColor(),
                           }}
                         >
-                          <h1>قسم السفر والسياحة</h1>
+                          <h1 className="dark:text-white">قسم السفر والسياحة</h1>
                         </div>
 
                         <div
@@ -152,7 +152,7 @@ export default function NavbarDropdown() {
                             borderColor: generateRandomColor(),
                           }}
                         >
-                          <h1>قسم السفر والسياحة</h1>
+                          <h1 className="dark:text-white">قسم السفر والسياحة</h1>
                         </div>
 
                         <div
@@ -231,7 +231,7 @@ export default function NavbarDropdown() {
 
                     {/* Filter 1 */}
                     <div className="text-end">
-                      <h1 className="  text-2xl mb-8  underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
+                      <h1 className="  text-2xl mb-8 dark:text-white underline underline-offset-8 decoration-[#DDDDDD] font-medium	">
                         الفلترة حسب المنطقة
                       </h1>
                       <div
@@ -239,13 +239,13 @@ export default function NavbarDropdown() {
                         style={{ direction: "rtl" }}
                       >
                         <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
-                          <h1>تريم</h1>
+                          <h1 className="dark:text-white">تريم</h1>
                         </div>
                         <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
-                          <h1>تريم</h1>
+                          <h1 className="dark:text-white">تريم</h1>
                         </div>
                         <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
-                          <h1>تريم</h1>
+                          <h1 className="dark:text-white">تريم</h1>
                         </div>
                         <div className="text-center border border-gray-500 w-28 overflow-hidden rounded-full h-10 flex justify-center items-center">
                           <h1>تريم</h1>

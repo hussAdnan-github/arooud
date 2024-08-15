@@ -60,12 +60,6 @@ export default function SideBar2() {
       id: 5,
       name: "المصادقة والتفويض",
       icon: <FaShield />,
-      value: "keys",
-    },
-    {
-      id: 6,
-      name: "رمز التفويض",
-      icon: <GoPasskeyFill />,
       value: "auth",
     },
   ];
@@ -78,7 +72,7 @@ export default function SideBar2() {
     },
     {
       id: 2,
-      name: " المواقع الالكترونية",
+      name: " المتاجر الإلكترونية",
       icon: <TbWorldUpload />,
       url: "/dashboard/website",
     },
@@ -93,7 +87,7 @@ export default function SideBar2() {
   const offer = [
     {
       id: 1,
-      name: "أنوع العملة",
+      name: "أنواع العملة",
       icon: <BsCurrencyExchange />,
       url: "/dashboard/currencies",
     },
@@ -111,7 +105,7 @@ export default function SideBar2() {
     },
     {
       id: 4,
-      name: "القسائم المحلية",
+      name: "الكوبونات المحلية",
       icon: <RiCoupon2Line />,
       url: "/dashboard/couponsLocal",
     },
@@ -125,7 +119,7 @@ export default function SideBar2() {
   const place = [
     {
       id: 1,
-      name: "الاعلانات",
+      name: "الإعلانات",
       icon: <HiSpeakerphone />,
       url: "/dashboard/advertisements",
     },
@@ -162,14 +156,6 @@ export default function SideBar2() {
       url: "/dashboard/authentications",
     },
   ];
-  const keys = [
-    {
-      id: 1,
-      name: "الرموز",
-      icon: <FaKey />,
-      url: "/dashboard/symbols",
-    },
-  ];
 
   return (
     <>
@@ -188,7 +174,7 @@ export default function SideBar2() {
                 <TabsList>
                   {titleSidebar.map((title) => (
                     <TabsTrigger
-                    key={title.id}
+                      key={title.id}
                       value={title.value}
                       className="w-full pe-2"
                       onClick={() => setactiveSection(title.name)}
@@ -256,12 +242,6 @@ export default function SideBar2() {
                   className=" relative right-56 bottom-20"
                 >
                   <SidbarItem data={place} />
-                </TabsContent>
-                <TabsContent
-                  value="keys"
-                  className=" relative right-56 bottom-20"
-                >
-                  <SidbarItem data={keys} />
                 </TabsContent>
                 <TabsContent
                   value="auth"

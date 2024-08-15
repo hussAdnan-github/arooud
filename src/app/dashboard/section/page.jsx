@@ -1,41 +1,22 @@
+async function getData() {
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/departments/departments/",
+    {
+      cache: "no-store",
+    }
+  );
+  const section = await response.json();
 
-async function getData(){
- 
-    return [
- 
-        {
-        id: 1,
-        state: "قيد الأنشاء",
-        title: "الاكترونيات",
-        // image: img,
-        },
-        
-        {
-        id: 1,
-        state: "قيد الأنشاء",
-        title: "الاكترونيات",
-        // image: img,
-        },
-       
-        
-        // ...
-      ]
-  }
+  return section["result"];
+}
 
-// async function page() {
-//   // Fetch data from your API here.
-  
-//   return <></>
-// }
-// import img from '../../../../public/dashboard/person.svg'
-import { DataTable } from "@/app/dashboard/section/data-table"
-import { Payment, columns } from "./columns"
+import { DataTable } from "@/app/dashboard/section/data-table";
+import { Payment, columns } from "./columns";
 export default async function Page() {
-  const data = await getData()
-
+  const data = await getData();
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto h-[1300px]">
       <DataTable columns={columns} data={data} />
     </div>
-  )
+  );
 }

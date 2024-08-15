@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="footer z-20 w-full mt-28">
+    <div className="footer z-20 w-full mt-28 bg-white">
       <div className="footer_img">
         <div className="flex flex-col-reverse md:flex-row justify-around text-white items-start pt-8 pb-4 bg__fotter">
           <div className="flex flex-col items-center md:items-end gap-4">
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer_down">
-        <footer className="bg-white rounded-lg shadow dark:bg-gray-800">
+        <footer className="bg-white  shadow dark:bg-primaryDark">
           <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <ul className="flex flex-wrap items-center justify-between mt-3 text-sm font-medium text-[#C8C9CC] dark:text-gray-400 sm:mt-0">
               <li>

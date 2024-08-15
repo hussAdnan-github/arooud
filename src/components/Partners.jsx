@@ -1,45 +1,24 @@
-import Link from 'next/link';
-import world from '../../public/img/CADpatents.svg'
+import Link from "next/link";
+import world from "../../public/img/CADpatents.svg";
 import PartnersCard from "./PartnersCard";
 
-export default function Partners() {
-  return (
-<div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+export default async function Partners() {
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/places/arewe/",
+    {cache:'no-store'}
+  );
+  const about = await response.json();
   
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-</div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-x-6">
+      <div className="partners_offer ">
+        {about.map((item) => (
+          <Link href={"/partners"} key={item.id}>
+            {" "}
+            <PartnersCard title={item.goal_ar} img={item. image_goal} />
+          </Link>
+        ))}
+      </div>
     </div>
- 
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-<div className="partners_offer ">
-      <Link href={'/Partners'}>     <PartnersCard title={"محل صدى الرنين"} img={world}/></Link>
-    </div>
- 
-
-</div>
-  )
+  );
 }

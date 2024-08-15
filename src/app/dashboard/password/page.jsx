@@ -15,8 +15,9 @@ export default function page() {
             src={Bglogin}
             className="absolute "
             style={{ height: "600px" }}
+            alt=""
           />
-          <Image src={logo} className="absolute left-1/4 top-24" />
+          <Image src={logo} className="absolute left-1/4 top-24" alt="" />
           <div className="flex w-full items-center justify-center absolute bottom-4">
               <div className="flex">
                 <Image src={facebook} width={24} alt="twintter imgae" />

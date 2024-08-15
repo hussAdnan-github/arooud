@@ -1,21 +1,21 @@
 "use client";
-import CardIconImg from "../../public/img/cardicon.svg";
-import market from "../../public/img/mrket.svg";
-import hotel from "../../public/img/hotel.svg";
-import world from "../../public/img/world.svg";
-import music from "../../public/img/music.svg";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// import 'swiper/css/navigation';
-
-// Import Swiper styles
-
 import { Navigation } from "swiper/modules";
-
 import CardIcon from "./CardIcon";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useQuery } from "@tanstack/react-query";
+import { Skeleton } from "./ui/skeleton";
+
+
+
+const fetchCatefories = async () => {
+  const response = await fetch(
+    "https://offers.pythonanywhere.com/v1/api/departments/departments/"
+  );
+  return await response.json();
+};
 
 export default function SliderCategries() {
   const swiperRef = useRef(null);
@@ -32,6 +32,29 @@ export default function SliderCategries() {
     }
   };
 
+  const { data, isLoading, isError, error, isSuccess , isFetched} = useQuery({
+    queryKey: ["catefories"],
+    queryFn: fetchCatefories,
+    staleTime :5 * 1000 ,
+  });
+  console.log({isLoading , isFetched})
+  if (isLoading) {
+    return (
+      <div className="flex gap-4 justify-center">
+        <Skeleton className="h-[208px] w-[208px] rounded-xl border bg-black" />
+        <Skeleton className="h-[208px] w-[208px] rounded-xl border bg-black" />
+        <Skeleton className="h-[208px] w-[208px] rounded-xl border bg-black" />
+        <Skeleton className="h-[208px] w-[208px] rounded-xl border bg-black" />
+        <Skeleton className="h-[208px] w-[208px] rounded-xl border bg-black" />
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="text-red-400">{error.message}</div>;
+  }
+  if (isSuccess) {
+    // console.log(data["result"]);
+  }
   return (
     <div className="mainslider_categries ms-8">
       <Swiper
@@ -56,42 +79,24 @@ export default function SliderCategries() {
         }}
         className="mySwiper slider_categries "
       >
-        <SwiperSlide>
-          {" "}
-          <CardIcon title={"الجمال والعافية"} img={CardIconImg} />
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <CardIcon title={"الترفيه"} img={music} />{" "}
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <CardIcon title={"التسوق"} img={market} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardIcon title={"السفر والسياحة"} img={world} />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <CardIcon title={"الضيافة"} img={hotel} />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <CardIcon title={"الضيافة"} img={hotel} />
-        </SwiperSlide>
+        {data["result"].map((item) => (
+          <SwiperSlide key={item.id}>
+            <CardIcon title={item.name_ar} img={item.image} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="relative w-full -top-28">
         <button
-          className="btn-prev absolute -left-14 bg-[#D9D9D9] p-2 rounded-full"
+          className="btn-prev absolute -left-14 bg-[#D9D9D9]   p-2 rounded-full"
           onClick={handlePrevClick}
         >
-          <FaAngleLeft />
+          <FaAngleLeft className="dark:text-primaryDark"/>
         </button>
         <button
-          className="btn-next absolute  -right-10 bg-[#D9D9D9] p-2 rounded-full"
+          className="btn-next absolute  -right-10 bg-[#D9D9D9]  p-2 rounded-full"
           onClick={handleNextClick}
         >
-          <FaAngleRight />
+          <FaAngleRight className="dark:text-primaryDark"/>
         </button>
       </div>
     </div>

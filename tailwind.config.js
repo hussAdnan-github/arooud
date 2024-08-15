@@ -23,6 +23,8 @@ module.exports = {
       colors: {
         primaryColo:'#ED1C24',
         grayColor: '#D3D1D8',
+        primaryDark:'#161717',
+        socondaryDark:'#202020',
         // border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

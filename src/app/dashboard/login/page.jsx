@@ -11,7 +11,7 @@ export default function page() {
     <div className="login_code p-4 h-auto md:h-[660px]">
       <div className="flex flex-col md:flex-row w-full h-full">
       <div className="img_login w-full flex flex-col justify-center items-center gap-y-20 p-14 md:p-0 mb-10 md:mb-0">
-          <Image src={logo} className="  w-56 md:w-[300px]" height={356} />
+          <Image src={logo} className="  w-56 md:w-[300px]" height={356} alt=""/>
           <div className="flex w-full items-center justify-center ">
             <div className="flex gap-2 me-2">
               <Image src={facebook} width={20} alt="twintter imgae" />

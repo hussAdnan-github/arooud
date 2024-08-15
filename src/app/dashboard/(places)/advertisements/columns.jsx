@@ -1,57 +1,50 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-import { MoreHorizontal } from "lucide-react";
-
 import Image from "next/image";
 
-import Edit from "../../_components/Edit";
+import Edite from "./Edite";
 export const columns = [
   {
-    id: "actions",
+    accessorKey: "id",
+
     cell: ({ row }) => {
       const payment = row.original;
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              className="h-8 w-8 p-0 bg-[#F4F9FD] rounded-full rotate-90"
-            >
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white">
-            <Edit />
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
+      const id = row.getValue("id");
+
+      return <Edite dataRow={row} />;
     },
   },
   {
-    accessorKey: "state",
+    accessorKey: "status",
     cell: ({ row }) => {
-      const state = row.getValue("state");
+      const status = row.getValue("status");
+      let statusTitle = "";
+      switch (status) {
+        case 1:
+          statusTitle = "قيد الانشاء";
+          break;
+        case 2:
+          statusTitle = "تم الانشاء";
+          break;
+        case 3:
+          statusTitle = "تم التوقف";
+          break;
+      }
+
       return (
         <div className="text-right font-bold ">
           <h1 className="text-sm text-[#91929E]">حالة القسم</h1>
-          <h1 className="text-green-600 text-sm">{state}</h1>
+          <h1 className="text-green-600 text-sm">{statusTitle}</h1>
         </div>
       );
     },
   },
   {
-    accessorKey: "title",
+    accessorKey: "name_ar",
     cell: ({ row }) => {
-      const title = row.getValue("title");
-      return <div className="text-right text-2xl font-bold">{title}</div>;
+      const name_ar = row.getValue("name_ar");
+      return <div className="text-right text-2xl font-bold">{name_ar}</div>;
     },
   },
   {

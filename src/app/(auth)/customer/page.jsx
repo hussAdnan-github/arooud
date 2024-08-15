@@ -4,7 +4,7 @@ import logo from "../../../../public/img/logo.png";
 import Link from "next/link";
 
 import ButtonRoundedPrimary from "@/components/ButtonRoundedPrimary";
-import login from "../../../../public/img/login.png";
+import customer from "../../../../public/img/customer.svg";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 
 export default function page() {
@@ -28,9 +28,9 @@ export default function page() {
           <div className="flex flex-col items-center">
             <div className="customer_img h-80 w-80    md:h-[360px] md:w-[360px] object-cover">
               <Image
-                src={login}
+                src={customer}
                 alt="صورة التسجيل"
-                className="rounded-full w-full h-full border border-black object-contain"
+                className="rounded-full w-full h-full object-contain"
               />
             </div>
             <div>

@@ -18,7 +18,7 @@ export default function page() {
             src={logo}
             className="  w-56 md:w-[300px]"
             height={356}
-        
+        alt=""
           />
           <div className="flex w-full items-center justify-center ">
             <div className="flex gap-2 me-2">

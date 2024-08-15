@@ -41,6 +41,7 @@ const DialogContent = React.forwardRef(({ className, children, ...props }, ref) 
         <X className="h-4 w-4  " />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
+      
     </DialogPrimitive.Content>
   </DialogPortal>
 ))
