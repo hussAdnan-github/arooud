@@ -5,7 +5,8 @@ import Link from "next/link";
 import BtnBack from "@/components/BtnBack";
 
 import TitleHeadRegiste from "@/components/TitleHeadRegiste";
-import MarketSgin from "@/components/form/Marketsgin";
+import MarketSgin from "@/components/form/MarketSgin";
+
  
 
 export default function page() {
