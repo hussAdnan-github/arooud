@@ -1,7 +1,6 @@
-import Password from "@/components/Password";
-import SideBar from "./_components/Sidbar";
+
 import SideBar2 from "./_components/Sidbar2";
-import Login from "@/components/form/Login";
+
 
 export const metadata = {
   title: "Create Next App",

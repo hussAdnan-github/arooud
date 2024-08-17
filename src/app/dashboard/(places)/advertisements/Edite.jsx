@@ -7,20 +7,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import axios from "axios";
 import { Clock8, MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import Image from "next/image";
-import { FaAngleDoubleLeft } from "react-icons/fa";
 
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { useState } from "react";

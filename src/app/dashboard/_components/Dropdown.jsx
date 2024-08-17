@@ -39,7 +39,7 @@ export default function Dropdown({ id }) {
             <ConfertPassword />
             <Link
               href="/"
-              className="pe-2 flex font-bold justify-end items-center text-end  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white rder-b-2 border-x-0 border-t-0"
+              className="pe-2 flex font-bold justify-end items-center text-end  py-2 hover:bg-gray-100  rder-b-2 border-x-0 border-t-0"
             >
               عرض الموقع
             </Link>

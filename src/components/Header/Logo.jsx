@@ -13,7 +13,7 @@ export default function Logo() {
       <Link href={"/"} className="">
         <Image
           src={theme == "light" ? logo : logoDark}
-          alt="Logo"
+          alt="شعار عروض"
           width={159}
           height={60}
         />

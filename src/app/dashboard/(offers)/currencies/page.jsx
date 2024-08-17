@@ -10,12 +10,6 @@ async function getData() {
   return section["result"];
 }
 
-// async function page() {
-//   // Fetch data from your API here.
-
-//   return <></>
-// }
-// import img from '../../../../../public/dashboard/person.svg'
 import { DataTable } from "@/app/dashboard/(offers)/currencies/data-table";
 import { Payment, columns } from "./columns";
 export default async function Page() {

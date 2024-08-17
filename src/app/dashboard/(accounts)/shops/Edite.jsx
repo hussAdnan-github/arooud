@@ -18,16 +18,28 @@ import {
 import axios from "axios";
 import { MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import Image from "next/image";
-import { FaAngleDoubleLeft, FaPlus, FaRegEye } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { MdOutlineCameraAlt } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Delete from "./Delete";
 import { BiEdit } from "react-icons/bi";
 import { TiPlus } from "react-icons/ti";
 
 export default function Edite({ dataRow }) {
+  const [datacountry, setDatacountry] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://offers.pythonanywhere.com/v1/api/places/directorate/"
+      );
+      const data = await response.json();
+      setDatacountry(data["result"]);
+    };
+
+    fetchData();
+  }, []);
   const [previewImage, setPreviewImage] = useState("");
   const handleFileChange = (event) => {
     console.log(event.target.files[0]);
@@ -43,7 +55,8 @@ export default function Edite({ dataRow }) {
     defaultValues: {
       sectionName: dataRow.getValue("name_ar"),
       status: dataRow.getValue("status"),
-      image: dataRow.getValue("image"),
+      // image: dataRow.getValue("image_ar"),
+      country: dataRow.getValue("directorate"),
     },
   });
 
@@ -103,7 +116,7 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 اسم المحل التجاري
               </label>
@@ -116,7 +129,7 @@ export default function Edite({ dataRow }) {
               />
             </div>
             <div className="mb-4">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+              <label className="block mb-2 text-sm font-medium text-gray-500 ">
                 نبذة المحل التجاري
               </label>
               <textarea
@@ -128,8 +141,8 @@ export default function Edite({ dataRow }) {
               ></textarea>
             </div>
             <div className="mb-4">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-              شعار المحل
+              <label className="block mb-2 text-sm font-medium text-gray-500 ">
+                شعار المحل
               </label>
               <div className="relative w-full h-[230px] rounded-lg mt-2">
                 <input
@@ -142,7 +155,7 @@ export default function Edite({ dataRow }) {
                   <div className="bg-black rounded-lg opacity-40 w-full h-full absolute z-10 cursor-pointer "></div>
                   <Image
                     src={
-                      previewImage ? previewImage : dataRow.getValue("image")
+                      previewImage ? previewImage : dataRow.getValue("image_ar")
                     }
                     alt="Preview"
                     width={464}
@@ -157,7 +170,7 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 المستخدام المنشاء{" "}
               </label>
@@ -192,7 +205,7 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 مجالات المتجر الإلكتروني{" "}
               </label>
@@ -224,7 +237,7 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 البريد الإلكتروني
               </label>
@@ -239,7 +252,7 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 موقع المحل التجاري{" "}
               </label>
@@ -254,41 +267,37 @@ export default function Edite({ dataRow }) {
             <div className="mb-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 المدينة{" "}
               </label>
-              <div className="flex items-center gap-5 justify-end">
-                <FaRegEye className="text-2xl text-gray-500" />
-                <BiEdit className="text-2xl" />
-                <FaPlus className="text-xl" />
+              <div className="flex items-center   justify-end">
+                <div className="flex gap-5 me-5">
+                  <FaRegEye className="text-2xl text-gray-500" />
+                  <BiEdit className="text-2xl" />
+                  <FaPlus className="text-xl" />
+                </div>
 
-                <Select>
-                  <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                    <SelectValue placeholder="" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white ">
-                    <SelectGroup>
-                      {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                      <SelectItem className=" text-[#9796A1] text-end">
-                        قيد الانشاء
-                      </SelectItem>
-
-                      <SelectItem
-                        className=" text-[#9796A1] text-end"
-                        value="apple"
-                      >
-                        انتظاار
-                      </SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                <select
+                  {...register("country", {
+                    required: "يجب أضافة أسم القسم",
+                  })}
+                  className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                  style={{ direction: "rtl" }}
+                >
+                  {datacountry.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.name_ar}
+                    </option>
+                  ))}
+                </select>
+                <p className="text-primaryColo">{errors.country?.message}</p>
               </div>
             </div>
             <div className="mt-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 الفيس بوك
               </label>
@@ -303,7 +312,7 @@ export default function Edite({ dataRow }) {
             <div className="mt-4">
               <label
                 for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-500 "
               >
                 انستقرام
               </label>

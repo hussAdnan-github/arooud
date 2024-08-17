@@ -35,7 +35,7 @@ export default async function CardAbout() {
             <Image
               className="w-2/3 rounded-t-lg h-96 md:h-80 md:w-80 md:rounded-none md:rounded-s-lg md:me-14"
               src={item.image_goal}
-              alt="هدف الشركة"
+              alt="من نحن : هدف شركة عروض"
               width={300}
               height={300}
             />
@@ -53,7 +53,7 @@ export default async function CardAbout() {
             <Image
               className="w-2/3 rounded-t-lg h-96 md:h-80 md:w-80 md:rounded-none md:rounded-s-lg md:me-14"
               src={item.image_idea}
-              alt="هدف الشركة"
+              alt="من نحن : فكرة شركة عروض"
               width={300}
               height={300}
             />
@@ -70,7 +70,7 @@ export default async function CardAbout() {
             <Image
               className="w-2/3 rounded-t-lg h-96 md:h-80 md:w-80 md:rounded-none md:rounded-s-lg md:me-14"
               src={item.image_message}
-              alt="هدف الشركة"
+              alt="من نحن : رسالة شركة عروض"
               width={300}
               height={300}
             />
@@ -87,7 +87,7 @@ export default async function CardAbout() {
             <Image
               className="w-2/3 rounded-t-lg h-96 md:h-80 md:w-80 md:rounded-none md:rounded-s-lg md:me-14"
               src={item.image_vision}
-              alt="هدف الشركة"
+              alt="من نحن : رئية شركة عروض"
               width={300}
               height={300}
             />

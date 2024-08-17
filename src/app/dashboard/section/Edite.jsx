@@ -10,10 +10,9 @@ import {
 import axios from "axios";
 import { MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import Image from "next/image";
-import { FaAngleDoubleLeft } from "react-icons/fa";
-import login from "../../../../public/img/login.png";
+
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { useState } from "react";
 import Delete from "./Delete";
@@ -52,7 +51,9 @@ export default function Edite({ dataRow }) {
     formData.append("image", data.image[0]);
     try {
       const response = await axios.put(
-        `https://offers.pythonanywhere.com/v1/api/departments/departments/${dataRow.getValue("id")}/`,
+        `https://offers.pythonanywhere.com/v1/api/departments/departments/${dataRow.getValue(
+          "id"
+        )}/`,
         formData,
         {
           headers: {
@@ -91,7 +92,7 @@ export default function Edite({ dataRow }) {
           >
             <div className="mb-4">
               <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
-              اسم القسم
+                اسم القسم
               </label>
               <input
                 {...register("sectionName")}

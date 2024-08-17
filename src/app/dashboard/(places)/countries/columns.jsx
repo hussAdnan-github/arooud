@@ -41,7 +41,7 @@ export const columns = [
     accessorKey: "name_ar",
     cell: ({ row }) => {
       const name_ar = row.getValue("name_ar");
-      return <div className="text-right text-xl font-bold">{name_ar}</div>;
+      return <div className="text-right text-xl font-bold w-[36rem]">{name_ar}</div>;
     },
   },
 ];

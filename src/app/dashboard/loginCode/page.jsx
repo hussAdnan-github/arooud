@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logo from "../../../../public/dashboard/logo.svg";
-import Bglogin from "../../../../public/dashboard/bg_login.svg";
+ 
 import twitter from "../../../../public/img/twitter.svg";
 import facebook from "../../../../public/img/facebook.svg";
 import instgram from "../../../../public/img/instgram.svg";
@@ -64,7 +64,7 @@ export default function page() {
                     data-focus-input-init
                     data-focus-input-next="code-2"
                     id="code-1"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>
@@ -79,7 +79,7 @@ export default function page() {
                     data-focus-input-prev="code-1"
                     data-focus-input-next="code-3"
                     id="code-2"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>
@@ -94,7 +94,7 @@ export default function page() {
                     data-focus-input-prev="code-2"
                     data-focus-input-next="code-4"
                     id="code-3"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function page() {
                     data-focus-input-prev="code-3"
                     data-focus-input-next="code-5"
                     id="code-4"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function page() {
                     data-focus-input-prev="code-4"
                     data-focus-input-next="code-6"
                     id="code-5"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>
@@ -138,7 +138,7 @@ export default function page() {
                     data-focus-input-init
                     data-focus-input-prev="code-5"
                     id="code-6"
-                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block w-12 h-12 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500      "
                     required
                   />
                 </div>

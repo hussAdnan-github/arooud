@@ -18,9 +18,9 @@ import {
 import axios from "axios";
 import { Clock8, MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import Image from "next/image";
-import { FaAngleDoubleLeft, FaPlus, FaRegEye } from "react-icons/fa";
+import { FaPlus, FaRegEye } from "react-icons/fa";
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { useState } from "react";
 import Delete from "./Delete";
@@ -149,7 +149,9 @@ export default function Edite({ dataRow }) {
               <p className="text-primaryColo">{errors.trem_use?.message}</p>
             </div>
             <div className="mb-4">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">صورة غلاف القسيمة</label>
+              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                صورة غلاف القسيمة
+              </label>
               <div className="relative w-full h-[230px] rounded-lg mt-2">
                 <input
                   id="file"

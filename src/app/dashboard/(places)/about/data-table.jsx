@@ -13,14 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+ 
 import {
   flexRender,
   getCoreRowModel,
@@ -72,7 +65,7 @@ export function DataTable({ columns, data }) {
     formData.append("vision_ar", data.visionName);
     formData.append("vision_en", data.visionName);
     formData.append("image_vision", data.visionimage[0]);
-    formData.append("status", 2);
+    formData.append("status", data.status);
 
     try {
       await axios
@@ -136,7 +129,7 @@ export function DataTable({ columns, data }) {
                   className="w-full text-end mt-8 mb-4"
                 >
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500  ">
                       الهدف 
                     </label>
                     <textarea
@@ -154,13 +147,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة غلاف الهدف{" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       htmlFor="file_input"
                     >
                       {" "}
@@ -180,7 +173,7 @@ export function DataTable({ columns, data }) {
                     </p>
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500  ">
                       الرسالة  
                     </label>
                     <textarea
@@ -199,13 +192,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة غلاف الرسالة  {" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       htmlFor="file_input2"
                     >
                       {" "}
@@ -225,7 +218,7 @@ export function DataTable({ columns, data }) {
                     </p>
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500  ">
                       الفكرة  
                     </label>
                     <textarea
@@ -244,13 +237,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة غلاف الفكرة  {" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       htmlFor="file_input3"
                     >
                       {" "}
@@ -270,7 +263,7 @@ export function DataTable({ columns, data }) {
                     </p>
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500  ">
                       الرؤية
                     </label>
                     <textarea
@@ -289,13 +282,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة غلاف الرؤية{" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       htmlFor="file_input4"
                     >
                       {" "}
@@ -318,31 +311,23 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       الحالة
                     </label>
 
-                    <Select>
-                      <SelectTrigger className="w-full   border-gray-300 text-[#9796A1]">
-                        <SelectValue placeholder="" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white ">
-                        <SelectGroup>
-                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                          <SelectItem className=" text-[#9796A1] text-end">
-                            قيد الانشاء
-                          </SelectItem>
-
-                          <SelectItem
-                            className=" text-[#9796A1] text-end"
-                            value="apple"
-                          >
-                            انتظاار
-                          </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                    <select
+                      className="w-full border cursor-pointer border-[#b9b5b5a1] text-gray-500 bg-white rounded-md  h-11 text-sm"
+                      style={{ direction: "rtl" }}
+                      {...register("status", {
+                        required: "يجب أضافة حالة المحافظة",
+                      })}
+                    >
+                      <option value="1">قيد الانشاء</option>
+                      <option value="2">تم الانشاء</option>
+                      <option value="3">تم التوقف</option>
+                    </select>
+                    <p className="text-primaryColo">{errors.status?.message}</p>
                   </div>
                   <div className="felx flex-row space-x-4 mt-8">
                     <Button

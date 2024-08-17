@@ -1,10 +1,22 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { IoSearchSharp } from "react-icons/io5";
+
 import { GoBell } from "react-icons/go";
 import { FaPlus, FaRegEye } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { format } from "date-fns";
+import { ar } from "date-fns/locale";
+
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 import {
   Dialog,
@@ -34,12 +46,15 @@ import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 import { BiEdit } from "react-icons/bi";
-import DatePicker from "../../_components/DatePicker";
+
 import { Clock8 } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { IoSearchSharp } from "react-icons/io5";
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, section, website, shope }) {
   const [columnFilters, setColumnFilters] = useState([]);
+  const [date, setDate] = useState();
+
   const table = useReactTable({
     data,
     columns,
@@ -71,17 +86,17 @@ export function DataTable({ columns, data }) {
           <Dropdown />
           <GoBell className="text-black rounded-lg p-2 text-4xl  bg-white drop-shadow-sm" />
         </div>
-        {/* <div className="flex items-center justify-end py-4 relative flex-auto">
+        <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
             placeholder="بحـث"
-            value={table.getColumn("name")?.getFilterValue() ?? ""}
+            value={table.getColumn("name_ar")?.getFilterValue() ?? ""}
             onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
+              table.getColumn("name_ar")?.setFilterValue(event.target.value)
             }
             className="max-w-md text-end rounded-full pe-10  drop-shadow-sm bg-white border-0"
           />
           <IoSearchSharp className="absolute me-2 text-2xl" />
-        </div> */}
+        </div>
       </div>
       <div className="w-[870px]">
         <div className="flex justify-between items-center">
@@ -108,7 +123,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       اسم العرض{" "}
                     </label>
@@ -121,12 +136,10 @@ export function DataTable({ columns, data }) {
                         required: "يجب أضافة أسم العرض",
                       })}
                     />
-                    <p className="text-primaryColo">
-                      {errors.name?.message}
-                    </p>
+                    <p className="text-primaryColo">{errors.name?.message}</p>
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500  ">
                       نبذة عن العرض 
                     </label>
                     <textarea
@@ -145,13 +158,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة غلاف العرض{" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       for="file_input"
                     >
                       {" "}
@@ -171,149 +184,163 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
-                      المتجر الإلكتروني  {" "}
+                      المتجر الإلكتروني{" "}
                     </label>
-                    <div className="flex items-center gap-5 justify-end">
-                      <FaRegEye className="text-2xl text-gray-500" />
-                      <BiEdit className="text-2xl" />
-                      <FaPlus className="text-xl" />
+                    <div className="flex items-center   justify-end">
+                      <div className="flex gap-5 me-5">
+                        <FaRegEye className="text-2xl text-gray-500" />
+                        <BiEdit className="text-2xl" />
+                        <FaPlus className="text-xl" />
+                      </div>
 
-                      <Select>
-                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white ">
-                          <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
-                            <SelectItem
-                              className=" text-[#9796A1] text-end"
-                              value="apple"
-                            >
-                              انتظاار
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <select
+                        {...register("section", {
+                          required: "يجب أضافة أسم القسم",
+                        })}
+                        className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                        style={{ direction: "rtl" }}
+                      >
+                        {website.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.name_ar}
+                          </option>
+                        ))}
+                      </select>
+                      <p className="text-primaryColo">
+                        {errors.section?.message}
+                      </p>
                     </div>
                   </div>
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       المحل التجاري{" "}
                     </label>
-                    <div className="flex items-center gap-5 justify-end">
-                      <FaRegEye className="text-2xl text-gray-500" />
-                      <BiEdit className="text-2xl" />
-                      <FaPlus className="text-xl" />
+                    <div className="flex items-center   justify-end">
+                      <div className="flex gap-5 me-5">
+                        <FaRegEye className="text-2xl text-gray-500" />
+                        <BiEdit className="text-2xl" />
+                        <FaPlus className="text-xl" />
+                      </div>
 
-                      <Select>
-                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white ">
-                          <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
-                            <SelectItem
-                              className=" text-[#9796A1] text-end"
-                              value="apple"
-                            >
-                              انتظاار
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <select
+                        {...register("section", {
+                          required: "يجب أضافة أسم القسم",
+                        })}
+                        className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                        style={{ direction: "rtl" }}
+                      >
+                        {shope.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.name_ar}
+                          </option>
+                        ))}
+                      </select>
+                      <p className="text-primaryColo">
+                        {errors.section?.message}
+                      </p>
                     </div>
                   </div>
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       القسم{" "}
                     </label>
-                    <div className="flex items-center gap-5 justify-end">
-                      <FaRegEye className="text-2xl text-gray-500" />
-                      <BiEdit className="text-2xl" />
-                      <FaPlus className="text-xl" />
+                    <div className="flex items-center   justify-end">
+                      <div className="flex gap-5 me-5">
+                        <FaRegEye className="text-2xl text-gray-500" />
+                        <BiEdit className="text-2xl" />
+                        <FaPlus className="text-xl" />
+                      </div>
 
-                      <Select>
-                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white ">
-                          <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
-                            <SelectItem
-                              className=" text-[#9796A1] text-end"
-                              value="apple"
-                            >
-                              انتظاار
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <select
+                        {...register("section", {
+                          required: "يجب أضافة أسم القسم",
+                        })}
+                        className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                        style={{ direction: "rtl" }}
+                      >
+                        {section.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.name_ar}
+                          </option>
+                        ))}
+                      </select>
+                      <p className="text-primaryColo">
+                        {errors.section?.message}
+                      </p>
                     </div>
                   </div>
 
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       حالة العرض{" "}
                     </label>
-                    <Select>
-                      <SelectTrigger className="w-full border-gray-300 text-[#9796A1]">
-                        <SelectValue placeholder="" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white ">
-                        <SelectGroup>
-                          {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                          <SelectItem className=" text-[#9796A1] text-end">
-                            قيد الانشاء
-                          </SelectItem>
-
-                          <SelectItem
-                            className=" text-[#9796A1] text-end"
-                            value="apple"
-                          >
-                            انتظاار
-                          </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                    <select
+                      {...register("status", {
+                        required: "يجب أضافة أسم القسم",
+                      })}
+                      className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                      style={{ direction: "rtl" }}
+                    >
+                      <option value="1">قيد الانشاء</option>
+                      <option value="2">تم الانشاء</option>
+                      <option value="3">تم التوقف</option>
+                    </select>
+                    <p className="text-primaryColo">{errors.status?.message}</p>
                   </div>
 
                   <div className="mt-4 flex items-center justify-between gap-4">
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         تاريخ انتهاء العرض{" "}
                       </label>
-                      <DatePicker />
+
+                      {/* <Popover>
+                        <PopoverTrigger {...register("date")} asChild>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full justify-between text-left font-normal   border-[#DADADA] ",
+                              !date &&
+                                "text-muted-foreground text-[#7D8592] hover:text-[#7D8592]"
+                            )}
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {date ? (
+                              format(date, "PPP", { locale: ar })
+                            ) : (
+                              <span>حدد التاريخ</span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0 bg-white">
+                          <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            locale={ar}
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover> */}
                     </div>
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         وقت انتهاء العرض{" "}
                       </label>
@@ -335,7 +362,7 @@ export function DataTable({ columns, data }) {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         السعر قبل{" "}
                       </label>
@@ -349,16 +376,15 @@ export function DataTable({ columns, data }) {
                             required: "يجب أضافة السعر قبل",
                           })}
                         />
-                       
                       </div>
                       <p className="text-primaryColo">
-                          {errors.after_price?.message}
-                        </p>
+                        {errors.after_price?.message}
+                      </p>
                     </div>
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         السعر بعد{" "}
                       </label>
@@ -372,11 +398,10 @@ export function DataTable({ columns, data }) {
                             required: "يجب أضافة السعر بعد",
                           })}
                         />
-                       
                       </div>
                       <p className="text-primaryColo">
-                          {errors.before_price?.message}
-                        </p>
+                        {errors.before_price?.message}
+                      </p>
                     </div>
                   </div>
 
@@ -388,6 +413,7 @@ export function DataTable({ columns, data }) {
                         id="first_name"
                         className="w-[16px]"
                         placeholder="حسيننن"
+                        {...register("checkbox")}
                       />
                     </div>
                   </div>

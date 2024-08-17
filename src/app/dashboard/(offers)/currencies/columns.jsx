@@ -1,16 +1,5 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
+ 
 
 import Image from "next/image";
 import Edite from "./Edite";
@@ -63,7 +52,7 @@ export const columns = [
     accessorKey: "name_ar",
     cell: ({ row }) => {
       const name_ar = row.getValue("name_ar");
-      return <div className="text-right text-2xl font-bold">{name_ar}</div>;
+      return <div className="text-right text-2xl font-bold w-[36rem]">{name_ar}</div>;
     },
   },
   {

@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import mainSlider from "../../public/img/mainSlider.svg";
 
 // import required modules
 import { Autoplay, Navigation } from "swiper/modules";
@@ -66,7 +65,7 @@ export default function MainSlider() {
                 src={item.image}
                 width={300}
                 height={100}
-                alt="Image Main Carsoule"
+                alt={item.name_ar}
               />
             </Link>
           </SwiperSlide>

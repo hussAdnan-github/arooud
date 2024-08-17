@@ -18,9 +18,9 @@ import {
 import axios from "axios";
 import { Clock8, MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+ 
 import Image from "next/image";
-import { FaAngleDoubleLeft, FaPlus, FaRegEye } from "react-icons/fa";
+import {   FaPlus, FaRegEye } from "react-icons/fa";
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { useState } from "react";
 import Delete from "./Delete";

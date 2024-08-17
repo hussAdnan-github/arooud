@@ -1,6 +1,5 @@
 import Image from "next/image";
 import logo from "../../../../public/dashboard/logo.svg";
-import Bglogin from "../../../../public/dashboard/bg_login.svg";
 import twitter from "../../../../public/img/twitter.svg";
 import facebook from "../../../../public/img/facebook.svg";
 import instgram from "../../../../public/img/instgram.svg";
@@ -10,8 +9,13 @@ export default function page() {
   return (
     <div className="login_code p-4 h-auto md:h-[660px]">
       <div className="flex flex-col md:flex-row w-full h-full">
-      <div className="img_login w-full flex flex-col justify-center items-center gap-y-20 p-14 md:p-0 mb-10 md:mb-0">
-          <Image src={logo} className="  w-56 md:w-[300px]" height={356} alt=""/>
+        <div className="img_login w-full flex flex-col justify-center items-center gap-y-20 p-14 md:p-0 mb-10 md:mb-0">
+          <Image
+            src={logo}
+            className="  w-56 md:w-[300px]"
+            height={356}
+            alt=""
+          />
           <div className="flex w-full items-center justify-center ">
             <div className="flex gap-2 me-2">
               <Image src={facebook} width={20} alt="twintter imgae" />
@@ -51,7 +55,7 @@ export default function page() {
               <div className="mb-4 text-end">
                 <label
                   for="first_name"
-                  className="block mb-2 text-sm me-4 text-gray-500 dark:text-white font-bold"
+                  className="block mb-2 text-sm me-4 text-gray-500  font-bold"
                 >
                   كلمة المرور
                 </label>
@@ -79,14 +83,16 @@ export default function page() {
                     checked
                     type="checkbox"
                     value=""
-                    className="checkbok w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="checkbok w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500  focus:ring-2 "
                   />
                 </div>
               </div>
               <div className="text-center mt-14">
                 <Button title={"تسجيل الدخول"} urllink={"#"} />
                 <Link href={"#"}>
-                  <h1 className="text-primaryColo underline mt-4">ليس لديك حساب؟</h1>
+                  <h1 className="text-primaryColo underline mt-4">
+                    ليس لديك حساب؟
+                  </h1>
                 </Link>
               </div>
             </form>

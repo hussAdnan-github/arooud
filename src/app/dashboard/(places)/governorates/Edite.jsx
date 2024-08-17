@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
+ 
 import { FaPlus, FaRegEye } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Delete from "./Delete";

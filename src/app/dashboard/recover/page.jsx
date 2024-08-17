@@ -1,10 +1,10 @@
 import Image from "next/image";
 import logo from "../../../../public/dashboard/logo.svg";
-import Bglogin from "../../../../public/dashboard/bg_login.svg";
+
 import twitter from "../../../../public/img/twitter.svg";
 import facebook from "../../../../public/img/facebook.svg";
 import instgram from "../../../../public/img/instgram.svg";
-import Link from "next/link";
+
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 import Button from "../_components/Button";

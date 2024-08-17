@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { FaPlus, FaRegEye } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+ 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import {
@@ -13,14 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+ 
 import {
   flexRender,
   getCoreRowModel,
@@ -118,13 +111,13 @@ export function DataTable({ columns, data, governorates }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       اسم المديرية{" "}
                     </label>
                     <input
                       type="text"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400   dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="اسم المديرية"
                       {...register("name", {
                         required: "يجب أضافة أسم المديرية",
@@ -135,7 +128,7 @@ export function DataTable({ columns, data, governorates }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       محافظة المديرية{" "}
                     </label>
@@ -153,7 +146,9 @@ export function DataTable({ columns, data, governorates }) {
                         })}
                       >
                         {governorates.map((item) => (
-                          <option key={item.id} value={item.id}>{item.name_ar}</option>
+                          <option key={item.id} value={item.id}>
+                            {item.name_ar}
+                          </option>
                         ))}
                       </select>
                       <p className="text-primaryColo">
@@ -165,7 +160,7 @@ export function DataTable({ columns, data, governorates }) {
                   <div className="mt-6">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       حالة المديرية{" "}
                     </label>

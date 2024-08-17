@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import CardProduct from "./CardProduct";
-import Link from "next/link";
+
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "./ui/skeleton";
 
@@ -66,10 +66,9 @@ export default function SliderCard() {
         modules={[Autoplay]}
         className="mySwiper h-[520px]"
       >
-       
         {data["result"].map((item) => (
           <SwiperSlide key={item.id}>
-              <CardProduct data={item}  />
+            <CardProduct data={item} />
           </SwiperSlide>
         ))}
       </Swiper>

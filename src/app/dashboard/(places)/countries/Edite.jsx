@@ -6,18 +6,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+ 
 import axios from "axios";
 import { MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaPlus } from "react-icons/fa";
+ 
 import Delete from "./Delete";
 export default function Edite({ dataRow }) {
   const {

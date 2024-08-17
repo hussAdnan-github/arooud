@@ -46,7 +46,7 @@ export default function ConfertPassword() {
           </h1> */}
           <form className="w-full text-end" onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-8">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+              <label className="block mb-2 text-sm font-medium text-gray-500 ">
                 كلمة المرور القديمة{" "}
               </label>
               <input
@@ -59,7 +59,7 @@ export default function ConfertPassword() {
               <p className="text-primaryColo">{errors.oldpassword?.message}</p>
             </div>
             <div className="mt-8">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+              <label className="block mb-2 text-sm font-medium text-gray-500  ">
                 كلمة المرور الجديدة{" "}
               </label>
               <input
@@ -72,7 +72,7 @@ export default function ConfertPassword() {
               <p className="text-primaryColo">{errors.password?.message}</p>
             </div>
             <div className="mt-8">
-              <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+              <label className="block mb-2 text-sm font-medium text-gray-500  ">
                 تأكيد كلمة المرور الجديدة{" "}
               </label>
               <input

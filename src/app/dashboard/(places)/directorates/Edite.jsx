@@ -10,10 +10,9 @@ import {
 import axios from "axios";
 import { MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { FaCircleChevronLeft } from "react-icons/fa6";
-import Image from "next/image";
-import { FaAngleDoubleLeft, FaPlus, FaRegEye } from "react-icons/fa";
-import { MdOutlineCameraAlt } from "react-icons/md";
+
+import { FaPlus, FaRegEye } from "react-icons/fa";
+
 import { useEffect, useState } from "react";
 import Delete from "./Delete";
 import { BiEdit } from "react-icons/bi";
@@ -128,9 +127,11 @@ export default function Edite({ dataRow }) {
                   })}
                 >
                   {dataprovinec.map((item) => (
-                    <option key={item.id} value={item.id}>{item.name_ar} </option>
-                   ))} 
-                </select> 
+                    <option key={item.id} value={item.id}>
+                      {item.name_ar}{" "}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
 

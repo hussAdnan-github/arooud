@@ -127,14 +127,14 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       اسم الإعلان
                     </label>
                     <input
                       type="text"
                       id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400   dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       {...register("name", {
                         required: "يجب أضافة أسم القسم",
@@ -145,7 +145,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       حالة الإعلان
                     </label>
@@ -165,14 +165,14 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500  "
                     >
                       رابط داخل الصورة
                     </label>
                     <input
                       type="text"
                       id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400   dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       {...register("share", {
                         required: "يجب أضافة أسم القسم",
@@ -185,7 +185,7 @@ export function DataTable({ columns, data }) {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         تاريخ انتهاء الإعلان{" "}
                       </label>
@@ -194,7 +194,7 @@ export function DataTable({ columns, data }) {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500  "
                       >
                         وقت انتهاء الإعلان{" "}
                       </label>
@@ -215,13 +215,13 @@ export function DataTable({ columns, data }) {
                   <div className="mt-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500  "
                     >
                       صورة الإعلان
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500  "
                       for="file_input"
                     >
                       {" "}

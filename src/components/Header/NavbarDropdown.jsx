@@ -18,7 +18,7 @@ export default function Dropdown({ id }) {
           >
             <Button
               variant="outline"
-              className="hover:-translate-y-1 hover:scale-100 transition duration-150 ease-in-out hover:bg-transparent hover:border-primaryColo hover:border hover:text-primaryColo rounded-full"
+              className="hover:-translate-y-1 hover:scale-100 transition duration-150 ease-in-out rounded-full"
             >
               تسجيل الدخول
             </Button>

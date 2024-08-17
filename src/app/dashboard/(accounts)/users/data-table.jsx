@@ -9,7 +9,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -34,7 +33,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
-import ConfertPassword from "../../_components/ConfertPassword";
+
 import DatePicker from "../../_components/DatePicker";
 import { Clock8 } from "lucide-react";
 import { BiEdit } from "react-icons/bi";
@@ -95,7 +94,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       الاسم الأول{" "}
                     </label>
@@ -110,7 +109,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       الاسم الأخير{" "}
                     </label>
@@ -125,7 +124,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       المدينة{" "}
                     </label>
@@ -154,7 +153,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       البريد الاكتروني
                     </label>
@@ -169,7 +168,7 @@ export function DataTable({ columns, data }) {
                   <div className="mt-6">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       رقم الهاتف
                     </label>
@@ -210,13 +209,13 @@ export function DataTable({ columns, data }) {
                   <div className="mt-6">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       الصورة الشخصية{" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500 "
                       for="file_input"
                     >
                       {" "}
@@ -235,7 +234,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       اسم المستخدم
                     </label>
@@ -250,7 +249,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       كلمة المرور{" "}
                     </label>
@@ -259,7 +258,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       نوع المستخدم
                     </label>
@@ -289,7 +288,7 @@ export function DataTable({ columns, data }) {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500 "
                       >
                         تاريخ الانضمام{" "}
                       </label>
@@ -298,7 +297,7 @@ export function DataTable({ columns, data }) {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500 "
                       >
                         وقت الانضمام{" "}
                       </label>
@@ -319,7 +318,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4 ">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       صلاحيات المستخدم
                     </label>

@@ -1,18 +1,5 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 import Edite from "./Edite";
 
 // const [email , setEmail] = useState();
@@ -132,6 +119,7 @@ export const columns = [
       return (
         <div className="flex justify-end">
           <Image
+          className="rounded-full w-[60px] h-[60px]"
             src={row.getValue("image_ar")}
             alt="sadasdsad"
             width={50}

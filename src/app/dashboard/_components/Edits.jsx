@@ -58,14 +58,14 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       اسم الاعلان
                     </label>
                     <input
                       type="text"
                       id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       required
                     />
@@ -73,7 +73,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       حالة الاعلان
                     </label>
@@ -101,14 +101,14 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       رابط داخل الصورة
                     </label>
                     <input
                       type="text"
                       id="first_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       required
                     />
@@ -118,7 +118,7 @@ export default function Edits() {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500 "
                       >
                         تاريخ انتهاء القسية{" "}
                       </label>
@@ -127,7 +127,7 @@ export default function Edits() {
                     <div className="w-full">
                       <label
                         for="first_name"
-                        className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-500 "
                       >
                         وقت انتهاء القسية{" "}
                       </label>
@@ -145,7 +145,7 @@ export default function Edits() {
                   <div className="mt-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       صورة الاعلان
                     </label>
@@ -188,7 +188,7 @@ export default function Edits() {
 
                 <form className="w-full text-end mt-8 mb-4">
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 ">
                     الهدف 
                     </label>
                     <textarea
@@ -202,7 +202,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       صورة غلاف الهدف{" "}
                     </label>
@@ -210,7 +210,7 @@ export default function Edits() {
                     <EditeImage/>
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 ">
                     الرسالة  
                     </label>
                     <textarea
@@ -224,7 +224,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       صورة غلاف الرسالة  {" "}
                     </label>
@@ -233,7 +233,7 @@ export default function Edits() {
 
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 ">
                     الفكرة  
                     </label>
                     <textarea
@@ -247,7 +247,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       صورة غلاف الفكرة  {" "}
                     </label>
@@ -256,7 +256,7 @@ export default function Edits() {
 
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 ">
                     الرؤية
                     </label>
                     <textarea
@@ -270,7 +270,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       صورة غلاف الرؤية{" "}
                     </label>
@@ -282,7 +282,7 @@ export default function Edits() {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       حالة المحافظة
                     </label>

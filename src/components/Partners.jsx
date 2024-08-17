@@ -1,5 +1,4 @@
 import Link from "next/link";
-import world from "../../public/img/CADpatents.svg";
 import PartnersCard from "./PartnersCard";
 
 export default async function Partners() {

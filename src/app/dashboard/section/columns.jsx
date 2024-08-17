@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Edite from "./Edite";
-import axios from "axios";
 
 export const columns = [
   {
@@ -33,7 +32,7 @@ export const columns = [
           break;
       }
       return (
-        <div className="text-right font-bold ">
+        <div className="text-right font-bold w-full">
           <h1 className="text-sm text-[#91929E]">حالة القسم</h1>
           <h1 className="text-[#0AC947] text-sm">{statusTitle}</h1>
         </div>
@@ -44,7 +43,7 @@ export const columns = [
     accessorKey: "name_ar",
     cell: ({ row }) => {
       const name_ar = row.getValue("name_ar");
-      return <div className="text-right text-2xl font-bold ">{name_ar}</div>;
+      return <div className="text-right text-2xl font-bold w-[42rem]">{name_ar}</div>;
     },
   },
   {

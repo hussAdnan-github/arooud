@@ -18,7 +18,7 @@ export default function CardProduct({ data }) {
           <Image
             className=" w-full h-full hover:scale-125 object-contain hover:rotate-12 transition ease-in-out  delay-0 hover:-translate-y-1 duration-300"
             src={data.image_ar}
-            alt="صورة العرض"
+            alt={`عرض عروض ${data.name_ar}`}
             width={200}
             height={200}
             objectFit="contain"

@@ -2,15 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { GoBell } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
-import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
 import {
   flexRender,
@@ -27,10 +20,9 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Input } from "@/components/ui/input";
 import { IoSearchSharp } from "react-icons/io5";
+import AddSection from "../_components/AddSection";
 
 export function DataTable({ columns, data }) {
-  const formData = new FormData();
-
   const [columnFilters, setColumnFilters] = useState([]);
   const table = useReactTable({
     data,
@@ -43,40 +35,6 @@ export function DataTable({ columns, data }) {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
   });
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitted },
-  } = useForm({
-    defaultValues: {},
-  });
-  const createPost = async (data) => {
-    formData.append("name_ar", data.sectionName);
-    formData.append("name_en", data.sectionName);
-    formData.append("status", data.status);
-    formData.append("image", data.image[0]);
-    try {
-      await axios
-        .post(
-          "https://offers.pythonanywhere.com/v1/api/departments/departments/",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
-        .then((response) => {
-          console.log(response);
-        });
-    } catch (error) {
-      console.error("Error creating post:", error);
-      throw error;
-    }
-  };
-  const onSubmit = async (data) => {
-    createPost(data);
-  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -100,101 +58,13 @@ export function DataTable({ columns, data }) {
         <div>
           <Dialog className="gap-0">
             <DialogTrigger asChild>
-              <Button className="bg-primaryColo shadow-md shadow-red-300 hover:bg-primaryColo text-white w-36">
+              <Button className="bg-primaryColo shadow-md shadow-red-300 hover:bg-primaryColo text-white ">
                 {" "}
                 <FaPlus className="me-2" />
                 أضافة قـسم
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] bg-white">
-              <DialogHeader>
-                <DialogTitle>أضافة قـسم</DialogTitle>
-              </DialogHeader>
-
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="w-full text-end mt-8"
-              >
-                <div className="mb-4">
-                  <label
-                    // for="first_name"
-                    className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
-                  >
-                    اسم القسم
-                  </label>
-                  <input
-                    className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
-                    placeholder="حسيننن"
-                    {...register("sectionName", {
-                      required: "يجب أضافة أسم القسم",
-                    })}
-                  />
-                  <p className="text-primaryColo">
-                    {errors.sectionName?.message}
-                  </p>
-                </div>
-                <div className="mt-6">
-                  <label
-                    // for="first_name"
-                    className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
-                  >
-                    حالة القسم
-                  </label>
-                  <select
-                   {...register("status", {
-                    required: "يجب أضافة أسم القسم",
-                  })}
-                    className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
-                    style={{ direction: "rtl" }}
-                  >
-                    <option value="1">قيد الانشاء</option>
-                    <option value="2">تم الانشاء</option>
-                    <option value="3">تم التوقف</option>
-                  </select>
-                  <p className="text-primaryColo">{errors.status?.message}</p>
-                </div>
-                <div className="mt-6">
-                  <label
-                    // for="first_name"
-                    className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
-                  >
-                    صورة{" "}
-                  </label>
-
-                  <label
-                    className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
-                    htmlFor="file_input"
-                  >
-                    {" "}
-                    <FaCircleChevronLeft className="text-gray-400 text-xl" />
-                    إضافة صورة القسم{" "}
-                  </label>
-                  <input
-                    className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                    id="file_input"
-                    {...register("image", {
-                      required: "يجب أضافة صورة القسم",
-                    })}
-                    type="file"
-                  />
-                  <p className="text-primaryColo">{errors.image?.message}</p>
-                </div>
-                <div className="felx flex-row space-x-4 mt-8">
-                  <Button
-                    type="submit"
-                    className="bg-[#D3D3D3] hover:bg-[#D3D3D3] text-white rounded-2xl"
-                  >
-                    حفظ مع إضافة أخرى
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-primaryColo px-8 py-2 hover:bg-primaryColo text-white rounded-2xl"
-                  >
-                    إضافة
-                  </Button>
-                </div>
-              </form>
-            </DialogContent>
+            <AddSection />
           </Dialog>
         </div>
         <div>
@@ -216,7 +86,6 @@ export function DataTable({ columns, data }) {
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
-              
                 {row.getVisibleCells().map((cell) => (
                   <div key={cell.id} className="">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

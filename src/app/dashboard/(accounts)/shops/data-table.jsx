@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { FaPlus, FaRegEye } from "react-icons/fa";
-import { FaArrowRightLong, FaCircleChevronLeft } from "react-icons/fa6";
+import {  FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { TiPlus } from "react-icons/ti";
 
@@ -35,8 +35,9 @@ import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 import { BiEdit } from "react-icons/bi";
+import AddSection from "../../_components/AddSection";
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, section, country }) {
   const [columnFilters, setColumnFilters] = useState([]);
   const table = useReactTable({
     data,
@@ -80,7 +81,7 @@ export function DataTable({ columns, data }) {
                   إضافة متجر إلكتروني
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[570px] h-[600px] overflow-scroll bg-white">
+              <DialogContent className="sm:max-w-[620px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
                   <DialogTitle>إضافة متجر إلكتروني</DialogTitle>
                 </DialogHeader>
@@ -89,7 +90,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       اسم المحل التجاري
                     </label>
@@ -102,7 +103,7 @@ export function DataTable({ columns, data }) {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+                    <label className="block mb-2 text-sm font-medium text-gray-500 ">
                       نبذة المحل التجاري
                     </label>
                     <textarea
@@ -116,13 +117,13 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-4 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-4 text-sm font-medium text-gray-500 "
                     >
                       شعار المحل{" "}
                     </label>
 
                     <label
-                      className="block mb-2 text-sm font-medium update_img text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium update_img text-gray-500 "
                       for="file_input"
                     >
                       {" "}
@@ -138,7 +139,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       المستخدام المنشاء{" "}
                     </label>
@@ -173,7 +174,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       مجالات المتجر الإلكتروني{" "}
                     </label>
@@ -181,34 +182,29 @@ export function DataTable({ columns, data }) {
                       className="grid grid-cols-4 "
                       style={{ direction: "rtl" }}
                     >
-                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">الكتروتيات</h1>
-                      </div>
-                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">مواد غذائية</h1>
-                      </div>
-                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">ادوات تجميل</h1>
-                      </div>
-                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">جوالات</h1>
-                      </div>
-                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">جوالات</h1>
-                      </div>
-                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <h1 className="text-[#7D7E80]">جوالات</h1>
-                      </div>
-                      <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
-                        <TiPlus className="text-xl" />
-                      </div>
+                      {section.map((item) => (
+                        <div
+                          key={item.id}
+                          className="w-32 mt-1 text-[#7D7E80] border border-[#DDDADB] text-center p-2 px-1 rounded-2xl"
+                        >
+                          <h1 className="text-[#7D7E80]">{item.name_ar}</h1>
+                        </div>
+                      ))}
+                      <Dialog className="gap-0">
+                        <DialogTrigger asChild>
+                          <Button className="cursor-pointer flex justify-center items-center w-32 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                            <TiPlus className="text-xl" />
+                          </Button>
+                        </DialogTrigger>
+                        <AddSection />
+                      </Dialog>
                     </div>
                   </div>
 
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       البريد الإلكتروني
                     </label>
@@ -223,7 +219,7 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       موقع المحل التجاري{" "}
                     </label>
@@ -238,41 +234,38 @@ export function DataTable({ columns, data }) {
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       المدينة{" "}
                     </label>
-                    <div className="flex items-center gap-5 justify-end">
-                      <FaRegEye className="text-2xl text-gray-500" />
-                      <BiEdit className="text-2xl" />
-                      <FaPlus className="text-xl" />
+                    <div className="flex items-center   justify-end">
+                      <div className="flex gap-5 me-5">
+                        <BiEdit className="text-2xl" />
+                        <FaPlus className="text-xl" />
+                      </div>
 
-                      <Select>
-                        <SelectTrigger className="w-3/4 border-gray-300 text-[#9796A1]">
-                          <SelectValue placeholder="" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white ">
-                          <SelectGroup>
-                            {/* <SelectLabel>قيد الأنشــاء</SelectLabel> */}
-                            <SelectItem className=" text-[#9796A1] text-end">
-                              قيد الانشاء
-                            </SelectItem>
-
-                            <SelectItem
-                              className=" text-[#9796A1] text-end"
-                              value="apple"
-                            >
-                              انتظاار
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <select
+                        // {...register("section", {
+                        //   required: "يجب أضافة أسم القسم",
+                        // })}
+                        className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
+                        style={{ direction: "rtl" }}
+                      >
+                        {country.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.name_ar}
+                          </option>
+                        ))}
+                      </select>
+                      {/* <p className="text-primaryColo">
+                        {errors.section?.message}
+                      </p> */}
                     </div>
                   </div>
                   <div className="mt-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       الفيس بوك
                     </label>
@@ -287,7 +280,7 @@ export function DataTable({ columns, data }) {
                   <div className="mt-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
                     >
                       انستقرام
                     </label>
