@@ -17,6 +17,27 @@ export const columns = [
     },
   },
   {
+    accessorKey: "status",
+
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "description_ar",
+
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "terms_of_use_ar",
+
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
     accessorKey: "currency_type",
     cell: ({ row }) => {
       const currency_type = row.getValue("currency_type");
@@ -34,7 +55,7 @@ export const columns = [
   {
     accessorKey: "email",
     cell: ({ row }) => {
-      return null;
+      return <div className="contents"></div>;
     },
   },
   {
@@ -84,33 +105,33 @@ export const columns = [
       );
     },
   },
-  {
-    accessorKey: "title",
-    cell: ({ row }) => {
-      const title = row.getValue("title");
-      const email = row.getValue("email");
-      return (
-        <div>
-          <div className="title_cusomer text-right text-[16px] font-bold">
-            {title}
-          </div>
-          <div className="email_cusomer text-right text-sm font-bold">
-            {email}
-          </div>
-        </div>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "title",
+  //   cell: ({ row }) => {
+  //     const title = row.getValue("title");
+  //     const email = row.getValue("email");
+  //     return (
+  //       <div>
+  //         <div className="title_cusomer text-right text-[16px] font-bold">
+  //           {title}
+  //         </div>
+  //         <div className="email_cusomer text-right text-sm font-bold">
+  //           {email}
+  //         </div>
+  //       </div>
+  //     );
+  //   },
+  // },
 
   {
-    accessorKey: "image",
+    accessorKey: "image_ar",
     cell: ({ row }) => {
-      const image = row.getValue("image");
+      const image_ar = row.getValue("image_ar");
       return (
         <div className="flex justify-end">
           <Image
             className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image")}
+            src={image_ar}
             alt="sadasdsad"
             width={50}
             height={50}

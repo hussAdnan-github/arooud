@@ -47,7 +47,7 @@ export default function AddSection() {
   return (
     <DialogContent className="sm:max-w-[425px] bg-white">
       <DialogHeader>
-        <DialogTitle>أضافة قـسم</DialogTitle>
+        <DialogTitle>إضافة قـسم</DialogTitle>
       </DialogHeader>
 
       <form onSubmit={handleSubmit(onSubmit)} className="w-full text-end mt-8">

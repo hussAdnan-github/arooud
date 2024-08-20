@@ -50,10 +50,11 @@ import { BiEdit } from "react-icons/bi";
 import { Clock8 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { IoSearchSharp } from "react-icons/io5";
+import axios from "axios";
 
 export function DataTable({ columns, data, section, website, shope }) {
   const [columnFilters, setColumnFilters] = useState([]);
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(new Date());
 
   const table = useReactTable({
     data,
@@ -74,10 +75,49 @@ export function DataTable({ columns, data, section, website, shope }) {
     defaultValues: {},
   });
   const createPost = async (data) => {
-    console.log(data);
+    const formData = new FormData();
+    const formattedDateTime = date.toISOString();
+    formData.append("image_ar", data.image[0]);
+    formData.append("image_en", data.image[0]);
+    formData.append("name_ar", data.name);
+    formData.append("name_en", data.name);
+    formData.append("description_ar", data.description);
+    formData.append("description_en", data.description);
+    formData.append("status", data.status);
+    formData.append("duration", formattedDateTime);
+    formData.append("price_before", data.before_price);
+    formData.append("price_after", data.after_price);
+    formData.append("distinct", data.checkbox);
+    formData.append("website", data.website);
+    formData.append("market", data.shope);
+    formData.append("department", data.section);
+    formData.append("currency_type", 6);
+    // console.log(formattedDateTime)
+    // console.log(formData.get('duration'))
+ 
+    try {
+      await axios
+        .post(
+          "https://offers.pythonanywhere.com/v1/api/offers/offers/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
+    }
   };
   const onSubmit = async (data) => {
     createPost(data);
+    // console.log(date)
+    // console.log(data);
   };
   return (
     <div>
@@ -196,7 +236,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                       </div>
 
                       <select
-                        {...register("section", {
+                        {...register("website", {
                           required: "يجب أضافة أسم القسم",
                         })}
                         className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
@@ -209,7 +249,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                         ))}
                       </select>
                       <p className="text-primaryColo">
-                        {errors.section?.message}
+                        {errors.website?.message}
                       </p>
                     </div>
                   </div>
@@ -228,7 +268,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                       </div>
 
                       <select
-                        {...register("section", {
+                        {...register("shope", {
                           required: "يجب أضافة أسم القسم",
                         })}
                         className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
@@ -241,7 +281,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                         ))}
                       </select>
                       <p className="text-primaryColo">
-                        {errors.section?.message}
+                        {errors.shope?.message}
                       </p>
                     </div>
                   </div>
@@ -308,8 +348,8 @@ export function DataTable({ columns, data, section, website, shope }) {
                         تاريخ انتهاء العرض{" "}
                       </label>
 
-                      {/* <Popover>
-                        <PopoverTrigger {...register("date")} asChild>
+                      <Popover>
+                        <PopoverTrigger asChild>
                           <Button
                             variant={"outline"}
                             className={cn(
@@ -328,6 +368,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0 bg-white">
                           <Calendar
+                            {...register("date")}
                             mode="single"
                             selected={date}
                             onSelect={setDate}
@@ -335,7 +376,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                             initialFocus
                           />
                         </PopoverContent>
-                      </Popover> */}
+                      </Popover>
                     </div>
                     <div className="w-full">
                       <label
@@ -456,7 +497,7 @@ export function DataTable({ columns, data, section, website, shope }) {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <div key={cell.id} className="">
+                    <div key={cell.id} className="contents">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

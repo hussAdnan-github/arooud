@@ -108,7 +108,7 @@ export const columns = [
         <div className="flex justify-end">
           <Image
             className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image")}
+            src={image}
             alt="sadasdsad"
             width={50}
             height={50}

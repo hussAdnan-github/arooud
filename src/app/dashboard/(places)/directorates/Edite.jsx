@@ -82,7 +82,7 @@ export default function Edite({ dataRow }) {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px] bg-white">
           <DialogHeader>
-            <DialogTitle>تعديل قـسم</DialogTitle>
+            <DialogTitle>تعديل مديرية</DialogTitle>
           </DialogHeader>
 
           <form
@@ -146,9 +146,7 @@ export default function Edite({ dataRow }) {
               <select
                 className="w-full border border-[#b9b5b5a1] text-[#b9b5b5a1] bg-gray-100 rounded-md focus:border-none focus:outline-none h-8"
                 style={{ direction: "rtl" }}
-                {...register("status", {
-                  required: "يجب أضافة أسم الدولة",
-                })}
+                {...register("status")}
               >
                 <option value="1">قيد الانشاء</option>
                 <option value="2">تم الانشاء</option>

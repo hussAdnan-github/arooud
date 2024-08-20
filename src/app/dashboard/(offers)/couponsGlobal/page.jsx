@@ -25,7 +25,7 @@ async function getData(){
   }
   async function getWebsite() {
     const response = await fetch(
-      "https://offers.pythonanywhere.com/v1/api/accounts/webs/",
+      "https://offers.pythonanywhere.com/v1/api/accounts/globalwebsite/",
       {
         cache: "no-store",
       }

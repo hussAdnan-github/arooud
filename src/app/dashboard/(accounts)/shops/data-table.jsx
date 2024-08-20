@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { IoSearchSharp } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { FaPlus, FaRegEye } from "react-icons/fa";
-import {  FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { TiPlus } from "react-icons/ti";
 
@@ -36,6 +36,8 @@ import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
 import { BiEdit } from "react-icons/bi";
 import AddSection from "../../_components/AddSection";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export function DataTable({ columns, data, section, country }) {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -50,7 +52,59 @@ export function DataTable({ columns, data, section, country }) {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
   });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm({
+    defaultValues: {},
+  });
+  const createPost = async (data) => {
+    const formData = new FormData();
+    const jsonData = JSON.stringify(data.section);
+    formData.append("image_ar", data.image[0]);
+    formData.append("image_en", data.image[0]);
+    formData.append("name_ar", data.name);
+    formData.append("name_en", data.name);
+    formData.append("about_the_market_ar", data.description);
+    formData.append("about_the_market_en", data.description);
+    formData.append("email", data.email);
+    formData.append("link", data.link);
+    formData.append("status", 2);
+    formData.append("facebook", data.facebook);
+    formData.append("the_x", data.link);
+    formData.append("instagram", data.instgram);
+    formData.append("tiktok", data.link);
+    formData.append("whatsapp", data.link);
+    formData.append("account", 4);
+    formData.append("directorate", data.country);
+    formData.append("departments", data.section);
+    console.log(formData.get("departments"));
 
+    try {
+      await axios
+        .post(
+          "https://offers.pythonanywhere.com/v1/api/accounts/markets/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
+    }
+  };
+  const onSubmit = async (data) => {
+    createPost(data);
+    // console.log(date)
+    // console.log(data);
+  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -61,9 +115,9 @@ export function DataTable({ columns, data, section, country }) {
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
             placeholder="بحـث"
-            value={table.getColumn("name")?.getFilterValue() ?? ""}
+            value={table.getColumn("name_ar")?.getFilterValue() ?? ""}
             onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
+              table.getColumn("name_ar")?.setFilterValue(event.target.value)
             }
             className="max-w-md text-end rounded-full pe-10 drop-shadow-sm bg-white border-0"
           />
@@ -78,15 +132,18 @@ export function DataTable({ columns, data, section, country }) {
                 <Button className="bg-primaryColo rounded-xl shadow-md shadow-red-300 hover:bg-primaryColo text-white   ">
                   {" "}
                   <FaPlus className="me-2" />
-                  إضافة متجر إلكتروني
+                  إضافة محل تجاري
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[620px] h-[600px] overflow-scroll bg-white">
                 <DialogHeader>
-                  <DialogTitle>إضافة متجر إلكتروني</DialogTitle>
+                  <DialogTitle>إضافة محل تجاري</DialogTitle>
                 </DialogHeader>
 
-                <form className="w-full text-end mt-8">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="w-full text-end mt-8"
+                >
                   <div className="mb-4">
                     <label
                       for="first_name"
@@ -99,8 +156,11 @@ export function DataTable({ columns, data, section, country }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="حسيننن"
-                      required
+                      {...register("name", {
+                        required: "يجب أضافة أسم المحل التجاري",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.name?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-500 ">
@@ -111,8 +171,13 @@ export function DataTable({ columns, data, section, country }) {
                       rows="4"
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف للمحل"
-                      required
+                      {...register("description", {
+                        required: "يجب أضافة نبذة عن المحل التجاري",
+                      })}
                     ></textarea>
+                    <p className="text-primaryColo">
+                      {errors.description?.message}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -134,7 +199,11 @@ export function DataTable({ columns, data, section, country }) {
                       className="  text-endblock w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                       id="file_input"
                       type="file"
+                      {...register("image", {
+                        required: "يجب أضافة صورة المحل التجاري",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.image?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -170,11 +239,10 @@ export function DataTable({ columns, data, section, country }) {
                       </Select>
                     </div>
                   </div>
-
                   <div className="mb-4">
                     <label
                       for="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-500 "
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
                       مجالات المتجر الإلكتروني{" "}
                     </label>
@@ -182,14 +250,48 @@ export function DataTable({ columns, data, section, country }) {
                       className="grid grid-cols-4 "
                       style={{ direction: "rtl" }}
                     >
-                      {section.map((item) => (
-                        <div
-                          key={item.id}
-                          className="w-32 mt-1 text-[#7D7E80] border border-[#DDDADB] text-center p-2 px-1 rounded-2xl"
-                        >
-                          <h1 className="text-[#7D7E80]">{item.name_ar}</h1>
-                        </div>
-                      ))}
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">الكتروتيات</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">مواد غذائية</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">ادوات تجميل</h1>
+                      </div>
+                      <div className="w-28 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="w-28 mt-2 text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <h1 className="text-[#7D7E80]">جوالات</h1>
+                      </div>
+                      <div className="flex justify-center items-center w-28 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
+                        <TiPlus className="text-xl" />
+                      </div>
+                    </div>
+                  </div>
+                  {/* <div className="mb-4">
+                    <label
+                      for="first_name"
+                      className="block mb-2 text-sm font-medium text-gray-500 "
+                    >
+                      مجالات المتجر الإلكتروني{" "}
+                    </label>
+                   
+                      <select {...register("section[]")} multiple>
+                        {section.map((item) => (
+                          <option
+                            key={item.id}
+                            className="w-32 mt-1 text-[#7D7E80] border border-[#DDDADB] text-center p-2 px-1 rounded-2xl"
+                            value={item.id}
+                          >
+                            {item.name_ar}
+                          </option>
+                        ))}
+                      </select>
                       <Dialog className="gap-0">
                         <DialogTrigger asChild>
                           <Button className="cursor-pointer flex justify-center items-center w-32 mt-2 bg-[#F6F6F6] text-[#7D7E80] border border-[#DDDADB] text-center p-2 rounded-2xl">
@@ -198,8 +300,8 @@ export function DataTable({ columns, data, section, country }) {
                         </DialogTrigger>
                         <AddSection />
                       </Dialog>
-                    </div>
-                  </div>
+                   
+                  </div> */}
 
                   <div className="mb-4">
                     <label
@@ -213,8 +315,11 @@ export function DataTable({ columns, data, section, country }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="youremail@gmail.com"
-                      required
+                      {...register("email", {
+                        required: "يجب أضافة البريد الإلكتروني",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.email?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -228,8 +333,11 @@ export function DataTable({ columns, data, section, country }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="youremail@gmail.com"
-                      required
+                      {...register("link", {
+                        required: "يجب أضافة موقع المحل التجاري",
+                      })}
                     />
+                    <p className="text-primaryColo">{errors.link?.message}</p>
                   </div>
                   <div className="mb-4">
                     <label
@@ -245,9 +353,9 @@ export function DataTable({ columns, data, section, country }) {
                       </div>
 
                       <select
-                        // {...register("section", {
-                        //   required: "يجب أضافة أسم القسم",
-                        // })}
+                        {...register("country", {
+                          required: "يجب أضافة أسم القسم",
+                        })}
                         className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
                         style={{ direction: "rtl" }}
                       >
@@ -257,9 +365,9 @@ export function DataTable({ columns, data, section, country }) {
                           </option>
                         ))}
                       </select>
-                      {/* <p className="text-primaryColo">
-                        {errors.section?.message}
-                      </p> */}
+                      <p className="text-primaryColo">
+                        {errors.country?.message}
+                      </p>
                     </div>
                   </div>
                   <div className="mt-4">
@@ -274,8 +382,13 @@ export function DataTable({ columns, data, section, country }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="youremail@gmail.com"
-                      required
+                      {...register("facebook", {
+                        required: "يجب أضافة حساب الفيس بوك",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.facebook?.message}
+                    </p>
                   </div>
                   <div className="mt-4">
                     <label
@@ -289,8 +402,13 @@ export function DataTable({ columns, data, section, country }) {
                       id="first_name"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="youremail@gmail.com"
-                      required
+                      {...register("instgram", {
+                        required: "يجب أضافة حساب انستقرام",
+                      })}
                     />
+                    <p className="text-primaryColo">
+                      {errors.instgram?.message}
+                    </p>
                   </div>
 
                   <div className="felx flex-row space-x-4 mt-8">
@@ -332,7 +450,7 @@ export function DataTable({ columns, data, section, country }) {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <div key={cell.id} className="">
+                    <div key={cell.id} className="contents">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

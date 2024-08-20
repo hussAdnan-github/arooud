@@ -137,7 +137,7 @@ export function DataTable({ columns, data }) {
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الهدف "
                       {...register("goalName", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة وصف الهدف",
                       })}
                     ></textarea>
                     <p className="text-primaryColo">
@@ -165,7 +165,7 @@ export function DataTable({ columns, data }) {
                       id="file_input"
                       type="file"
                       {...register("goalimage", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة صورة غلاف الهدف",
                       })}
                     />
                     <p className="text-primaryColo">
@@ -182,7 +182,7 @@ export function DataTable({ columns, data }) {
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الرسالة  "
                       {...register("messageName", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة وصف الرسالة",
                       })}
                     ></textarea>
                     <p className="text-primaryColo">
@@ -210,7 +210,7 @@ export function DataTable({ columns, data }) {
                       id="file_input2"
                       type="file"
                       {...register("messageimage", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة صورة غلاف الرسالة",
                       })}
                     />
                     <p className="text-primaryColo">
@@ -227,7 +227,7 @@ export function DataTable({ columns, data }) {
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الفكرة  "
                       {...register("ideaName", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة وصف الفكرة",
                       })}
                     ></textarea>
                     <p className="text-primaryColo">
@@ -255,7 +255,7 @@ export function DataTable({ columns, data }) {
                       id="file_input3"
                       type="file"
                       {...register("ideaimage", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة صورة غلاف الفكرة",
                       })}
                     />
                     <p className="text-primaryColo">
@@ -272,7 +272,7 @@ export function DataTable({ columns, data }) {
                       className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                       placeholder="أضف بعض الوصف الرؤية"
                       {...register("visionName", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة وصف الرؤية",
                       })}
                     ></textarea>
                     <p className="text-primaryColo">
@@ -300,7 +300,7 @@ export function DataTable({ columns, data }) {
                       id="file_input4"
                       type="file"
                       {...register("visionimage", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة صورة غلاف الرؤية",
                       })}
                     />
                     <p className="text-primaryColo">

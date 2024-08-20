@@ -16,6 +16,20 @@ export const columns = [
     },
   },
   {
+    accessorKey: "end_time",
+
+    cell: ({ row }) => {
+      return null;
+    },
+  },
+  {
+    accessorKey: "urls_ar",
+
+    cell: ({ row }) => {
+      return null;
+    },
+  },
+  {
     accessorKey: "status",
     cell: ({ row }) => {
       const status = row.getValue("status");
@@ -44,7 +58,7 @@ export const columns = [
     accessorKey: "name_ar",
     cell: ({ row }) => {
       const name_ar = row.getValue("name_ar");
-      return <div className="text-right text-2xl font-bold">{name_ar}</div>;
+      return <div className="text-right text-2xl font-bold w-[36rem]">{name_ar}</div>;
     },
   },
   {
@@ -54,8 +68,8 @@ export const columns = [
       return (
         <div className="flex justify-end">
           <Image
-          className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image")}
+            className="rounded-full w-[60px] h-[60px]"
+            src={image}
             alt="sadasdsad"
             width={50}
             height={50}

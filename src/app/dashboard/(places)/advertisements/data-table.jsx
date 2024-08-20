@@ -13,7 +13,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { format } from "date-fns";
+import { ar } from "date-fns/locale";
 
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   flexRender,
   getCoreRowModel,
@@ -26,13 +37,15 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Dropdown from "../../_components/Dropdown";
 import ButtonBack from "../../_components/ButtonBack";
-import DatePicker from "../../_components/DatePicker";
+ 
 import { Clock8 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 export function DataTable({ columns, data }) {
   const [columnFilters, setColumnFilters] = useState([]);
+  const [date, setDate] = useState(new Date());
+
   const table = useReactTable({
     data,
     columns,
@@ -54,15 +67,17 @@ export function DataTable({ columns, data }) {
   const createPost = async (data) => {
     console.log(data);
     const formData = new FormData();
+    const formattedDateTime = date.toISOString();
 
     formData.append("name_ar", data.name);
     formData.append("name_en", data.name);
-    formData.append("end_time", 20102540);
+    formData.append("end_time", formattedDateTime);
     formData.append("image", data.image[0]);
-    formData.append("type_advertising", 1);
-    formData.append("urls_ar", data.share);
-    formData.append("urls_en", data.share);
+    formData.append("type_advertising", 2);
+    formData.append("urls_ar",'https://tailwindcss.com/docs/installation');
+    formData.append("urls_en",'https://tailwindcss.com/docs/installation');
     formData.append("status", data.status);
+
     try {
       await axios
         .post(
@@ -137,7 +152,7 @@ export function DataTable({ columns, data }) {
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400   dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       {...register("name", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة اسم الإعلان",
                       })}
                     />
                     <p className="text-primaryColo">{errors.name?.message}</p>
@@ -154,7 +169,7 @@ export function DataTable({ columns, data }) {
                       className="w-full border cursor-pointer text-gray-500 border-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
                       style={{ direction: "rtl" }}
                       {...register("status", {
-                        required: "يجب أضافة أسم الدولة",
+                        required: "يجب أضافة حالة الإعلان",
                       })}
                     >
                       <option value="1">قيد الانشاء</option>
@@ -175,7 +190,7 @@ export function DataTable({ columns, data }) {
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400   dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                       placeholder="حسيننن"
                       {...register("share", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة رابط الأعلان",
                       })}
                     />
                     <p className="text-primaryColo">{errors.share?.message}</p>
@@ -189,7 +204,34 @@ export function DataTable({ columns, data }) {
                       >
                         تاريخ انتهاء الإعلان{" "}
                       </label>
-                      <DatePicker />
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full justify-between text-left font-normal   border-[#DADADA] ",
+                              !date &&
+                                "text-muted-foreground text-[#7D8592] hover:text-[#7D8592]"
+                            )}
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {date ? (
+                              format(date, "PPP", { locale: ar })
+                            ) : (
+                              <span>حدد التاريخ</span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0 bg-white">
+                          <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            locale={ar}
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover>
                     </div>
                     <div className="w-full">
                       <label
@@ -204,7 +246,6 @@ export function DataTable({ columns, data }) {
                           id="first_name"
                           className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                           placeholder="حسيننن"
-                         
                         />
                         <div className=" absolute left-4">
                           <Clock8 className="text-[#858D97]" />
@@ -233,7 +274,7 @@ export function DataTable({ columns, data }) {
                       id="file_input"
                       type="file"
                       {...register("image", {
-                        required: "يجب أضافة أسم القسم",
+                        required: "يجب أضافة صورة الإعلان",
                       })}
                     />
                     <p className="text-primaryColo">{errors.image?.message}</p>
@@ -260,7 +301,7 @@ export function DataTable({ columns, data }) {
             <div className="text-end my-2">
               <ButtonBack />
 
-              {/* <h1 className="text-3xl font-bold my-4">({data.length}) الإعلانات</h1> */}
+              <h1 className="text-3xl font-bold my-4">({data.length}) الإعلانات</h1>
             </div>
           </div>
         </div>

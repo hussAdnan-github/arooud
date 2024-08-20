@@ -2,9 +2,7 @@
 import Image from "next/image";
 import Edite from "./Edite";
 
-// const [email , setEmail] = useState();
-
-// const email = '';
+ 
 export const columns = [
   {
     accessorKey: "id",
@@ -35,7 +33,31 @@ export const columns = [
   {
     accessorKey: "email",
     cell: ({ row }) => {
-      return null;
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "link",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "facebook",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "instagram",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "about_the_market_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
     },
   },
   {
@@ -120,7 +142,7 @@ export const columns = [
         <div className="flex justify-end">
           <Image
           className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image_ar")}
+            src={image_ar}
             alt="sadasdsad"
             width={50}
             height={50}

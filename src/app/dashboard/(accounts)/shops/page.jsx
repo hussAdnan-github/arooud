@@ -22,7 +22,7 @@ async function getSection() {
 }
 async function getCountry() {
   const response = await fetch(
-    "https://offers.pythonanywhere.com/v1/api/places/country/",
+    "https://offers.pythonanywhere.com/v1/api/places/directorate/",
     {
       cache: "no-store",
     }

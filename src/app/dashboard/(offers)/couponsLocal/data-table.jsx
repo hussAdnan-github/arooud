@@ -28,6 +28,19 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { format } from "date-fns";
+import { ar } from "date-fns/locale";
+
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -37,9 +50,11 @@ import { BiEdit } from "react-icons/bi";
 import DatePicker from "../../_components/DatePicker";
 import { Clock8 } from "lucide-react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export function DataTable({ columns, data, currency, website, shope }) {
   const [columnFilters, setColumnFilters] = useState([]);
+  const [date, setDate] = useState(new Date());
   const table = useReactTable({
     data,
     columns,
@@ -59,7 +74,40 @@ export function DataTable({ columns, data, currency, website, shope }) {
     defaultValues: {},
   });
   const createPost = async (data) => {
-    console.log(data);
+    const formData = new FormData();
+    const formattedDateTime = date.toISOString();
+    formData.append("image_ar", data.image[0]);
+    formData.append("image_en", data.image[0]);
+    formData.append("coupon_value", data.price);
+    formData.append("status", data.status);
+    formData.append("description_ar", data.description);
+    formData.append("description_en", data.description);
+    formData.append("terms_of_use_ar", data.trem_use);
+    formData.append("terms_of_use_en", data.trem_use);
+    formData.append("use", data.number_use);
+    formData.append("duration", formattedDateTime);
+    formData.append("website", data.website);
+    formData.append("market", data.shope);
+    formData.append("currency_type", data.currency);
+    console.log(date);
+    try {
+      await axios
+        .post(
+          "https://offers.pythonanywhere.com/v1/api/offers/localcoupon/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
+    }
   };
   const onSubmit = async (data) => {
     createPost(data);
@@ -74,9 +122,11 @@ export function DataTable({ columns, data, currency, website, shope }) {
         <div className="flex items-center justify-end py-4 relative flex-auto">
           <Input
             placeholder="بحـث"
-            value={table.getColumn("name")?.getFilterValue() ?? ""}
+            value={table.getColumn("coupon_value")?.getFilterValue() ?? ""}
             onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
+              table
+                .getColumn("coupon_value")
+                ?.setFilterValue(event.target.value)
             }
             className="max-w-md text-end rounded-full pe-10  drop-shadow-sm bg-white border-0"
           />
@@ -331,7 +381,34 @@ export function DataTable({ columns, data, currency, website, shope }) {
                       >
                         تاريخ انتهاء الكوبون{" "}
                       </label>
-                      <DatePicker />
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full justify-between text-left font-normal   border-[#DADADA] ",
+                              !date &&
+                                "text-muted-foreground text-[#7D8592] hover:text-[#7D8592]"
+                            )}
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {date ? (
+                              format(date, "PPP", { locale: ar })
+                            ) : (
+                              <span>حدد التاريخ</span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0 bg-white">
+                          <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            locale={ar}
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover>
                     </div>
                     <div className="w-full">
                       <label
@@ -466,7 +543,7 @@ export function DataTable({ columns, data, currency, website, shope }) {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <div key={cell.id} className="">
+                    <div key={cell.id} className="contents">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

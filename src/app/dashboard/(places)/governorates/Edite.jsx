@@ -106,9 +106,7 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                 placeholder="اسم الدولة"
-                {...register("name", {
-                  required: "يجب أضافة أسم الدولة",
-                })}
+                {...register("name")}
               />
               <p className="text-primaryColo">{errors.name?.message}</p>
             </div>
@@ -128,9 +126,7 @@ export default function Edite({ dataRow }) {
                 <select
                   className="w-full border cursor-pointer border-[#b9b5b5a1] text-gray-500 bg-white rounded-md  h-11 text-sm"
                   style={{ direction: "rtl" }}
-                  {...register("country", {
-                    required: "يجب أضافة أسم الدولة",
-                  })}
+                  {...register("country")}
                 >
                   {datacountry.map((item) => (
                     <option key={item.id} value={item.id}>{item.name_ar} </option>
@@ -155,9 +151,7 @@ export default function Edite({ dataRow }) {
                 <select
                   className="w-full border cursor-pointer border-[#b9b5b5a1] text-gray-500 bg-white rounded-md  h-11 text-sm"
                   style={{ direction: "rtl" }}
-                  {...register("status", {
-                    required: "يجب أضافة أسم الدولة",
-                  })}
+                  {...register("status")}
                 >
                   <option value="1">قيد الانشاء</option>
                   <option value="2">تم الانشاء</option>

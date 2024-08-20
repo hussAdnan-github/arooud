@@ -16,7 +16,7 @@ export default async function Page() {
   const data = await getData();
   return (
     <div className="container mx-auto h-[1300px]">
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columns} data={data} pageSize={5}/>
     </div>
   );
 }

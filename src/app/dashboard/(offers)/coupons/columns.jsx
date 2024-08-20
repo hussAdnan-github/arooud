@@ -1,10 +1,10 @@
 "use client";
- 
+
 import Image from "next/image";
 import Edite from "./Edite";
 
-
 export const columns = [
+  
   {
     accessorKey: "id",
 
@@ -16,6 +16,7 @@ export const columns = [
       return <Edite dataRow={row} />;
     },
   },
+
   {
     accessorKey: "currency_type",
     cell: ({ row }) => {
@@ -31,12 +32,7 @@ export const columns = [
       );
     },
   },
-  {
-    accessorKey: "email",
-    cell: ({ row }) => {
-      return null;
-    },
-  },
+
   {
     accessorKey: "use",
     cell: ({ row }) => {
@@ -74,7 +70,9 @@ export const columns = [
 
       return (
         <div className="text-end">
-          <div className="text-end text-sm text-[#91929E]">تاريخ انتهاء القسيمة</div>
+          <div className="text-end text-sm text-[#91929E]">
+            تاريخ انتهاء القسيمة
+          </div>
           <div className="date_cusomer text-sm text-right  font-bold">
             {duration}
           </div>
@@ -107,14 +105,50 @@ export const columns = [
       return (
         <div className="flex justify-end">
           <Image
-          className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image_ar")}
+            className="rounded-full w-[60px] h-[60px]"
+            src={image_ar}
             alt="sadasdsad"
             width={50}
             height={50}
           />
         </div>
       );
+    },
+  },
+  {
+    accessorKey: "status",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "email",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "website",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "market",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "description_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "terms_of_use_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
     },
   },
 ];

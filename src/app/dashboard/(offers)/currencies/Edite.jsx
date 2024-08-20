@@ -102,9 +102,7 @@ export default function Edite({ dataRow }) {
                 type="text"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                 placeholder="حسيننن"
-                {...register("Name", {
-                  required: "يجب أضافة أسم القسم",
-                })}
+                {...register("Name")}
               />
             </div>
             <div className="mb-4">
@@ -118,9 +116,7 @@ export default function Edite({ dataRow }) {
               <select
                       className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
                       style={{ direction: "rtl" }}
-                      {...register("status", {
-                        required: "يجب أضافة أسم الدولة",
-                      })}
+                      {...register("status")}
                     >
                       <option value="1">قيد الانشاء</option>
                       <option value="2">تم الانشاء</option>
@@ -138,9 +134,7 @@ export default function Edite({ dataRow }) {
                 type="text"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-end"
                 placeholder="ري"
-                {...register("short", {
-                  required: "يجب أضافة أسم القسم",
-                })}
+                {...register("short")}
               />
             </div>
             <div>

@@ -1,6 +1,5 @@
 "use client";
 
-
 import Image from "next/image";
 
 import Edite from "./Edite";
@@ -18,6 +17,42 @@ export const columns = [
     },
   },
   {
+    accessorKey: "status",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "description_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "distinct",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "website",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "market",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "department",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
     accessorKey: "currency_type",
     cell: ({ row }) => {
       const currency_type = row.getValue("currency_type");
@@ -32,7 +67,7 @@ export const columns = [
       );
     },
   },
- 
+
   {
     accessorKey: "price_after",
     cell: ({ row }) => {
@@ -70,7 +105,9 @@ export const columns = [
 
       return (
         <div className="text-end">
-          <div className="text-end text-sm text-[#91929E]">تاريخ انتهاء العرض</div>
+          <div className="text-end text-sm text-[#91929E]">
+            تاريخ انتهاء العرض
+          </div>
           <div className="date_cusomer text-sm text-right  font-bold">
             {duration}
           </div>
@@ -82,13 +119,12 @@ export const columns = [
     accessorKey: "name_ar",
     cell: ({ row }) => {
       const name_ar = row.getValue("name_ar");
-   
+
       return (
         <div>
           <div className="title_cusomer text-right text-[16px] font-bold">
             {name_ar}
           </div>
-          
         </div>
       );
     },
@@ -101,8 +137,8 @@ export const columns = [
       return (
         <div className="flex justify-end">
           <Image
-          className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image_ar")}
+            className="rounded-full w-[60px] h-[60px]"
+            src={image_ar}
             alt="sadasdsad"
             width={50}
             height={50}

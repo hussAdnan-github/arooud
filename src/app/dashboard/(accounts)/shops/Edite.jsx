@@ -53,28 +53,43 @@ export default function Edite({ dataRow }) {
     formState: { errors, isSubmitted },
   } = useForm({
     defaultValues: {
-      sectionName: dataRow.getValue("name_ar"),
+      name: dataRow.getValue("name_ar"),
+      description: dataRow.getValue("about_the_market_ar"),
       status: dataRow.getValue("status"),
-      // image: dataRow.getValue("image_ar"),
+      country: dataRow.getValue("directorate"),
+      email: dataRow.getValue("email"),
+      phone: dataRow.getValue("whatsapp"),
+      link: dataRow.getValue("link"),
+      facebook: dataRow.getValue("facebook"),
+      instagram: dataRow.getValue("instagram"),
+
       country: dataRow.getValue("directorate"),
     },
   });
 
   const createUpdate = async (data) => {
-    // if (data.image && data.image[0]) {
-    //   setPreviewImage(URL.createObjectURL(data.image[0]));
-    //   console.log(setPreviewImage);
-    // }
-    // console.log(data.image[0]);
-    // console.log(data);
     const formData = new FormData();
-    formData.append("name_ar", data.sectionName);
-    formData.append("name_en", data.sectionName);
-    formData.append("status", data.status);
-    formData.append("image", data.image[0]);
+
+    formData.append("image_ar", data.image[0]);
+    formData.append("image_en", data.image[0]);
+    formData.append("name_ar", data.name);
+    formData.append("name_en", data.name);
+    formData.append("about_the_market_ar", data.description);
+    formData.append("about_the_market_en", data.description);
+    formData.append("email", data.email);
+    formData.append("link", data.link);
+    formData.append("status", 2);
+    formData.append("facebook", data.facebook);
+    formData.append("the_x", data.link);
+    formData.append("instagram", data.instagram);
+    formData.append("tiktok", data.link);
+    formData.append("whatsapp", data.link);
+    formData.append("account", 4);
+    formData.append("directorate", data.country);
+    formData.append("departments", 165);
     try {
       const response = await axios.put(
-        `https://offers.pythonanywhere.com/v1/api/departments/departments/${dataRow.getValue(
+        `https://offers.pythonanywhere.com/v1/api/accounts/markets/${dataRow.getValue(
           "id"
         )}/`,
         formData,
@@ -106,7 +121,7 @@ export default function Edite({ dataRow }) {
         </DialogTrigger>
         <DialogContent className="DialogContent sm:max-w-[540px] h-[600px]   overflow-scroll bg-white">
           <DialogHeader>
-            <DialogTitle>تعديل قـسم</DialogTitle>
+            <DialogTitle>تعديل متجر إلكتروني</DialogTitle>
           </DialogHeader>
 
           <form
@@ -125,8 +140,9 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="حسيننن"
-                required
+                {...register("name" )}
               />
+              <p className="text-primaryColo">{errors.name?.message}</p>
             </div>
             <div className="mb-4">
               <label className="block mb-2 text-sm font-medium text-gray-500 ">
@@ -137,8 +153,9 @@ export default function Edite({ dataRow }) {
                 rows="4"
                 className="resize-none bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="أضف بعض الوصف للمحل"
-                required
+                {...register("description")}
               ></textarea>
+              <p className="text-primaryColo">{errors.description?.message}</p>
             </div>
             <div className="mb-4">
               <label className="block mb-2 text-sm font-medium text-gray-500 ">
@@ -166,6 +183,7 @@ export default function Edite({ dataRow }) {
                   <MdOutlineCameraAlt className="absolute top-[40%] left-[45%] cursor-pointer text-6xl text-white z-20" />
                 </label>
               </div>
+              <p className="text-primaryColo">{errors.image?.message}</p>
             </div>
             <div className="mb-4">
               <label
@@ -246,8 +264,9 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="youremail@gmail.com"
-                required
+                {...register("email")}
               />
+              <p className="text-primaryColo">{errors.email?.message}</p>
             </div>
             <div className="mb-4">
               <label
@@ -261,8 +280,9 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="youremail@gmail.com"
-                required
+                {...register("link")}
               />
+              <p className="text-primaryColo">{errors.link?.message}</p>
             </div>
             <div className="mb-4">
               <label
@@ -279,9 +299,7 @@ export default function Edite({ dataRow }) {
                 </div>
 
                 <select
-                  {...register("country", {
-                    required: "يجب أضافة أسم القسم",
-                  })}
+                  {...register("country")}
                   className="w-full border cursor-pointer border-[#b9b5b5a1] text-[#b9b5b5a1] bg-white rounded-md  h-11 text-sm"
                   style={{ direction: "rtl" }}
                 >
@@ -306,8 +324,9 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="youremail@gmail.com"
-                required
+                {...register("facebook")}
               />
+              <p className="text-primaryColo">{errors.facebook?.message}</p>
             </div>
             <div className="mt-4">
               <label
@@ -321,8 +340,9 @@ export default function Edite({ dataRow }) {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5  text-end"
                 placeholder="youremail@gmail.com"
-                required
+                {...register("instagram")}
               />
+              <p className="text-primaryColo">{errors.instagram?.message}</p>
             </div>
 
             <div className="flex justify-end  space-x-4 mt-8">

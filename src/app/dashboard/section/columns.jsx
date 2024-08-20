@@ -48,6 +48,7 @@ export const columns = [
   },
   {
     accessorKey: "image",
+ 
     cell: ({ row }) => {
       const image = row.getValue("image");
       return (

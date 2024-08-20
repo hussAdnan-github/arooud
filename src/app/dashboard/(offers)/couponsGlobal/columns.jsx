@@ -34,7 +34,7 @@ export const columns = [
   {
     accessorKey: "email",
     cell: ({ row }) => {
-      return null;
+      return <div className="contents"></div>;
     },
   },
   {
@@ -101,7 +101,30 @@ export const columns = [
       );
     },
   },
-
+  {
+    accessorKey: "description_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "terms_of_use_ar",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "status",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
+  {
+    accessorKey: "website",
+    cell: ({ row }) => {
+      return <div className="contents"></div>;
+    },
+  },
   {
     accessorKey: "image_ar",
     cell: ({ row }) => {
@@ -110,7 +133,7 @@ export const columns = [
         <div className="flex justify-end">
           <Image
             className="rounded-full w-[60px] h-[60px]"
-            src={row.getValue("image_ar")}
+            src={image_ar}
             alt="sadasdsad"
             width={50}
             height={50}

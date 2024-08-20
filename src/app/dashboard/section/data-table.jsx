@@ -61,7 +61,7 @@ export function DataTable({ columns, data }) {
               <Button className="bg-primaryColo shadow-md shadow-red-300 hover:bg-primaryColo text-white ">
                 {" "}
                 <FaPlus className="me-2" />
-                أضافة قـسم
+                إضافة قـسم
               </Button>
             </DialogTrigger>
             <AddSection />
@@ -79,7 +79,8 @@ export function DataTable({ columns, data }) {
       </div>
       <div className="">
         <div className="flex w-full flex-col gap-2 ">
-          {table.getRowModel().rows.length ? (
+          {/* <p>{table.getRowModel().rows.length = 2}</p> */}
+          {table.getRowModel().rows.length  ? (
             table.getRowModel().rows.map((row) => (
               <div
                 className="w-full flex justify-between h-[91px]  bg-white rounded-lg items-center p-2"
